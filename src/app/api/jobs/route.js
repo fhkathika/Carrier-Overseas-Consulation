@@ -14,3 +14,5 @@ export async function GET(){
     const jobs=await Jobs.find().sort({createdAt:-1})
     return Response.json(jobs)
 }
+
+

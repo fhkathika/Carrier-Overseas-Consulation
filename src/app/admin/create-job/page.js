@@ -138,14 +138,18 @@ onChange={handleChange}
 className='w-full border p-2 rounded'
 />
 </div>
+<div className='flex justify-between'>
 <button type='submit' className='bg-[#e82e31] text-white px-6 py-2 rounded mb-6'>
 Submit
 </button>
+<Link href="/jobPortal" className='bg-[#e82e31] text-white px-6 py-2 rounded mb-6'>
+View Jobs
+</Link> 
+</div>
+
 
         </form>
-      <Link href="/jobPortal" className='bg-[#e82e31] text-white px-6 py-2 rounded mb-6'>
-View Jobs
-</Link>  
+       
     </div>
   )
 }
