@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^5.15.8",
     "@tailwindcss/line-clamp": "^0.4.4",
     "framer-motion": "^12.34.0",
     "mongodb": "^7.1.0",
