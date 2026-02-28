@@ -54,7 +54,7 @@ catch(error){
 
       {/* Modal */}
      {open && createPortal(
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={()=>setOpen(false)} >
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"  >
     <div className="bg-white p-6 rounded-lg w-full max-w-lg relative  max-h-[90vh] overflow-y-auto" >
 
       {/* Close Button */}
