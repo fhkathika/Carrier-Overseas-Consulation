@@ -4,7 +4,9 @@ import Navbar from "./components/Navbar";
 import AllJobs from "./components/AllJobs";
 import AboutUs from "./components/AboutUs";
 import Reviews from "./components/Reviews";
+import connectDB from "@/lib/db";
 async function getJobs(){
+    await connectDB() 
   const res=await fetch("http://localhost:3000/api/jobs",{
     cache:"no-store",
   })

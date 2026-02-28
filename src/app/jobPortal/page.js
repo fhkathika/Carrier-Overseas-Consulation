@@ -2,6 +2,7 @@ import DeleteModal from "../components/DeleteModal"
 import EditModal from "../components/EditModal"
 
 async function getJobs() {
+    await connectDB() 
   const res = await fetch("http://localhost:3000/api/jobs", {
     cache: "no-store",
   })
