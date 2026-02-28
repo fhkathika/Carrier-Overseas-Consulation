@@ -1,3 +1,4 @@
+import connectDB from "@/lib/db"
 import DeleteModal from "../components/DeleteModal"
 import EditModal from "../components/EditModal"
 
