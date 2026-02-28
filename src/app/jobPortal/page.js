@@ -1,13 +1,14 @@
 import connectDB from "@/lib/db"
 import DeleteModal from "../components/DeleteModal"
 import EditModal from "../components/EditModal"
+import Jobs from "@/models/Jobs"
+
+export const dynamic = "force-dynamic"
 
 async function getJobs() {
-    await connectDB() 
-  const res = await fetch("http://localhost:3000/api/jobs", {
-    cache: "no-store",
-  })
-  return res.json()
+  await connectDB()
+  const jobs = await Jobs.find().lean()
+  return JSON.parse(JSON.stringify(jobs))
 }
 
 export default async function JobPortal() {

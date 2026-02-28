@@ -1,38 +1,32 @@
-import Image from "next/image";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import AllJobs from "./components/AllJobs";
-import AboutUs from "./components/AboutUs";
-import Reviews from "./components/Reviews";
-import connectDB from "@/lib/db";
-async function getJobs(){
-    await connectDB() 
-  const res=await fetch("http://localhost:3000/api/jobs",{
-    cache:"no-store",
-  })
- return  res.json()
+import Hero from "./components/Hero"
+import AllJobs from "./components/AllJobs"
+import AboutUs from "./components/AboutUs"
+import Reviews from "./components/Reviews"
+import connectDB from "@/lib/db"
+import Jobs from "@/models/Jobs"
+
+
+export const dynamic = "force-dynamic"
+
+async function getJobs() {
+  await connectDB()
+  const jobs = await Jobs.find().lean()
+  return JSON.parse(JSON.stringify(jobs))
 }
 
- 
 export default async function Home() {
-   const jobs= await getJobs()
+  const jobs = await getJobs()
+
   return (
     <>
-    {/* <Navbar/> */}
-    <Hero/>
-    <section id="about">
-    <AboutUs></AboutUs>
-    </section>
-    <section id="jobPortal">
-    <AllJobs jobs={jobs}/>
-    </section>
-
-
- 
-
- <Reviews/>
-  
-   
+      <Hero />
+      <section id="about">
+        <AboutUs />
+      </section>
+      <section id="jobPortal">
+        <AllJobs jobs={jobs} />
+      </section>
+      <Reviews />
     </>
-  );
+  )
 }
