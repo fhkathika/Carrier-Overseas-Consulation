@@ -24,7 +24,7 @@ export default function Reviews() {
       <div className="max-w-7xl mx-auto px-6 text-center">
 
         <h2 className="text-3xl md:text-4xl font-bold mb-10">
-          Trusted by Leading Brands and Professionals
+       What Our Clients Say
         </h2>
 
         <div className="relative w-full overflow-hidden">
