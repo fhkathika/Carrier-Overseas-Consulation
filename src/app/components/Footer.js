@@ -20,36 +20,38 @@ export default function Footer() {
   height={40}
 />
     </Link>
-<p className='text-sm leading-relaxed'> Short description about the company. 
-          What your business does and your mission.</p>
+{/* <p className='text-sm leading-relaxed'> Short description about the company. 
+          What your business does and your mission.</p> */}
   </div>
   {/* column 2 */}
   <div className='text-lg font-semibold text-white mb-4'>
 {/* <h3>Links </h3> */}
 <ul className='space-y-2'>
   <li><a href="/" className="hover:text-[color:#e82e31] transition">Home</a></li>
-  <li><a href="/about" className="hover:text-[color:#e82e31] transition">About</a></li>
-  <li><a href="/jobs" className="hover:text-[color:#e82e31] transition">Jobs</a></li>
-  <li><a href="/contact" className="hover:text-[color:#e82e31] transition">Conatct</a></li>
+  <li><a href="/#about" className="hover:text-[color:#e82e31] transition">About</a></li>
+  <li><a href="/#jobPortal" className="hover:text-[color:#e82e31] transition">Jobs</a></li>
+  {/* <li><a href="/contact" className="hover:text-[color:#e82e31] transition">Conatct</a></li> */}
 </ul>
   </div>
   {/* column 3 */}
   <div>
-<h3>Services</h3>
+<h3 className='text-lg font-semibold text-white mb-2'>Key Services & Capabilities</h3>
 <ul>
-          <li><a href="#" className="hover:text-[color:#e82e31] transition cursor-pointer">CV Review</a></li>
-          <li><a href="#" className="hover:text-[color:#e82e31] transition cursor-pointer">Visa Processing</a></li>
-          <li><a href="#" className="hover:text-[color:#e82e31] transition cursor-pointer">Interview Prep</a></li>
-          <li><a href="#" className="hover:text-[color:#e82e31] transition cursor-pointer">Career Guidance</a></li>
+          <li><a  className="">•  International manpower sourcing</a></li>
+          <li><a  className="">•  Visa & documentation processing</a></li>
+          <li><a  className="">•  Recruitment consulting</a></li>
+          <li><a  className="">•  Skills testing & evaluation</a></li>
+          <li><a  className="">•  Worker deployment</a></li>
 
 </ul>
   </div>
   {/* column 4 */}
   <div>
 <h3 className='text-lg font-semibold text-white mb-4'>Conatct</h3>
-<p className='text-sm'>Dhaka,Bangladesh</p>
-<p className='text-sm'>info@email.com</p>
-<p className='text-sm'>+880 1234 567 890</p>
+<p className='text-sm'>House 25, Road 34, Gulshan 2,
+Dhaka 1212, Bangladesh</p>
+<p className='text-sm'>info@ahmedamin.com</p>
+<p className='text-sm'>+88 02 8812395</p>
 </div>
 </div>
 {/* footer bottom  */}
