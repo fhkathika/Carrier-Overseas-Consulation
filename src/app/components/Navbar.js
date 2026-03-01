@@ -3,11 +3,13 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useState } from "react"
+import { usePathname, useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
 
 export default function Navbar() {
   const [isOpen,setIsOpen]=useState(false)
+  const [loggedIn,setLoggedIn]=useState(false)
+  const router=useRouter()
   const pathname=usePathname()
   const navLinks=[
 {name:"Home",path:"/"},
@@ -15,7 +17,21 @@ export default function Navbar() {
 {name:"Job Portal",path:"/#jobPortal"},
 // {name:"Conatct",path:"/contact"},
   ]
-  console.log("navLinks",navLinks[0].name)
+   useEffect(()=>{
+    const checkaAuth=async()=>{
+const res= await fetch("/api/admin/me")
+const data=await res.json()
+setLoggedIn(data.loggedIn)
+
+    }
+    checkaAuth()
+  },[])
+const handleLogout=async()=>{
+  await fetch("/api/admin/logout",{method:"POST"})
+  setLoggedIn(false)
+  router.push("/admin/login")
+  router.refresh()
+}
   return (
   <>
   
@@ -50,6 +66,32 @@ className={`transition-colors duration-300 ${
 </Link>
         ))
       }
+      {
+        loggedIn && (
+             <>
+          <Link  href="/admin/create-job"
+className={`block ${pathname==="/admin/create-job"?"text-red-500 font-semibold"
+  :"hover:text-red-500 font-semibold"}`}
+onClick={()=>setIsOpen(false)} //close menu after click
+>
+  Create Job
+</Link>
+          <Link  href="/admin/jobPortal"
+className={`block ${pathname==="/admin/job-portal"?"text-red-500 font-semibold"
+  :"hover:text-red-500 font-semibold"}`}
+onClick={()=>setIsOpen(false)} //close menu after click
+>
+  Update Circular
+</Link>
+            <button
+          onClick={handleLogout}
+          className="bg-[#e82e31] text-white px-2 py-1 rounded"
+        >
+          Logout
+        </button>
+        </> 
+        )
+      }
       
     </div>
     {/* Mobile Button  */}
@@ -77,7 +119,32 @@ onClick={()=>setIsOpen(false)} //close menu after click
 </Link>
           ))
         }
-      
+        {
+        loggedIn && (
+          <>
+          <Link  href="/admin/create-job"
+className={`block ${pathname==="/admin/create-job"?"text-red-500 font-semibold"
+  :"hover:text-red-500 font-semibold"}`}
+onClick={()=>setIsOpen(false)} //close menu after click
+>
+  Create Job
+</Link>
+          <Link  href="/admin/job-portal"
+className={`block ${pathname==="/admin/job-portal"?"text-red-500 font-semibold"
+  :"hover:text-red-500 font-semibold"}`}
+onClick={()=>setIsOpen(false)} //close menu after click
+>
+  Update Circular
+</Link>
+            <button
+          onClick={handleLogout}
+          className="bg-[#e82e31] text-white px-2 py-1 rounded"
+        >
+          Logout
+        </button>
+        </> 
+        )
+      }
 
       </div>
     )

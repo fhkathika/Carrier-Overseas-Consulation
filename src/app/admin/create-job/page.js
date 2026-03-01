@@ -1,8 +1,9 @@
 "use client"
 import Link from 'next/link'
 import React, { useState } from 'react'
-
+export const dynamic = "force-dynamic"
 export default function CreateJob() {
+   const [loading, setLoading] = useState(false)
     const [formData,setFormData]=useState({
 category: "",
 describtion: "",
@@ -21,6 +22,8 @@ deadline:""
     }
     const handleSubmit=async(e)=>{
 e.preventDefault()
+setLoading(true)
+try{
 const res=await fetch("/api/jobs",{
     method:"POST",
     headers:{
@@ -29,12 +32,14 @@ const res=await fetch("/api/jobs",{
     body:JSON.stringify({
         ...formData,
         vacancies:Number(formData.vacancies),
-        deadline:new Date(formData.deadline)
+        deadline:new Date(formData.deadline),
+         secret: "superadmin123",
+    // title: "Frontend Developer",
+    // company: "ABC Ltd",
     
     })
 
 })
-  console.log(" clicked....",formData)
 if(res.ok){
     alert("Job Created Successfully ✅")
     setFormData({
@@ -46,6 +51,13 @@ salary: "",
 deadline:""
     })
 }
+}
+catch (error) {
+      console.error("Error:", error)
+    } finally {
+      setLoading(false)  // ✅ stop loading
+    }
+
 
     }
   
@@ -53,6 +65,7 @@ deadline:""
     <div className='max-w-xl mx-auto mt-10'>
         
         <h2 className='text-2xl font-bold mb-6'>Create Job</h2>
+
         <form onSubmit={handleSubmit} className='space-y-4'>
            <div className="flex flex-col gap-2">
   <label className="text-sm font-semibold">
@@ -139,12 +152,22 @@ className='w-full border p-2 rounded'
 />
 </div>
 <div className='flex justify-between'>
-<button type='submit' className='bg-[#e82e31] text-white px-6 py-2 rounded mb-6'>
+{/* <button type='submit' className='bg-[#e82e31] text-white px-6 py-2 rounded mb-6'>
 Submit
+</button> */}
+<button
+  type="submit"
+  disabled={loading}
+  className="bg-[#e82e31] text-white px-6 py-2 rounded mb-6"
+>
+  {loading && (
+    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+  )}
+  {loading ? "Processing..." : "Create Job"}
 </button>
-<Link href="/jobPortal" className='bg-[#e82e31] text-white px-6 py-2 rounded mb-6'>
+{/* <Link href="/admin/jobPortal" className='bg-[#e82e31] text-white px-6 py-2 rounded mb-6'>
 View Jobs
-</Link> 
+</Link>  */}
 </div>
 
 

@@ -3,6 +3,7 @@ import { useState } from "react"
 import { createPortal } from "react-dom"
 export default function EditModal({job}) {
   const [open, setOpen] = useState(false);
+  const [loading,setLoading]= useState(false);
   const [formData,setFormData]=useState({
     category:job?.category || "",
       describtion: job?.describtion || "",
@@ -22,6 +23,7 @@ export default function EditModal({job}) {
   }
 const handleSubmit=async(e)=>{
     e.preventDefault()
+    setLoading(true)
     console.log("click id ...", job?._id)
     try{
 const res=await fetch(`/api/jobs/${job?._id}`,{
@@ -40,6 +42,9 @@ location.reload()
 }
 catch(error){
    console.log("Update error:", error);
+}
+finally{
+  setLoading(false)
 }
 }
   return (
@@ -146,9 +151,18 @@ className='w-full border p-2 rounded'
 />
 </div>
 <div className="flex">
-<button type='submit' className='bg-[#e82e31] text-white px-6 py-2 rounded mb-6'>
-Update
+
+<button
+  type="submit"
+  disabled={loading}
+  className="bg-[#e82e31] text-white px-6 py-2 rounded mb-6"
+>
+  {loading && (
+    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+  )}
+  {loading ? "Processing..." : "Update"}
 </button>
+
  <button
           onClick={() => setOpen(false)}
           className="bg-gray-300 px-4 py-2 rounded mb-6 ml-2"

@@ -1,7 +1,9 @@
+
 import connectDB from "@/lib/db"
-import DeleteModal from "../components/DeleteModal"
-import EditModal from "../components/EditModal"
+import DeleteModal from "../../components/DeleteModal"
+import EditModal from "../../components/EditModal"
 import Jobs from "@/models/Jobs"
+
 
 export const dynamic = "force-dynamic"
 
@@ -13,7 +15,6 @@ async function getJobs() {
 
 export default async function JobPortal() {
   const jobs = await getJobs()
-
   return (
     <>
       {/* Title */}
@@ -61,7 +62,7 @@ export default async function JobPortal() {
 <div className="flex">
               {/* Edit Button + Modal */}
               <div className="mt-4">
-                <EditModal job={job} />
+                <EditModal job={job}  />
               </div>
               <div className="mt-4 ml-2">
                 <DeleteModal job={job} />
