@@ -1,6 +1,7 @@
 
 import connectDB from "@/lib/db";
 import Jobs from "@/models/Jobs";
+import { NextResponse } from "next/server";
 
 // POST a job 
 // export async function POST(request){
@@ -16,12 +17,12 @@ export async function POST(req) {
   const { secret, ...jobData } = await req.json()
 
   if (secret !== process.env.ADMIN_SECRET) {
-    return Response.json({ message: "Unauthorized" }, { status: 401 })
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 })
   }
 
   const job = await Jobs.create(jobData)
 
-  return Response.json(job, { status: 201 })
+  return NextResponse.json(job, { status: 201 })
 }
 
 export async function GET(){
