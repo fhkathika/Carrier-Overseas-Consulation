@@ -42,7 +42,7 @@ const handleLogout=async()=>{
     {/* Logo */}
     <Link href="/" className=" absolute left-6 -bottom-6 z-50">
       <Image
-        src="/COC (2).png"
+        src="/COC (5).png"
         alt="Company Logo"
         width={220}
         height={50}
