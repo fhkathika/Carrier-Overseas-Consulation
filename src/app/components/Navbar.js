@@ -37,15 +37,15 @@ const handleLogout=async()=>{
   
   
 <nav className="relative bg-[#111827] shadow-md">
-  <div className="max-w-7xl mx-auto px-6 py-6 flex justify-end items-center">
+  <div className="max-w-7xl mx-auto px-4 py-4 flex justify-end items-center">
 
     {/* Logo */}
     <Link href="/" className=" absolute left-6 -bottom-6 z-50">
       <Image
-        src="/coc_logo.png"
+        src="/COC (2).png"
         alt="Company Logo"
-        width={140}
-        height={60}
+        width={220}
+        height={50}
         className="drop-shadow-lg"
       />
     </Link>

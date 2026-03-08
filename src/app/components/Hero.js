@@ -31,12 +31,12 @@ export default function Hero() {
   return (
 <section className="relative w-full h-[70vh] sm:h-[80vh] md:h-screen">
   <Image
-    src="/slider_image1.jpg"
+    src="/coc_bg_sample6.png"
     alt="Hero"
     fill
     priority
     sizes="100vw"
-    className="object-cover"
+    className="object-content"
   />
 
   <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center px-4">

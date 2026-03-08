@@ -14,9 +14,9 @@ export default function Footer() {
 {/* <h2 className='text-2xl font-bold text-white mb-4'>COCL</h2> */}
  <Link href="/" className="flex items-center">
   <Image
-  src="/coc_logo.png"
+  src="/COC (2).png"
   alt="Company Logo"
-  width={140}
+  width={240}
   height={40}
 />
     </Link>
