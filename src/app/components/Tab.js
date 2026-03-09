@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 export default function Tab({jobs}) {
       const [activeTab, setActiveTab] = useState("Describtion & Responsibility")
+      console.log("jobs",jobs?.description)
   return (
      <div className=" bg-gray shadow  rounded-lg p-4">
 
@@ -25,20 +26,28 @@ export default function Tab({jobs}) {
       {/* Tab Content */}
       <div className="mt-4">
         {activeTab === "Describtion & Responsibility" && (
-          <div>
+          <div className="job-description">
             {/* <h5 className="text-xl font-semibold">Describtion & Responsibility</h5> */}
-            <p className="text-slate-600">
+            {/* <p className="text-slate-600">
               {jobs?.describtion}
-            </p>
+            </p> */}
+            <div dangerouslySetInnerHTML={{ __html: jobs?.describtion }} />
           </div>
         )}
 
         {activeTab === "Required Qualification" && (
           <div>
             {/* <h5 className="text-xl font-semibold">Required Qualification</h5> */}
-            <p className="text-slate-600">
+            {/* <p className="text-slate-600">
              {jobs?.requirment}
-            </p>
+            </p> */}
+             <div className="job-description">
+            {/* <h5 className="text-xl font-semibold">Describtion & Responsibility</h5> */}
+            {/* <p className="text-slate-600">
+              {jobs?.describtion}
+            </p> */}
+            <div dangerouslySetInnerHTML={{ __html: jobs?.requirment }} />
+          </div>
           </div>
         )}
 

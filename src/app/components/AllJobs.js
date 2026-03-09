@@ -51,13 +51,16 @@ const handleClick=(id)=>{
           {/* <p className="mb-4 opacity-70 group-hover:opacity-100">{jobs?.salary}</p> */}
           <hr className='mb-4 text-gray-300'/>
           {/* <p className="mb-4 text-gray-400">{jobs.describtion}</p> */}
-          <p
+          {/* <p
   className={`mb-2 text-sm transition-all duration-300 opacity-70 group-hover:opacity-100 ${
     expandedIndex === 3 ? "" : "line-clamp-3"
   }`}
 >
   {jobs?.describtion}
-</p>
+</p> */}
+<div className="job-description line-clamp-3">
+            <div dangerouslySetInnerHTML={{ __html: jobs?.describtion }} />
+          </div>
 
 {/* <button
 className=" group-hover:text-white group-hover:text-[#772828] transition duration-300  block text-sm  "

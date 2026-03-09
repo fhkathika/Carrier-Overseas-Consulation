@@ -1,4 +1,5 @@
 "use client"
+import Editor from '@/app/components/Editor'
 import Link from 'next/link'
 import React, { useState } from 'react'
 export const dynamic = "force-dynamic"
@@ -31,6 +32,8 @@ const res=await fetch("/api/jobs",{
     },
     body:JSON.stringify({
         ...formData,
+        describtion:formData?.describtion,
+        requirment:formData?.requirment,
         vacancies:Number(formData.vacancies),
         deadline:new Date(formData.deadline),
          secret: "superadmin123",
@@ -84,13 +87,11 @@ catch (error) {
   <label className="text-sm font-semibold">
     Job Describtion
   </label>
-
-<textarea 
+{/* <Editor name="describtion" className='w-full border p-2 rounded' required value={formData.describtion} onChange={handleChange}/> */}
+<Editor 
 name="describtion"
-required
 value={formData.describtion}
 onChange={handleChange}
-className='w-full border p-2 rounded'
 />
 </div>
    <div className="flex flex-col gap-2">
@@ -98,13 +99,13 @@ className='w-full border p-2 rounded'
     Required Qualification
   </label>
 
-<textarea 
+<Editor 
 name="requirment"
-required
 value={formData.requirment}
 onChange={handleChange}
-className='w-full border p-2 rounded'
+// className='w-full border p-2 rounded'
 />
+
 </div>
    <div className="flex flex-col gap-2">
   <label className="text-sm font-semibold">

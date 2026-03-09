@@ -56,9 +56,12 @@ export default async function JobPortal() {
 
               <hr className="mb-4 text-gray-300" />
 
-              <p className="mb-2 text-sm opacity-70 group-hover:opacity-100 line-clamp-3">
+              {/* <p className="mb-2 text-sm opacity-70 group-hover:opacity-100 line-clamp-3">
                 {job?.describtion}
-              </p>
+              </p> */}
+               <div className="job-description line-clamp-3">
+            <div dangerouslySetInnerHTML={{ __html: job?.describtion }} />
+          </div>
 <div className="flex">
               {/* Edit Button + Modal */}
               <div className="mt-4">

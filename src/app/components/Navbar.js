@@ -44,9 +44,9 @@ const handleLogout=async()=>{
       <Image
         src="/COC (5).png"
         alt="Company Logo"
-        width={220}
+        width={240}
         height={50}
-        className="drop-shadow-lg"
+        className="drop-shadow-lg w-36 h-10 sm:w-40 sm:h-12 md:w-60 md:h-16"
       />
     </Link>
     {/* <h1 className="text-2xl font-bold">COCL</h1> */}
@@ -77,7 +77,7 @@ onClick={()=>setIsOpen(false)} //close menu after click
   Create Job
 </Link>
           <Link  href="/admin/jobPortal"
-className={`block ${pathname==="/admin/job-portal"?"text-red-500 font-semibold"
+className={`block ${pathname==="/admin/jobPortal"?"text-red-500 font-semibold"
   :"hover:text-red-500 font-semibold"}`}
 onClick={()=>setIsOpen(false)} //close menu after click
 >
@@ -129,8 +129,8 @@ onClick={()=>setIsOpen(false)} //close menu after click
 >
   Create Job
 </Link>
-          <Link  href="/admin/job-portal"
-className={`block ${pathname==="/admin/job-portal"?"text-red-500 font-semibold"
+          <Link  href="/admin/jobPortal"
+className={`block ${pathname==="/admin/jobPortal"?"text-red-500 font-semibold"
   :"hover:text-red-500 font-semibold"}`}
 onClick={()=>setIsOpen(false)} //close menu after click
 >

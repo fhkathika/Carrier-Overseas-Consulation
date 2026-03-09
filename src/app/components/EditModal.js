@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import { createPortal } from "react-dom"
+import Editor from "./Editor";
 export default function EditModal({job}) {
   const [open, setOpen] = useState(false);
   const [loading,setLoading]= useState(false);
@@ -89,11 +90,10 @@ finally{
     Job Describtion
   </label>
 
-<textarea 
+<Editor 
 name="describtion"
 value={formData.describtion}
 onChange={handleChange}
-className='w-full border p-2 rounded'
 />
 </div>
    <div className="flex flex-col gap-2">
@@ -101,7 +101,7 @@ className='w-full border p-2 rounded'
     Required Qualification
   </label>
 
-<textarea 
+<Editor 
 name="requirment"
 value={formData.requirment}
 onChange={handleChange}
