@@ -4,6 +4,9 @@ import AboutUs from "./components/AboutUs"
 import Reviews from "./components/Reviews"
 import connectDB from "@/lib/db"
 import Jobs from "@/models/Jobs"
+import Testimonials from "./components/Testimonials"
+import Client_Logo from "./components/Client_Logo"
+import JobPoster from "./components/JobPoster"
 
 
 export const dynamic = "force-dynamic"
@@ -23,10 +26,12 @@ export default async function Home() {
       <section id="about">
         <AboutUs />
       </section>
+      <JobPoster/>
       <section id="jobPortal">
         <AllJobs jobs={jobs} />
       </section>
       <Reviews />
+      <Client_Logo/>
     </>
   )
 }

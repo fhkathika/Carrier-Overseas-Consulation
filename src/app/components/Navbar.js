@@ -15,7 +15,8 @@ export default function Navbar() {
 {name:"Home",path:"/"},
 {name:"About",path:"/#about"},
 {name:"Job Portal",path:"/#jobPortal"},
-// {name:"Conatct",path:"/contact"},
+{name:"Success",path:"/success"},
+{name:"Galary",path:"/galary"},
   ]
    useEffect(()=>{
     const checkaAuth=async()=>{

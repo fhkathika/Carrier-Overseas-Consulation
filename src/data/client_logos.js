@@ -1,0 +1,40 @@
+const client_logos=[
+    {
+    id:1,
+    src:'/clientLogoImg/img1.PNG'
+},
+    {
+    id:2,
+    src:'/clientLogoImg/img2.PNG'
+},
+    {
+    id:3,
+     src:'/clientLogoImg/img3.PNG'
+},
+    {
+    id:4,
+     src:'/clientLogoImg/img4.PNG'
+},
+    {
+    id:5,
+     src:'/clientLogoImg/img5.PNG'
+},
+    {
+    id:6,
+     src:'/clientLogoImg/img6.PNG'
+},
+    {
+    id:7,
+     src:'/clientLogoImg/img7.PNG'
+},
+    {
+    id:8,
+     src:'/clientLogoImg/img8.PNG'
+},
+    {
+    id:9,
+     src:'/clientLogoImg/img9.PNG'
+},
+
+]
+export default client_logos
