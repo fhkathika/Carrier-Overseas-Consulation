@@ -1,5 +1,6 @@
 
 import connectDB from "@/lib/db";
+import jobPoster from "@/models/jobPoster";
 import Jobs from "@/models/Jobs";
 import { NextResponse } from "next/server";
 

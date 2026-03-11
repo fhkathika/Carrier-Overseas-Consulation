@@ -1,6 +1,8 @@
 "use client"
+import CreateJobPosterModal from '@/app/components/CreateJobPosterModal'
 import Editor from '@/app/components/Editor'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 export const dynamic = "force-dynamic"
 export default function CreateJob() {
@@ -13,6 +15,7 @@ vacancies: "",
 salary: "",
 deadline:""
     })
+
     const handleChange=(e)=>{
         console.log("first clicked")
         const {name,value}=e.target
@@ -66,8 +69,11 @@ catch (error) {
   
   return (
     <div className='max-w-xl mx-auto mt-10'>
+        <div className='flex justify-between '>
+<h2 className='text-2xl font-bold mb-6'>Create Job</h2>
+<CreateJobPosterModal/>
+        </div>
         
-        <h2 className='text-2xl font-bold mb-6'>Create Job</h2>
 
         <form onSubmit={handleSubmit} className='space-y-4'>
            <div className="flex flex-col gap-2">

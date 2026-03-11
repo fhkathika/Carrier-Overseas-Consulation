@@ -4,6 +4,7 @@ import AboutUs from "./components/AboutUs"
 import Reviews from "./components/Reviews"
 import connectDB from "@/lib/db"
 import Jobs from "@/models/Jobs"
+import jobPoster from "@/models/jobPoster"
 import Testimonials from "./components/Testimonials"
 import Client_Logo from "./components/Client_Logo"
 import JobPoster from "./components/JobPoster"
@@ -16,9 +17,15 @@ async function getJobs() {
   const jobs = await Jobs.find().lean()
   return JSON.parse(JSON.stringify(jobs))
 }
+async function getJobsPoster() {
+  await connectDB()
+  const jobs = await jobPoster.find().lean()
+  return JSON.parse(JSON.stringify(jobs))
+}
 
 export default async function Home() {
   const jobs = await getJobs()
+  const poster = await getJobsPoster()
 
   return (
     <>
@@ -26,7 +33,7 @@ export default async function Home() {
       <section id="about">
         <AboutUs />
       </section>
-      <JobPoster/>
+      <JobPoster poster={poster}/>
       <section id="jobPortal">
         <AllJobs jobs={jobs} />
       </section>
