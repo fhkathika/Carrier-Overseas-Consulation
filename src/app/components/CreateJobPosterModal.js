@@ -87,7 +87,7 @@ catch (error) {
       type="text"
       name="title"
       required
-       value={formData.title}
+       value={formData?.title}
       placeholder="Job Title"
       onChange={handleChange}
       className="border p-2 w-full"
@@ -103,7 +103,7 @@ catch (error) {
       type="date"
       required
       name="startDate"
-       value={formData.startDate}
+       value={formData?.startDate}
       onChange={handleChange}
       className="border p-2 w-full"
       />
@@ -118,7 +118,7 @@ catch (error) {
       type="date"
       name="endDate"
       required
-      value={formData.endDate}
+      value={formData?.endDate}
       onChange={handleChange}
       className="border p-2 w-full"
       />
@@ -130,10 +130,10 @@ catch (error) {
   </label>
 
   <input
+      key={formData.image ? formData.image.name : 'file-input'}
       type="file"
       name="image"
       required
-      value={formData.image}
       onChange={handleChange}
       className="border p-2 w-full"
       />

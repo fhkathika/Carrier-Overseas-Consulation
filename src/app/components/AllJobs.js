@@ -23,23 +23,13 @@ const handleClick=(id)=>{
   </div>
 
         {/* Slider */}
-<div className='max-w-6xl mx-auto '> 
-         <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={20}
-      navigation
-      pagination={{ clickable: true }}
-      breakpoints={{
-        320: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
-      }}
-    >
+<div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 '> 
+   
             {
                 jobs.map((jobs,index)=>(
-                     <SwiperSlide key={index} className='mt-4 mb-4'>
+                 
                   
-      <div className="group relative overflow-hidden rounded-br-lg shadow-lg bg-white p-6 transition duration-500 hover:-translate-y-2 hover:shadow-xl ">
+      <div key={index} className="group relative overflow-hidden rounded-br-lg shadow-lg bg-white p-6 transition duration-500 hover:-translate-y-2 hover:shadow-xl ">
 
         {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#AF3436] to-[#e82e31] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
@@ -82,12 +72,11 @@ className=" group-hover:text-white group-hover:text-[#772828] transition duratio
 
       </div>
      
-    </SwiperSlide>
+  
                 ))
             }
 
 
-        </Swiper>
 </div>
     </section>
   )

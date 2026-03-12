@@ -20,27 +20,30 @@ async function getJobs() {
 }
 async function getJobsPoster() {
   await connectDB()
-  const jobs = await jobPoster.find().lean()
-  return JSON.parse(JSON.stringify(jobs))
+  const poster = await jobPoster.find().lean()
+  return JSON.parse(JSON.stringify(poster))
 }
 
 export default async function Home() {
   const jobs = await getJobs()
   const poster = await getJobsPoster()
-
   return (
     <>
       <Hero />
         <section id="about">
         <AboutUs />
       </section>
-     <JobPoster poster={poster}/>
-      <section id="jobPortal">
+      {
+        poster?.length>0 && <JobPoster poster={poster}/>
+      }
+     
        <Chart/>
-        <AllJobs jobs={jobs} />
+      <section id="jobPortal">
+     
+        {/* <AllJobs jobs={jobs} /> */}
       </section>
       <Reviews />
-     
+     <Testimonials/>
       <Client_Logo/>
     </>
   )

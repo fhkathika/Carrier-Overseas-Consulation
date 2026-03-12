@@ -74,8 +74,9 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom"
 export default function JobPoster({poster}) {
   const [open,setOpen]=useState(false)
      const [index,setIndex]=useState(0)
+     const today=new Date()
   return (
-   <section className="py-16 bg-gray-50">
+   <section className="py-10 bg-gray-50">
     <div className='max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12'>
     <h3 className='text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center'>
    Current Job Openings
@@ -95,19 +96,24 @@ export default function JobPoster({poster}) {
       modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper"
     >
+    
 {
-  poster?.map((item,i)=>(
-  <SwiperSlide className="flex justify-center items-center" key={i}>
+  poster?.map((item,i)=>{
+    const start=new Date(item?.startDate);
+    const end=new Date(item?.endDate);
+    <p>{item?.endDate}</p>
+    if(today>=start && today<= end){
+      return( <SwiperSlide className="flex justify-center items-center" key={i}>
   <img
     src={item?.image}
     alt="Job Poster"
     className="w-auto sm:w-[320px] md:w-[400px] lg:w-auto h-auto rounded-lg shadow-lg"
      onClick={()=>{setIndex(i);setOpen(true)}}
   />
-</SwiperSlide>
+</SwiperSlide>)
 
-
-  ))
+    }
+})
 }
    
 

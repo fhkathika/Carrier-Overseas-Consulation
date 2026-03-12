@@ -14,8 +14,8 @@ export default function Navbar() {
   const navLinks=[
 {name:"Home",path:"/"},
 {name:"About",path:"/#about"},
-{name:"Job Portal",path:"/#jobPortal"},
-{name:"Success",path:"/success"},
+{name:"Job Circular",path:"/Circular"},
+// {name:"Success",path:"/success"},
 {name:"Galary",path:"/galary"},
   ]
    useEffect(()=>{
