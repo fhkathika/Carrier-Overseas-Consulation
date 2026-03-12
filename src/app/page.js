@@ -8,6 +8,7 @@ import jobPoster from "@/models/jobPoster"
 import Testimonials from "./components/Testimonials"
 import Client_Logo from "./components/Client_Logo"
 import JobPoster from "./components/JobPoster"
+import Chart from "./components/Chart"
 
 
 export const dynamic = "force-dynamic"
@@ -30,14 +31,16 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <section id="about">
+        <section id="about">
         <AboutUs />
       </section>
-      <JobPoster poster={poster}/>
+     <JobPoster poster={poster}/>
       <section id="jobPortal">
+       <Chart/>
         <AllJobs jobs={jobs} />
       </section>
       <Reviews />
+     
       <Client_Logo/>
     </>
   )
