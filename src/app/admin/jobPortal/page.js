@@ -3,6 +3,8 @@ import connectDB from "@/lib/db"
 import DeleteModal from "../../components/DeleteModal"
 import EditModal from "../../components/EditModal"
 import Jobs from "@/models/Jobs"
+import AllPosters from "../../components/AllPosters"
+
 
 
 export const dynamic = "force-dynamic"
@@ -13,8 +15,10 @@ async function getJobs() {
   return JSON.parse(JSON.stringify(jobs))
 }
 
+
 export default async function JobPortal() {
   const jobs = await getJobs()
+
   return (
     <>
       {/* Title */}
@@ -68,13 +72,16 @@ export default async function JobPortal() {
                 <EditModal job={job}  />
               </div>
               <div className="mt-4 ml-2">
-                <DeleteModal job={job} />
+                <DeleteModal item={job} path="/api/jobs" />
               </div>
               </div>
             </div>
           </div>
         ))}
       </div>
+<AllPosters/>
+
+
     </>
   )
 }

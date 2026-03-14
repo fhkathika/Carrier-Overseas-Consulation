@@ -3,7 +3,7 @@ import jobPoster from "@/models/jobPoster";
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
-import JobPoster from "@/models/jobPoster";
+
 
 export async function POST(req) {
   try {
@@ -43,8 +43,13 @@ export async function POST(req) {
   }
 }
 
-export async function GET(){
+export async function GET() {
+  try {
     await connectDB()
-    const poster=await JobPoster.find().sort({createdAt:-1})
-    return Response.json(poster)
+    const posters = await jobPoster.find().sort({ createdAt: -1 })
+    return NextResponse.json(posters)  // ✅ Correct
+  } catch (err) {
+    console.error(err)
+    return NextResponse.json({ message: "Failed to fetch posters" }, { status: 500 })
+  }
 }

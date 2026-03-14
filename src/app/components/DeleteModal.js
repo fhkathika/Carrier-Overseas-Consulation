@@ -1,15 +1,16 @@
 "use client"
 import React, { useState } from 'react'
 import { createPortal } from "react-dom"
-export default function DeleteModal({job}) {
+export default function DeleteModal({item,path}) {
+  console.log("item...",item)
       const [open, setOpen] = useState(false);
       const haddleDelete=async(id)=>{
-        console.log("id..",id)
-const res=await fetch(`/api/jobs/${id}`,{
+        console.log("id.....",id)
+const res=await fetch(`${path}/${id}`,{
     method:"DELETE",
 });
 if(res.ok){
-    alert("Job Deleted Successfully ✅")
+    alert(" Deleted Successfully ✅")
 location.reload(); //quick refresh
 }
 
@@ -38,7 +39,7 @@ location.reload(); //quick refresh
       </button>
 
       <h2 className="text-lg font-semibold mb-4">
-        Delete Job
+        Delete Item
       </h2>
 
       <p className="text-gray-600">
@@ -49,7 +50,7 @@ location.reload(); //quick refresh
       
 
         <button
-          onClick={() => haddleDelete(job?._id)}
+          onClick={() => haddleDelete(item?._id)}
       
             className="bg-[#AF3436] text-white px-4 py-2 rounded"
         >
