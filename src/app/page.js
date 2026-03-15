@@ -30,20 +30,13 @@ export default async function Home() {
   return (
     <>
       <Hero />
-        <section id="about">
-        <AboutUs />
-      </section>
-      {
-        poster?.length>0 && <JobPoster poster={poster}/>
-      }
-     
-       <Chart/>
+      {/* <Chart/> */}
       <section id="jobPortal">
      
         {/* <AllJobs jobs={jobs} /> */}
       </section>
       <Reviews />
-     <Testimonials/>
+   
       <Client_Logo/>
     </>
   )

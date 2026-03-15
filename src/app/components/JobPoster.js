@@ -101,8 +101,8 @@ export default function JobPoster({poster}) {
   poster?.map((item,i)=>{
     const start=new Date(item?.startDate);
     const end=new Date(item?.endDate);
-    <p>{item?.endDate}</p>
-    if(today>=start && today<= end){
+  
+    if(today<= end){
       return( <SwiperSlide className="flex justify-center items-center" key={i}>
   <img
     src={item?.image}
