@@ -99,7 +99,7 @@ COCL's staff management and computer Information
               src="/candidateProcessChartpage14.png"
               alt="About Us"
               width={500}
-          height={400}
+          height={500}
               className='object-container rounded-xl '
               />
         
