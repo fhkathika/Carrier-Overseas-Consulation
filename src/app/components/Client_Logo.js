@@ -13,7 +13,7 @@ export default function Client_Logo() {
   </div>
           <div className="flex animate-scroll gap-0 w-max">
 
-            {[...client_logos, ...client_logos].map((item, index) => (
+            {client_logos.map((item, index) => (
               <div
                 key={index}
                 className="min-w-[300px] bg-white-100  transition"
