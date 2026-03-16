@@ -3,20 +3,20 @@
 import { useEffect, useState } from "react";
 export default function Reviews() {
     const [reviews, setReviews] = useState([]);
-  async function getReview(){
-try{const res=await fetch("/api/createReview")
-const data=await res.json();
-setReviews(data)
-}
-catch(error){
-  console.log(error)
-}
-}
-useEffect(()=>{
-  getReview();
-},[])
-const allReview=getReview()
-console.log("allReview..",allReview)
+     async function getReview() {
+    try {
+      const res = await fetch("/api/createReview");
+      const data = await res.json();
+      setReviews(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getReview();
+  }, []);
+
   return (
     <section className="py-16 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center">

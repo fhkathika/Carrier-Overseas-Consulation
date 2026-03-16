@@ -9,6 +9,7 @@ import Testimonials from "./components/Testimonials"
 import Client_Logo from "./components/Client_Logo"
 import JobPoster from "./components/JobPoster"
 import Chart from "./components/Chart"
+import FlowchartHomepage from "./components/FlowchartHomepage"
 
 
 export const dynamic = "force-dynamic"
@@ -31,13 +32,11 @@ export default async function Home() {
     <>
       <Hero />
       {/* <Chart/> */}
-      <section id="jobPortal">
-     
-        {/* <AllJobs jobs={jobs} /> */}
-      </section>
+     <FlowchartHomepage/>
+      <Client_Logo/>
       <Reviews />
    
-      <Client_Logo/>
+      
     </>
   )
 }

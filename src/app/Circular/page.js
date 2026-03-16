@@ -6,7 +6,7 @@ import jobPoster from "@/models/jobPoster"
 import ReviewForm from '../components/ReviewForm'
 import JobPoster from '../components/JobPoster'
 
-async function getJobs() {
+async function getJobs() { 
   await connectDB()
   const jobs = await Jobs.find().lean()
   return JSON.parse(JSON.stringify(jobs))

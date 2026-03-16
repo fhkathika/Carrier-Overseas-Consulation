@@ -1,6 +1,7 @@
 "use client"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { RechartsDevtools } from '@recharts/devtools';
+import Image from 'next/image';
 
 // #region Sample data
 const data = [
@@ -52,7 +53,7 @@ const data = [
 
 export default function Chart() {
   return (
-      <section className="py-5 bg-gray-50 max-w-6xl mx-auto px-10  ">
+      <section className="py-5 bg-gray-50 max-w-6xl mx-auto px-10   ">
             <div className='max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12'>
     <h3 className='text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center'>
    Country-wise Total Manpower Mobilized Through COCL(2000-2024)
@@ -85,7 +86,8 @@ export default function Chart() {
       <Line
         type="monotone"
         dataKey="totalManpower"
-        stroke="var(--color-chart-2)"
+        stroke="#2b2857"
+         strokeWidth={4}  
         dot={{
           fill: 'var(--color-surface-base)',
         }}
