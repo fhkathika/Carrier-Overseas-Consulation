@@ -1,5 +1,5 @@
 "use client"
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, AreaChart,Area} from 'recharts';
 import { RechartsDevtools } from '@recharts/devtools';
 import Image from 'next/image';
 
@@ -59,51 +59,28 @@ export default function Chart() {
    Country-wise Total Manpower Mobilized Through COCL(2000-2024)
     </h3>
   </div>
-    <LineChart
-   style={{ width: '100%', maxWidth: '900px', height: '100%', maxHeight: '70vh', aspectRatio: 1.618 }}
+   
+    <div className='flex justify-center'>
+ <AreaChart
+      style={{ width: '100%', maxWidth: '900px', maxHeight: '70vh', aspectRatio: 1.618 }}
       responsive
       data={data}
       margin={{
-        top: 5,
+        top: 20,
         right: 0,
         left: 0,
-        bottom: 5,
+        bottom: 0,
       }}
+      onContextMenu={(_, e) => e.preventDefault()}
     >
-      <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border-3)" />
-      <XAxis dataKey="name" stroke="var(--color-text-3)" />
-      <YAxis width="auto" stroke="var(--color-text-3)" />
-      <Tooltip
-        cursor={{
-          stroke: 'var(--color-border-2)',
-        }}
-        contentStyle={{
-          backgroundColor: 'var(--color-surface-raised)',
-          borderColor: 'var(--color-border-2)',
-        }}
-      />
-      <Legend />
-      <Line
-        type="monotone"
-        dataKey="totalManpower"
-        stroke="#2b2857"
-         strokeWidth={4}  
-        dot={{
-          fill: 'var(--color-surface-base)',
-        }}
-        activeDot={{ r: 8, stroke: 'var(--color-surface-base)' }}
-      />
-      {/* <Line
-        type="monotone"
-        dataKey="uv"
-        stroke="var(--color-chart-2)"
-        dot={{
-          fill: 'var(--color-surface-base)',
-        }}
-        activeDot={{ stroke: 'var(--color-surface-base)' }}
-      /> */}
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" niceTicks="snap125" />
+      <YAxis width="auto" niceTicks="snap125" />
+      <Tooltip />
+      <Area type="monotone" dataKey="totalManpower" stroke="#e82e31" fill="#e82e31" />
       <RechartsDevtools />
-    </LineChart>
+    </AreaChart>
+    </div>
 
     </section>
   );

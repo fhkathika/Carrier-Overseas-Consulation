@@ -15,6 +15,7 @@ export default function Navbar() {
 {name:"Home",path:"/"},
 {name:"About Us",path:"/about"},
 {name:"Our Success",path:"/success"},
+{name:"Achievement",path:"/achievement"},
 {name:"Job Circular",path:"/Circular"},
 {name:"Galary",path:"/galary"},
   ]

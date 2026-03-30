@@ -22,46 +22,7 @@ export default function Testimonials() {
   return (
    <section className='py-16 bg-gray-100 max-w-7xl mx-auto  px-6 '>
  
-    
-   
-
-      <div className="max-w-5xl mx-auto px-6 mt-6 text-center">
-                 <h2 className="text-3xl md:text-4xl font-bold mb-10 ">
-                Cetegory Wise Total Manpower Mobilized Throughly COCL(2000-2024)
-                    </h2>
-            
-                 <div className='relative w-full aspect-[16/9]   flex justify-center'>
-                  <Image
-                  src="/categorywiseManpowercopy2part2.png"
-                  alt="About Us"
-                  width={700}
-              height={400}
-                  className='object-container  '
-                  />
-            
-                </div>
-            
-           
-            </div>
-
-            <div className="max-w-6xl mx-auto px-6 mt-6 text-center">
-                 <h2 className="text-3xl md:text-4xl font-bold mb-10 ">
-                Total Manpower Mobilized Globally(2000-2024)
-                    </h2>
-            
-                 <div className='relative w-full aspect-[16/9]   flex justify-center'>
-                  <Image
-                  src="/totalManpowerGloballycopy2.jpg"
-                  alt="About Us"
-                  width={900}
-              height={400}
-                  className='object-container shadow-lg '
-                  />
-            
-                </div>
-            
-           
-            </div>
+      
 
              <div className='max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12 py-12 '>
     <h3 className='text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center py-5'>
@@ -106,7 +67,7 @@ export default function Testimonials() {
         )
       }
       </div>
-       
+  
    </section>
   )
 }

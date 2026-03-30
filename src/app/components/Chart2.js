@@ -1,5 +1,4 @@
 "use client"
-
 import {
   BarChart,
   Bar,
@@ -39,8 +38,9 @@ const data = [
 ];
 
 export default function Chart2() {
+  
   return (
-   <div style={{ width: "100%", maxWidth: "900px", margin: "auto" }}>
+   <div  className="max-w-6xl mx-auto px-6 mt-6 text-center mb-6">
   
   <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12">
     <h3 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center">
@@ -48,7 +48,7 @@ export default function Chart2() {
     </h3>
   </div>
 
-  <div className="flex justify-center">
+  <div className="flex justify-center" >
     <BarChart
       width={900}
       height={300}
@@ -65,7 +65,7 @@ export default function Chart2() {
       <YAxis />
       <Tooltip />
       <Legend />
-      <Bar dataKey="totalManpower" fill="#2b2857" barSize={30} />
+      <Bar dataKey="totalManpower" fill="#e82e31" barSize={30} />
     </BarChart>
   </div>
 

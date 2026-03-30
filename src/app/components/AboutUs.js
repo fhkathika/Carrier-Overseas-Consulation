@@ -83,12 +83,12 @@ Alongside their father, they successfully established what is now known as the A
 </div>
     </div>
  {/* Our Vision  */}
-    <div className="max-w-4xl mx-auto px-6 mt-6 text-center">
-     <h2 className="text-3xl md:text-4xl font-bold mb-10 ">
+    <div className="max-w-7xl mx-auto px-6  text-center">
+     <h2 className="text-3xl md:text-4xl font-bold mb-10 mt-5">
      Our Vision
         </h2>
-   <div className=" aspect-[16/9]">
-    <p className='text-gray-600 mb-6'>
+   <div className=" ">
+    <p className='text-gray-600 '>
       Career Overseas Consultants Ltd. (COCL) is a subsidiary of Bed in Group is committed to delivering exceptional Manpower Placement Services to our overseas esteemed clients. We uphold the highest standards of professionalism, reliability and excellence in every aspect of our engage ments and services.
 Our passion for innovation and dedication to growth know no bounds. We are steadfast In our pursuit of becoming the leading provider of overseas employment solutions. Client satisfaction is at the core of our values, and we believe it is the foundation of our success and growth. At COCL, we strive to enhance the lives of foreign-bound workers, contributing to the creation of a better future and more prosperous society.
 Our vision is to be the trusted leader in ethical placement services, connecting professionals skilled and non skilles workers with companies who require those services to foster synergistic partner- ships that drive Innovation, efficiency, and mutual growth.
@@ -99,12 +99,12 @@ Our determination to excel is matched only by our drive to achieve greatness. Wi
 </div>
 </div>
 {/* organization */}
-    <div className="max-w-4xl mx-auto px-6 mt-6 text-center">
-     <h2 className="text-3xl md:text-4xl font-bold mb-10 ">
+    <div className="max-w-7xl mx-auto px-6 text-center">
+     <h2 className="text-3xl md:text-4xl font-bold mb-10 mt-5">
      Our Organization
         </h2>
-   <div className=" aspect-[16/9]">
-    <p className='text-gray-600 mb-6'>
+   <div className=" ">
+    <p className='text-gray-600 '>
      Our biggest asset is our pool of human resources. A team of experienced, well-qualified and dynamic professionals recognized as experts in their own fields to cater to the needs of organization. COCL with its experienced and capable staff endeavors to continuously review and improve the services ensuring optimum satisfaction to the customers. COCL's cardinal principle is to uphold corruption free Code of Business Conduct and Ethics. We are honest and trustworthy with our customers, clients, candidates and co-workers and have been proved through time.
 COCL currently employs 93 full-time personnel including Marketing professionals, Management experts and staff of other disciplines, associated with the job. Our success is in-fact, based on our highly dedicated and motivated employees. We encourage and assist our employees in developing relevant and transferable skills, encourage fostering teamwork, trust and new ideas. We empower our employees to come-up with innovative solutions acceptable through open discussion.
 COCL's success springs from a relentless commitment to high standard of service and vast experience in Manpower business. COCL has earned this unique position by obtaining ISO 9001:2015 Certificate, proving its competence and maintaining the Quality Management System standard in overseas placement services in Bangladesh.
@@ -115,12 +115,12 @@ COCL is proud of to fulfill its obligations, commitments, expectations, requirem
 </div>
 </div>
 {/* facilities  */}
-    <div className="max-w-4xl mx-auto px-6 mt-6 text-center">
-     <h2 className="text-3xl md:text-4xl font-bold mb-10 ">
+    <div className="max-w-7xl mx-auto px-6  text-center">
+     <h2 className="text-3xl md:text-4xl font-bold mb-10 mt-5">
      Our Facilities
         </h2>
-   <div className=" aspect-[16/9]">
-    <p className='text-gray-600 mb-6'>
+   <div className="">
+    <p className='text-gray-600 '>
      Presently, COCL has a spacious office covering an area of 5780 sq. feet in Dhaka, wherein through total co-operation of the Group, in-house one stop services are provided covering interviewing prospective candidates, conducting trade tests, arranging medical tests, providing Air tickets and finally boarding the candidates to the place of their destination. These facilities have given COCL a clear edge over other recruiting agencies.
 COCL offices are equipped with modern communications and fully computerized database. These are all managed by our team of dedicated office personnel.
 COCL has very ambitious plans for growth and progress. In the last few months, COCL has and continue to endeavor to develop their organizational strength, manpower, and capacities to such an extent that they are able to take responsibility for any number and any category of manpower business of their line.
@@ -131,8 +131,8 @@ Our steadfast commitment and dedication to our customers along with our future o
 </div>
 </div>
 {/* organigation chart  */}
-    <div className="max-w-4xl mx-auto px-6 mt-6 text-center ">
-     <h2 className="text-3xl md:text-4xl font-bold mb-10 ">
+    <div className="max-w-7xl mx-auto px-6  text-center ">
+     <h2 className="text-3xl md:text-4xl font-bold mb-10 mt-5">
      Our Organization Chart
         </h2>
    <div className=" aspect-[16/9]">

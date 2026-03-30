@@ -91,15 +91,15 @@ COCL's staff management and computer Information
         </div>
          <div className="max-w-2xl mx-auto px-6 mt-6 text-center">
              <h2 className="text-3xl md:text-4xl font-bold mb-10 ">
-             Our Organigation Chart
+            Candidate Process Flow Chart
                 </h2>
         
              <div className='relative w-full aspect-[16/9]   flex justify-center'>
               <Image
-              src="/candidateProcessChartpage14.png"
+              src="/coclFlowchart.jpg"
               alt="About Us"
-              width={500}
-          height={500}
+              width={1000}
+          height={600}
               className='object-container rounded-xl '
               />
         
@@ -107,7 +107,7 @@ COCL's staff management and computer Information
         
        
         </div>
-         <div className="max-w-4xl mx-auto px-6 mt-6 text-center">
+         {/* <div className="max-w-4xl mx-auto px-6 mt-6 text-center">
              <h2 className="text-3xl md:text-4xl font-bold mb-10 ">
              Our Detailed Manpower Section Processing & Flow
                 </h2>
@@ -124,7 +124,8 @@ COCL's staff management and computer Information
             </div>
         
        
-        </div>
+        </div> */}
+
     </section>
   )
 }
