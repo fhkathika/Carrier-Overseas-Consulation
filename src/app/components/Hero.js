@@ -39,27 +39,23 @@ export default function Hero() {
     className="object-content"
   />
 
-  <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-end text-center px-4 pb-15 ">
+ <div className="absolute inset-0 bg-black/40 flex flex-col justify-end text-center px-4 pb-15">
+  
+  <div className="overflow-hidden whitespace-nowrap w-full text-white py-2">
     
-    <motion.h1
-      initial={{ y: 60, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1 }}
-      className="text-white text-2xl sm:text-3xl md:text-5xl font-bold leading-tight"
-    >
-      From dreams to destinations — we are here!
-    </motion.h1>
+    <div className="flex w-max animate-marquee">
+      <p className="mx-8 text-2xl font-bold">
+        From dreams to destinations... we are here! Take the first step today! Turning dreams into real opportunities!
+      </p>
 
-    <motion.p
-      initial={{ y: 40, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1, delay: 0.6 }}
-      className="mt-4 sm:mt-6 text-white text-base sm:text-lg md:text-2xl font-medium"
-    >
-      Take the first step today!
-    </motion.p>
+      {/* Duplicate for seamless loop */}
+      <p className="mx-8 text-2xl font-bold">
+        From dreams to destinations... we are here! Take the first step today! Turning dreams into real opportunities!
+      </p>
+    </div>
 
   </div>
+</div>
 </section>
   )
 }

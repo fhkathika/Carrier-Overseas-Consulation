@@ -138,11 +138,11 @@ Our steadfast commitment and dedication to our customers along with our future o
    <div className=" aspect-[16/9]">
      <div className='relative w-full aspect-[16/9] '>
       <Image
-      src="/organizational_chartPage8.jpg"
+      src="/OrganizationChartUdate.png"
       alt="About Us"
       width={1200}
   height={800}
-      className='object-container rounded-xl shadow-lg'
+      className='object-container '
       />
 
     </div>
