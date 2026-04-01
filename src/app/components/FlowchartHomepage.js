@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import TotalCountryWeWork from './TotalCountryWeWork'
 
 export default function FlowchartHomepage() {
   return (
@@ -115,7 +116,7 @@ Besides appredation and recognition received by COCL from the esteemed clients, 
 
   </div>
 </div>
-         <div className="max-w-6xl mx-auto px-6 mt-6 text-center">
+         <div className="max-w-6xl mx-auto px-6 mt-6 text-center mb-5">
              <h2 className="text-3xl md:text-4xl font-bold  ">
             Candidate Process Flow Chart
                 </h2>
@@ -151,7 +152,7 @@ Besides appredation and recognition received by COCL from the esteemed clients, 
         
        
         </div> */}
-
+<TotalCountryWeWork/>
     </section>
   )
 }
