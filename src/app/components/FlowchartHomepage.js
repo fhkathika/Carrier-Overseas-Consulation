@@ -28,22 +28,23 @@ Besides appredation and recognition received by COCL from the esteemed clients, 
             Why Choose Us!
                 </h2>
 
-                <div className='grid grid-cols-6 gap-4'>
-  <div className="col-span-3 col-start-2 ... rounded-lg border-2 border-[#e82e31] text-center"> ✔ In-House One-Stop Services01</div>
-  <div className="col-span-3 col-start-9 ... rounded-lg border-2 border-[#e82e31] text-center">Skilled & Certified Workforce02</div>
-  <div className="col-span-3 col-start-6 ... rounded-lg border-2 border-[#e82e31] text-center"> Technical Training (MTTC Approved)</div>
-  <div className="col-span-3 col-start-4 ... rounded-lg border-2 border-[#e82e31] text-center"> Medical Testing (GCC Approved)</div>
-  <div className="col-span-3 col-start-3 ... rounded-lg border-2 border-[#e82e31] text-center">Air Ticket & Travel Support (CTIL)</div>
-  <div className="col-span-3 col-start-2 ... rounded-lg border-2 border-[#e82e31] text-center">Airport Coordination & Assistance</div>
-  <div className="col-span-3 col-start-6 ... rounded-lg border-2 border-[#e82e31] text-center">Pre-Departure Briefing</div>
-  <div className="col-span-3 col-start-9 ... rounded-lg border-2 border-[#e82e31] text-center">Safety & Compliance Guidance</div>
-  <div className="col-span-3 col-start-8 ... rounded-lg border-2 border-[#e82e31] text-center">Client Support & Backup Service</div>
-  <div className="col-span-3 col-start-9 ... rounded-lg border-2 border-[#e82e31] text-center"> On-Site Problem Resolution</div>
-  <div className="col-span-3 col-start-8 ... rounded-lg border-2 border-[#e82e31] text-center">Management-Level Assistance</div>
-  <div className="col-span-3 col-end-7 ... rounded-lg border-2 border-[#e82e31] text-center">Worker Replacement Guarantee</div>
-  <div className="col-span-3 col-end-6 ... rounded-lg border-2 border-[#e82e31] text-center">Quality & Performance Assurance</div>
-  <div className="col-span-3 col-end-5 ... rounded-lg border-2 border-[#e82e31] text-center">Staff Management System</div>
-  <div className="col-span-3 col-end-4 ... rounded-lg border-2 border-[#e82e31] text-center"> Digital Information Management</div>
+                <div className='grid grid-cols-12 gap-5'>
+  <div className="col-span-3 col-start-6 ... rounded-lg shadow-lg p-5  flex items-center justify-center text-center"> <span className='text-green-500'>✔</span> In-House One-Stop Services01</div>
+  <div className="col-span-3 col-start-4 ... rounded-lg shadow-lg p-3 flex items-center justify-center text-center"><span className='text-green-500'>✔</span>Skilled & Certified Workforce02</div>
+  <div className="col-span-4 col-start-7 ... rounded-lg   shadow-lg p-5 flex items-center justify-center text-center"><span className='text-green-500'>✔</span> Technical Training (MTTC Approved)</div>
+  <div className="col-span-3 col-start-3 ... rounded-lg   shadow-lg p-3 flex items-center justify-center text-center"><span className='text-green-500'>✔</span> Medical Testing (GCC Approved)</div>
+  <div className="col-span-4 col-start-8 ... rounded-lg   shadow-lg p-5 flex items-center justify-center text-center"><span className='text-green-500'>✔</span>Air Ticket & Travel Support (CTIL)</div>
+  <div className="col-span-3 col-start-2 ... rounded-lg   shadow-lg p-2 flex items-center justify-center text-center"><span className='text-green-500'>✔</span>Airport Coordination & Assistance</div>
+  <div className="col-span-4 col-start-9 ... rounded-lg   shadow-lg p-3 flex items-center justify-center text-center"><span className='text-green-500'>✔</span>Pre-Departure Briefing</div>
+  <div className="col-span-3 col-start-1 ... rounded-lg   shadow-lg p-5 flex items-center justify-center text-center"><span className='text-green-500'>✔</span>Safety & Compliance Guidance</div>
+  <div className="col-span-2 col-start-6 ... rounded-full   shadow-lg p-10 flex items-center justify-center text-center">Why Choose Us!</div>
+  <div className="col-span-3 col-start-10 ... rounded-lg  shadow-lg p-3 flex items-center justify-center text-center"><span className='text-green-500'>✔</span>Client Support & Backup Service</div>
+  <div className="col-span-3 col-start-2 ... rounded-lg  shadow-lg p-5 flex items-center justify-center text-center"><span className='text-green-500'>✔</span> On-Site Problem Resolution</div>
+  <div className="col-span-3 col-start-9 ... rounded-lg  shadow-lg p-5 flex items-center justify-center text-center"><span className='text-green-500'>✔</span>Management-Level Assistance</div>
+  <div className="col-span-4 col-start-3 ... rounded-lg  shadow-lg p-5 flex items-center justify-center text-center"><span className='text-green-500'>✔</span>Worker Replacement Guarantee</div>
+  <div className="col-span-4 col-start-8 ... rounded-lg  shadow-lg p-5 flex items-center justify-center text-center"><span className='text-green-500'>✔</span>Quality & Performance Assurance</div>
+  <div className="col-span-3 col-start-4 ... rounded-lg  shadow-lg p-3 flex items-center justify-center text-center"><span className='text-green-500'>✔</span>Staff Management System</div>
+  <div className="col-span-3 col-start-7 ... rounded-lg  shadow-lg p-3 flex items-center justify-center text-center"><span className='text-green-500'>✔</span> Digital Information Management</div>
  
 ✔
 ✔
