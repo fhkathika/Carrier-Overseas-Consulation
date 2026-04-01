@@ -2,39 +2,39 @@ import React from 'react'
 const client_logos=[
     {
     id:1,
-    src:'/clientLogoImg/img1.PNG'
+    src:'/clientLogoImg/img1.png'
 },
     {
     id:2,
-    src:'/clientLogoImg/img2.PNG'
+    src:'/clientLogoImg/img2.png'
 },
     {
     id:3,
-     src:'/clientLogoImg/img3.PNG'
+     src:'/clientLogoImg/img3.png'
 },
     {
     id:4,
-     src:'/clientLogoImg/img4.PNG'
+     src:'/clientLogoImg/img4.png'
 },
     {
     id:5,
-     src:'/clientLogoImg/img5.PNG'
+     src:'/clientLogoImg/img5.png'
 },
     {
     id:6,
-     src:'/clientLogoImg/img6.PNG'
+     src:'/clientLogoImg/img6.png'
 },
     {
     id:7,
-     src:'/clientLogoImg/img7.PNG'
+     src:'/clientLogoImg/img7.png'
 },
     {
     id:8,
-     src:'/clientLogoImg/img8.PNG'
+     src:'/clientLogoImg/img8.png'
 },
     {
     id:9,
-     src:'/clientLogoImg/img9.PNG'
+     src:'/clientLogoImg/img9.png'
 },
 
 ]
