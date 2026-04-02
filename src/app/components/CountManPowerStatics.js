@@ -10,7 +10,7 @@ threshold:0.3,
     })
   return (
       <div className="max-w-6xl mx-auto px-6 mt-6 text-center">
-  <h2 className="text-3xl md:text-4xl font-bold mb-10">
+  <h2 className="text-1xl md:text-4xl font-bold sm:mb-15">
     Category Wise Total Manpower Mobilized Through COCL(2000-2024)
   </h2>
 

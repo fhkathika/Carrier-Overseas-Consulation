@@ -40,10 +40,10 @@ const data = [
 export default function Chart2() {
   
   return (
-   <div  className="max-w-6xl mx-auto px-6 mt-6 text-center mb-6">
+   <div  className="max-w-6xl mx-auto px-6 mt-6 text-center mb-2">
   
-  <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12">
-    <h3 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center">
+  <div className="max-w-7xl mx-auto px-2 md:px-6 lg:px-8  sm:mb-15">
+    <h3 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center">
       Total Manpower Mobilized Through COCL (2000-2024)
     </h3>
   </div>

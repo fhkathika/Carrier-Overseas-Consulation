@@ -62,15 +62,15 @@ triggerOnce:true,
 threshold:0.3,
     })
   return (
-     <div className="max-w-6xl mx-auto px-6 mt-6 text-center mb-6">
-                 <h2 className="text-3xl md:text-4xl font-bold mb-10 ">
+     <div className="max-w-6xl mx-auto px-6 mt-3 text-center mb-3">
+                 <h2 className="text-1xl md:text-4xl font-bold sm:mb-15">
                 Total Manpower Mobilized Globally(2000-2024)
                     </h2>
             
              <div  ref={ref} className=' grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
                {
-data.map((info)=>(
-<div className=' flex justify-around p-8 '>
+data.map((info,i)=>(
+<div className=' flex justify-around p-8 ' key={i}>
    <div className=' flex flex-col items-center justify-center p-2  border-r-2 border-red-100'>
     <img className='w-15 h-15' src={info?.src}/>
     <p>{info?.country}</p>

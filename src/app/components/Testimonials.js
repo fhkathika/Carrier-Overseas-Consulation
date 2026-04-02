@@ -21,20 +21,17 @@ export default function Testimonials() {
     const [index,setIndex]=useState(0)
   return (
    <section className='py-16 bg-gray-100 max-w-7xl mx-auto  px-6 '>
- 
+
       
 
-             <div className='max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12 py-12 '>
+             <div className='max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12 py-5 items-center'>
     <h3 className='text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center py-5'>
      Our Client Appriciation Letter
     </h3>
   
    <Swiper
-        slidesPerView={3}
-        grid={{
-          rows: 1,
-          fill:"row"
-        }}
+        slidesPerView={1}
+       
         spaceBetween={30}
         pagination={{
           clickable: true,
@@ -47,8 +44,10 @@ export default function Testimonials() {
         className="mySwiper"
       >
       {all_certificates?.map((item,i)=>(
-   <SwiperSlide key={i}>
-    <img src={item?.src} alt={`certificate${i+1}`}
+<SwiperSlide className="flex items-center justify-center" key={i}>
+    <img src={item?.src} 
+      alt={`certificate${i+1}`}
+  className="w-full max-h-[300px] sm:max-h-[400px] lg:max-h-[500px] object-contain mx-auto"
     onClick={()=>{setIndex(i); setOpen(true)}}
     />
    </SwiperSlide>
@@ -66,6 +65,64 @@ export default function Testimonials() {
             />
         )
       }
+
+     {/* <div
+  id="centered"
+  data-carousel='{ "loadingClasses": "opacity-0", "isCentered": true, "slidesQty": { "xs": 1, "lg": 2 } }'
+  className="relative w-full"
+>
+  <div className="carousel h-80">
+    <div className="carousel-body h-full opacity-0">
+    
+      <div className="carousel-slide px-1">
+        <div className="bg-base-200/50 flex h-full justify-center p-6">
+          <span className="self-center text-lg">First slide</span>
+        </div>
+      </div>
+     
+      <div className="carousel-slide px-1">
+        <div className="bg-base-200 flex h-full justify-center p-6">
+          <span className="self-center text-lg">Second slide</span>
+        </div>
+      </div>
+   
+      <div className="carousel-slide px-1">
+        <div className="bg-base-200 flex h-full justify-center p-6">
+          <span className="self-center text-lg">Third slide</span>
+        </div>
+      </div>
+   
+      <div className="carousel-slide px-1">
+        <div className="bg-base-200/50 flex h-full justify-center p-6">
+          <span className="self-center text-lg">Fourth slide</span>
+        </div>
+      </div>
+    
+      <div className="carousel-slide px-1">
+        <div className="bg-base-200 flex h-full justify-center p-6">
+          <span className="self-center text-lg">Fifth slide</span>
+        </div>
+      </div>
+  
+      <div className="carousel-slide px-1">
+        <div className="bg-base-200 flex h-full justify-center p-6">
+          <span className="self-center text-lg">Sixth slide</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <button type="button" className="carousel-prev start-5 max-sm:start-3 carousel-disabled:opacity-50 size-9.5 bg-base-100 flex items-center justify-center rounded-full shadow-base-300/20 shadow-sm">
+    <span className="icon-[tabler--chevron-left] size-5 cursor-pointer"></span>
+    <span className="sr-only">Previous</span>
+  </button>
+
+   <button type="button" className="carousel-next end-5 max-sm:end-3 carousel-disabled:opacity-50 size-9.5 bg-base-100 flex items-center justify-center rounded-full shadow-base-300/20 shadow-sm">
+    <span className="icon-[tabler--chevron-right] size-5"></span>
+    <span className="sr-only">Next</span>
+  </button>
+</div> */}
       </div>
   
    </section>

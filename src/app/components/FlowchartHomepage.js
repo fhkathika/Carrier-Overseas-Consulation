@@ -12,7 +12,7 @@ export default function FlowchartHomepage() {
   <div className="w-full h-[300px] flex  justify-center text-center">
   <Image
     src="/manpower_services-removebg-preview.png"
-    alt="About Us"
+    alt="Manpower Services"
     width={300}
     height={300}
     className="object-contain"
