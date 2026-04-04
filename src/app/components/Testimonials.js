@@ -21,16 +21,13 @@ export default function Testimonials() {
     const [index,setIndex]=useState(0)
   return (
    <section className='py-16 bg-gray-100 max-w-7xl mx-auto  px-6 '>
-
-      
-
-             <div className='max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12 py-5 items-center'>
+<div className='max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12 py-5 items-center'>
     <h3 className='text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center py-5'>
      Our Client Appriciation Letter
     </h3>
   
    <Swiper
-        slidesPerView={1}
+        slidesPerView={2}
        
         spaceBetween={30}
         pagination={{
@@ -41,13 +38,13 @@ export default function Testimonials() {
             disableOnInteraction:false
         }}
         modules={[Grid, Pagination,Autoplay]}
-        className="mySwiper"
+       className='swiper-pagination'
       >
       {all_certificates?.map((item,i)=>(
-<SwiperSlide className="flex items-center justify-center" key={i}>
+<SwiperSlide className="flex items-center justify-center " key={i} >
     <img src={item?.src} 
       alt={`certificate${i+1}`}
-  className="w-full max-h-[300px] sm:max-h-[400px] lg:max-h-[500px] object-contain mx-auto"
+  className="w-auto max-h-[800px] sm:max-h-[900px] lg:max-h-[1000px] object-cover mx-auto"
     onClick={()=>{setIndex(i); setOpen(true)}}
     />
    </SwiperSlide>
