@@ -4,7 +4,7 @@ import React from 'react'
 export default function TotalCountryWeWork() {
   return (
    <div className="max-w-6xl mx-auto px-6 mt-6 text-center">
-               <h2 className="text-3xl md:text-4xl font-bold mb-5 ">
+             <h2 className="max-w-6xl md:max-w-3xl text-1xl md:text-4xl font-bold bg-[#c1dff2] mx-auto  p-2  rounded-[50px_10px_50px_10px] mb-10 ">
               Countries We Work
                   </h2>
           

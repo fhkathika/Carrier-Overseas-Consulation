@@ -38,22 +38,22 @@ const handleLogout=async()=>{
   <>
   
   
-<nav className="relative bg-[#111827] shadow-md">
-  <div className="max-w-7xl mx-auto px-4 py-4 flex justify-end items-center">
+<nav className=" bg-[#111827] shadow-md">
+  <div className="max-w-7xl mx-auto  flex justify-between items-center">
 
     {/* Logo */}
-    <Link href="/" className=" absolute left-6 -bottom-6 z-50">
+    <Link href="/" className="  ">
       <Image
         src="/COC (5).png"
         alt="Company Logo"
         width={240}
-        height={50}
-        className="drop-shadow-lg w-36 h-10 sm:w-40 sm:h-12 md:w-60 md:h-16"
+        height={70}
+        className=" w-36 h-10 sm:w-40 sm:h-12 md:w-60 "
       />
     </Link>
     {/* <h1 className="text-2xl font-bold">COCL</h1> */}
  {/* Desktop Menu  */}
-    <div className="hidden md:flex space-x-6 text-white ">
+    <div className="hidden md:flex space-x-6 text-white px-2">
       {
         navLinks?.map((link)=>(
 <Link 
@@ -98,7 +98,7 @@ onClick={()=>setIsOpen(false)} //close menu after click
     </div>
     {/* Mobile Button  */}
     <button
-    className="md:hidden text-white"
+    className="md:hidden text-white px-3"
     onClick={()=>setIsOpen(!isOpen)}
     >
    ☰

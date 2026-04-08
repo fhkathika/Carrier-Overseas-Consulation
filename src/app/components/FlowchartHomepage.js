@@ -4,7 +4,7 @@ import TotalCountryWeWork from './TotalCountryWeWork'
 
 export default function FlowchartHomepage() {
   return (
-    <section className='py-16 bg-gray-100'>
+    <section className='py-16 '>
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 items-center ">
 
@@ -22,7 +22,7 @@ export default function FlowchartHomepage() {
   {/* Right Content */}
   <div className="lg:col-span-2">
 
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 leading-tight text-center lg:text-left">
+    <h2 className="text-1xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 leading-tight text-center lg:text-left">
       Manpower Services
     </h2>
 
@@ -38,92 +38,34 @@ Besides appredation and recognition received by COCL from the esteemed clients, 
 
   </div>
 </div>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 mt-10">
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-5 place-items-center">
-
-    {/* Features */}
-    <div className="lg:col-span-3 lg:col-start-6 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> In-House One-Stop Services
-    </div>
-
-    <div className="lg:col-span-3 lg:col-start-4 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> Skilled & Certified Workforce
-    </div>
-
-    <div className="lg:col-span-4 lg:col-start-7 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> Technical Training (MTTC Approved)
-    </div>
-
-    <div className="lg:col-span-3 lg:col-start-3 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> Medical Testing (GCC Approved)
-    </div>
-
-    <div className="lg:col-span-4 lg:col-start-8 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> Air Ticket & Travel Support (CTIL)
-    </div>
-
-    <div className="lg:col-span-3 lg:col-start-2 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> Airport Coordination & Assistance
-    </div>
-
-    <div className="lg:col-span-4 lg:col-start-9 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> Pre-Departure Briefing
-    </div>
-
-    <div className="lg:col-span-3 lg:col-start-1 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> Safety & Compliance Guidance
-    </div>
-
-    {/* Circle in center */}
-    <div className="lg:col-span-2 lg:col-start-6 flex justify-center">
-      <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40
-        text-lg sm:text-xl lg:text-2xl 
-        text-white font-bold 
-        border-4 lg:border-8 border-double 
-        flex items-center justify-center text-center 
-        bg-[#e82e31] rounded-full box-border">
-        Why Choose Us!
-      </div>
-    </div>
-
-    <div className="lg:col-span-3 lg:col-start-10 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> Client Support & Backup Service
-    </div>
-
-    <div className="lg:col-span-3 lg:col-start-2 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> On-Site Problem Resolution
-    </div>
-
-    <div className="lg:col-span-3 lg:col-start-9 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> Management-Level Assistance
-    </div>
-
-    <div className="lg:col-span-4 lg:col-start-3 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> Worker Replacement Guarantee
-    </div>
-
-    <div className="lg:col-span-4 lg:col-start-8 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> Quality & Performance Assurance
-    </div>
-
-    <div className="lg:col-span-3 lg:col-start-4 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> Staff Management System
-    </div>
-
-    <div className="lg:col-span-3 lg:col-start-7 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
-      <span className='text-green-500'>✔</span> Digital Information Management
-    </div>
-
-  </div>
-</div>
-         <div className="max-w-6xl mx-auto px-6 mt-6 text-center mb-5">
-             <h2 className="text-3xl md:text-4xl font-bold  ">
-            Candidate Process Flow Chart
-                </h2>
+      
+         <div className="max-w-6xl mx-auto px-6 mt-6 text-center mb-10">
+             {/* <h2 className="text-3xl md:text-4xl font-bold  ">
+          Why Choose Us
+                </h2> */}
         
              <div className='flex justify-center'>
               <Image
-              src="/coclFlowchart.jpg"
+              src="/wcu2.png"
+              alt="About Us"
+              width={1000}
+          height={600}
+            
+              />
+        
+            </div>
+        
+       
+        </div>
+         <div className="max-w-6xl mx-auto px-6 mt-6 text-center sm:mb-15">
+             <h2 className="max-w-6xl md:max-w-3xl text-1xl md:text-4xl font-bold bg-[#c1dff2] mb-10 mx-auto  p-2  rounded-[50px_10px_50px_10px] ">
+            Candidate Process Flow Chart
+                </h2>
+                
+        
+             <div className='flex justify-center'>
+              <Image
+              src="/candidate_Process.png"
               alt="About Us"
               width={1000}
           height={600}
@@ -156,3 +98,96 @@ Besides appredation and recognition received by COCL from the esteemed clients, 
     </section>
   )
 }
+
+
+
+
+//   <div className="max-w-6xl mx-auto px-4 sm:px-6 mt-10">
+//   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-5 place-items-center">
+
+//     {/* Features */}
+//     <div className="lg:col-span-3 lg:col-start-6 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> In-House One-Stop Services
+//     </div>
+
+//     <div className="lg:col-span-3 lg:col-start-4 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Skilled & Certified Workforce
+//     </div>
+
+//     <div className="lg:col-span-4 lg:col-start-7 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Technical Training (MTTC Approved)
+//     </div>
+
+//     <div className="lg:col-span-3 lg:col-start-3 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Medical Testing (GCC Approved)
+//     </div>
+
+//     <div className="lg:col-span-4 lg:col-start-8 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Air Ticket & Travel Support (CTIL)
+//     </div>
+
+//     <div className="lg:col-span-3 lg:col-start-2 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Airport Coordination & Assistance
+//     </div>
+
+//     <div className="lg:col-span-4 lg:col-start-9 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Pre-Departure Briefing
+//     </div>
+
+//     <div className="lg:col-span-3 lg:col-start-1 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Safety & Compliance Guidance
+//     </div>
+
+//     {/* Circle in center */}
+//     <div className="lg:col-span-2 lg:col-start-6 flex justify-center">
+//       <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40
+//         text-lg sm:text-xl lg:text-2xl 
+//         text-white font-bold 
+//         border-4 lg:border-8 border-double 
+//         flex items-center justify-center text-center 
+//         bg-[#e82e31] rounded-full box-border">
+//         Why Choose Us!
+//       </div>
+//     </div>
+
+//     <div className="lg:col-span-3 lg:col-start-10 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Client Support & Backup Service
+//     </div>
+
+//     <div className="lg:col-span-3 lg:col-start-1 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> On-Site Problem Resolution
+//     </div>
+
+//     <div className="lg:col-span-3 lg:col-start-9 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Management-Level Assistance
+//     </div>
+
+//     <div className="lg:col-span-4 lg:col-start-2 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Worker Replacement Guarantee
+//     </div>
+
+//     <div className="lg:col-span-4 lg:col-start-8 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Quality & Performance Assurance
+//     </div>
+
+//     <div className="lg:col-span-3 lg:col-start-3 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Staff Management System
+//     </div>
+
+//     <div className="lg:col-span-3 lg:col-start-7 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Digital Information Management
+//     </div>
+//     <div className="lg:col-span-4 lg:col-start-4 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> On line Application to by pass middle man
+//     </div>
+
+//     <div className="lg:col-span-3 lg:col-start-6 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Employee
+//     </div>
+
+//     <div className="lg:col-span-3 lg:col-start-5 rounded-lg shadow-lg p-4 flex items-center justify-center text-center">
+//       <span className='text-green-500'>✔</span> Digital Information Management
+//     </div>
+
+//   </div>
+// </div>

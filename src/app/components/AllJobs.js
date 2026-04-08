@@ -63,7 +63,7 @@ className=" group-hover:text-white group-hover:text-[#772828] transition duratio
   {expandedIndex === 3 ? "See Less" : "See More"}
 </button> */}
 <div className='flex flex-end'>
-  <button onClick={()=>handleClick(jobs?._id)} className=" ml-auto px-2 py-2 rounded border border-[#772828]rounded-lg group-hover:bg-white group-hover:text-[#772828] transition duration-300">
+  <button onClick={()=>handleClick(jobs?._id)} className=" ml-auto mt-4 px-2 py-2 rounded border border-[#772828]rounded-lg group-hover:bg-white group-hover:text-[#772828] transition duration-300">
             View Detail
           </button>
 </div>

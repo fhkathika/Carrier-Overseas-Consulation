@@ -21,7 +21,7 @@ export default function AboutUs() {
       {/* <p className='text-[#e82e31] font-semibold mb-3'>
         ABOUT US
       </p> */}
-      <h2 className='text-3xl md:text-4xl font-bold mb-6 leading-tight'>
+      <h2 className='text-2xl md:text-4xl font-bold mb-6 leading-tight'>
        A Legacy of Ethical Excellence
       </h2>
     <p className='text-gray-600 mb-6'>
@@ -53,7 +53,7 @@ export default function AboutUs() {
 
  
  {/* Our Vision  */}
-   <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-5  lg:gap-10 items-center ">
+   <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-5  lg:gap-10 items-center sm:mb-5">
     
       {/* Left Image */}
       <div className="w-full sm:h-[300px] p-3 flex  justify-center text-center ">
@@ -78,7 +78,7 @@ Our determination to excel is matched only by our drive to achieve greatness. Wi
     </div>
    
 {/* organization */}
-<div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-5 lg:gap-10 items-center">
+<div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-5 lg:gap-10 items-center mb-5">
 
   {/* Content */}
   <div className="lg:col-span-4 order-2 lg:order-1">
@@ -136,13 +136,13 @@ Our steadfast commitment and dedication to our customers along with our future o
      <h2 className="text-2xl md:text-4xl font-bold md:mb-10  mt-5">
      Our Organization Chart
         </h2>
-   <div className=" aspect-[16/9]">
-     <div className='relative w-full aspect-[16/9] '>
+   <div className=" ">
+     <div className=' w-full '>
       <Image
       src="/OrganizationChartUdate.png"
       alt="About Us"
       width={1200}
-  height={800}
+  height={500}
       className='object-container '
       />
 
@@ -151,36 +151,32 @@ Our steadfast commitment and dedication to our customers along with our future o
 </div>
 </div>
  {/* The founders */}
-  <div className='max-w-7xl mx-auto  px-6 py-6 '>
+<div className='max-w-7xl mx-auto px-6 py-6 border-2 grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch'>
      
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
-    {/* Left image  */}
-    <div className='relative w-full aspect-[16/9] '>
-      <Image
-      src="/founderPage04copy5.jpg"
+  {/* Left image */}
+  <div className='w-full h-full relative'>
+    <Image
+      src="/founderPage4copy5.jpg"
       alt="About Us"
-      width={1200}
-  height={800}
+      fill
       className='object-container rounded-xl shadow-lg'
-      />
-
-    </div>
+    />
+  </div>
     
-    {/* Right content  */}
-    
-    <div className="flex items-center">
-     
-    <p className='text-gray-600 mb-6 align-center'>
-            <span className=' block text-2xl text-black md:text-4xl font-bold mb-2 leading-tight text-center  font-semibold  sm:mb-6'>
-       The Founders
+  {/* Right content */}
+  <div className="flex items-center">
+    <p className='text-gray-600 mb-6 text-center'>
+      <span className='block text-2xl text-black md:text-4xl font-bold mb-2 leading-tight sm:mb-6'>
+        The Founders
       </span> 
-Three ambitious brothers, guided by their father, a retired senior government official, after completing their higher education in abroad and acquiring extensive experience and knowledge in various multinational organizations In abroad, they returned to Bangladesh with a firm determination to leverage their knowledge, expertise and network to benefit the nation's economy. Aspired to make a significant impact on Bangladesh's burgeoning industry in placement services, they have been established Career Overseas Consultants Ltd; is one of the subsidiary of Amed in Group
+    Three ambitious brothers, guided by their father, a retired senior government official, after completing their higher education in abroad and acquiring extensive experience and knowledge in various multinational organizations In abroad, they returned to Bangladesh with a firm determination to leverage their knowledge, expertise and network to benefit the nation's economy. Aspired to make a significant impact on Bangladesh's burgeoning industry in placement services, they have been established Career Overseas Consultants Ltd; is one of the subsidiary of Amed in Group
 to provide an ethical placement services to meet the growing demand of world market for professional, skilled, semi skilled and general workers.
 Alongside their father, they successfully established what is now known as the Amed Agin Group. By assembling a team of highly experienced and qualified technocrats, economists, and commercial and marketing specialists, they laid a robust foundation for their enterprise.
+   
     </p>
+  </div>
+
 </div>
-</div>
-    </div>
 <div className="text-center mt-12">
   <a
     href="/Brochure _COCL.pdf"

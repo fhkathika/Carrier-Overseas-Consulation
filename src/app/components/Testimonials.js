@@ -20,8 +20,8 @@ export default function Testimonials() {
     const [open,setOpen]=useState(false)
     const [index,setIndex]=useState(0)
   return (
-   <section className='py-16 bg-gray-100 max-w-7xl mx-auto  px-6 '>
-<div className='max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12 py-5 items-center'>
+   <section className=' sm:py-16 bg-gray-100 max-w-7xl mx-auto  px-6 '>
+<div className='max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-5 sm:mb-8 items-center'>
     <h3 className='text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center py-5'>
      Our Client Appriciation Letter
     </h3>
@@ -37,6 +37,20 @@ export default function Testimonials() {
             delay:3000,
             disableOnInteraction:false
         }}
+                   breakpoints={{
+      0: {
+        slidesPerView: 1, // 📱 mobile
+      },
+      640: {
+        slidesPerView: 1, // small devices
+      },
+      768: {
+        slidesPerView: 2, // tablets
+      },
+      1024: {
+        slidesPerView: 3, // desktop
+      },
+    }}
         modules={[Grid, Pagination,Autoplay]}
        className='swiper-pagination'
       >

@@ -112,16 +112,45 @@ const blues = [
 
 
 
-const colors = [
-  "#e82e31", 
-  "#f87171",  
-  "#b90713", 
-  "#e82e31",  
-   "#a01313",
-  "#e70909",
-  "#ef4444",
- 
+const colors = 
+[
+
+
+  "#c23d48", 
+   
+  "#6a41e6",  
+  
+
+   "#df461b",
+    "#4cbd56", 
+      "#fcca03",
+  "#42c4d5",
+   "#2d92d0", 
 ];
+// [
+
+//  "#b2f1b7", 
+//   "#cf9ea2", 
+//   "#b1a1e0",  
+   
+
+//    "#be3611",
+//       "#d3fc03",
+//   "#a7cfd4",
+//    "#71c4f8", 
+// ];
+
+
+// [
+//  ["#264F73", "#457AA6", "#A2BBD2", "#E3EBF2"],
+//   ["#1A334A", "#264F73", "#457AA6"]
+//   ["#264F73", "#457AA6"],
+//   ["#264F73", "#457AA6"],
+//   ["#1A334A", "#264F73", "#457AA6", "#678097", "#E3EBF2"]
+// ]
+
+
+
 
 const getColor = (length, index) => {
   return colors[index % colors.length];
@@ -134,6 +163,17 @@ const data = [
     { name: "Saudi Arabia", pv: 69453 },
     { name: "Malaysia", pv: 18967 },
       { name: "Qatar", pv: 12357 },
+{ name: "Rest Of", pv: 6453 }
+];
+const data2=[
+ { name: "Iraq", pv: 9504 },
+   { name: "Saudi Arabia", pv: 69453 },
+  { name: "UAE & Dubai", pv: 13315 },
+  { name: "Singapore", pv: 9800 },
+
+    { name: "Malaysia", pv: 18967 },
+      { name: "Qatar", pv: 12357 },
+        
 { name: "Rest Of", pv: 6453 }
 ];
 
@@ -171,7 +211,7 @@ export default function Chart() {
   }, []);
 
   return (
-    <section className="max-w-6xl mx-auto px-6 mt-6 text-center mb-2">
+    <section className="w-full sm:max-w-6xl mx-auto sm:px-6 mt-6 text-center mb-2">
       
       <h3 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center">
    Country-wise Total Manpower Mobilized Through COCL(2000-2024)
@@ -180,15 +220,17 @@ export default function Chart() {
     <ResponsiveContainer width="100%" height={500}>
       <PieChart>
         <Pie
-          data={data}
+          data={ chartData >= 640 ?data :data2}
           dataKey="pv"
           nameKey="name"
           cx="50%"
           cy="50%"
           outerRadius={radius} // responsive
-            label={chartData >= 640 ? ({ name, percent }) => `${name} (${(percent*100).toFixed(0)}%)` : false}
+            label={chartData >= 640 ? ({ name, percent }) => `${name} (${(percent*100).toFixed(0)}%)` : ({ name, percent }) => `${name}  (${(percent*100).toFixed(0)}%)`}
+
+            
   labelLine={chartData >= 640} // only draw label lines on desktop
-  fontSize={chartData < 640 ? 10 : 14} // smaller font on mobile
+  fontSize={chartData < 640 ? 7 : 14} // smaller font on mobile
           
         >
           {data.map((_, i) => (

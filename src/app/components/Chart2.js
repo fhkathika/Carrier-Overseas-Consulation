@@ -6,7 +6,8 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend
+  Legend,
+  Cell
 } from "recharts";
 
 // Sample data
@@ -36,6 +37,21 @@ const data = [
   { name: "2022", uv: 3490, totalManpower: 4297, amt: 2100 },
   { name: "2023", uv: 3490, totalManpower: 4920, amt: 2100 },
 ];
+const colors =  [
+ ["#264F73", "#457AA6", "#A2BBD2", "#E3EBF2"],
+  ["#1A334A", "#264F73", "#457AA6"]
+  ["#264F73", "#457AA6"],
+  ["#264F73", "#457AA6"],
+  ["#1A334A", "#264F73", "#457AA6", "#678097", "#E3EBF2"]
+];
+
+const getColor = (length, index) => {
+  if (length <= colors.length) {
+    return colors[length - 1][index];
+  }
+
+  return colors[colors.length - 1][index % colors.length];
+};
 
 export default function Chart2() {
   
@@ -49,6 +65,7 @@ export default function Chart2() {
   </div>
 
   <div className="flex justify-center" >
+    
     <BarChart
       width={900}
       height={300}
@@ -65,7 +82,13 @@ export default function Chart2() {
       <YAxis />
       <Tooltip />
       <Legend />
-      <Bar dataKey="totalManpower" fill="#e82e31" barSize={30} />
+      
+   
+    <Bar dataKey="totalManpower" barSize={30}>
+  {data.map((entry, index) => (
+    <Cell key={`cell-${index}`} fill={getColor(data.length, index)}  />
+  ))}
+</Bar>
     </BarChart>
   </div>
 
