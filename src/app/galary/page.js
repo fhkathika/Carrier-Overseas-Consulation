@@ -3,57 +3,17 @@ import React, { useState } from 'react'
 import Lightbox from 'yet-another-react-lightbox'
 import "yet-another-react-lightbox/styles.css"
 import Zoom from 'yet-another-react-lightbox/plugins/zoom'
-const galaryImg=[
-  {
-    id:1,
-    src:"https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg"
-  },
-  {
-    id:2,
-    src:"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
-  },
-  {
-    id:3,
-    src:"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
-  },
-  {
-    id:4,
-    src:"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
-  },
-  {
-    id:5,
-    src:"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
-  },
-  {
-    id:6,
-    src:"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
-  },
-  {
-    id:7,
-    src:"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg"
-  },
-  {
-    id:8,
-    src:"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg"
-  },
-  {
-    id:9,
-    src:"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg"
-  },
-  {
-    id:10,
-    src:"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg"
-  },
-  {
-    id:11,
-    src:"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg"
-  },
-  {
-    id:12,
-    src:"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg"
-  },
- 
-]
+
+const galaryImg = [];
+
+for (let i = 1; i <= 21; i++) {
+  galaryImg.push({
+    id: i,
+    src: `/galary_img_cocl/IMG_${i}.JPG
+    `
+  });
+}
+console.log("galaryImg.....",galaryImg)
 export default function galary() {
   const [index,setIndex]=useState(0)
   const [open,setOpen]=useState(false)

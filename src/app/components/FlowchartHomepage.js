@@ -46,7 +46,7 @@ Besides appredation and recognition received by COCL from the esteemed clients, 
         
              <div className='flex justify-center'>
               <Image
-              src="/wcu2.png"
+              src="/Why choose us design 2.png"
               alt="About Us"
               width={1000}
           height={600}

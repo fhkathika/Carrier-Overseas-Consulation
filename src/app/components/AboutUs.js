@@ -139,7 +139,7 @@ Our steadfast commitment and dedication to our customers along with our future o
    <div className=" ">
      <div className=' w-full '>
       <Image
-      src="/OrganizationChartUdate.png"
+      src="/Frame 2.png"
       alt="About Us"
       width={1200}
   height={500}
