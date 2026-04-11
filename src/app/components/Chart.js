@@ -113,29 +113,23 @@ const blues = [
 
 
 const colors = 
-[
-
-
-  "#c23d48", 
-   
-  "#6a41e6",  
-  
-
-   "#df461b",
-    "#4cbd56", 
-      "#fcca03",
-  "#42c4d5",
-   "#2d92d0", 
+ [
+ ["#264F73", "#457AA6", "#A2BBD2", "#E3EBF2"],
+  ["#1A334A", "#264F73", "#457AA6"]
+  ["#264F73", "#457AA6"],
+  ["#264F73", "#457AA6"],
+  ["#1A334A", "#264F73", "#457AA6", "#678097", "#E3EBF2"]
 ];
+
 // [
 
-//  "#b2f1b7", 
+//  "#64b76b", 
 //   "#cf9ea2", 
 //   "#b1a1e0",  
    
 
-//    "#be3611",
-//       "#d3fc03",
+//    "#f08c70",
+//       "#8e9b4c",
 //   "#a7cfd4",
 //    "#71c4f8", 
 // ];
@@ -152,10 +146,16 @@ const colors =
 
 
 
+// const getColor = (length, index) => {
+//   return colors[index % colors.length];
+// };
 const getColor = (length, index) => {
-  return colors[index % colors.length];
-};
+  if (length <= colors.length) {
+    return colors[length - 1][index];
+  }
 
+  return colors[colors.length - 1][index % colors.length];
+};
 const data = [
  { name: "Iraq", pv: 9504 },
   { name: "UAE & Dubai", pv: 13315 },
@@ -213,7 +213,7 @@ export default function Chart() {
   return (
     <section className="w-full sm:max-w-6xl mx-auto sm:px-6 mt-6 text-center mb-2">
       
-      <h3 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center">
+      <h3 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center mt-20">
    Country-wise Total Manpower Mobilized Through COCL(2000-2024)
       </h3>
 
@@ -231,7 +231,7 @@ export default function Chart() {
             
   labelLine={chartData >= 640} // only draw label lines on desktop
   fontSize={chartData < 640 ? 7 : 14} // smaller font on mobile
-          
+      className="font-bold"    
         >
           {data.map((_, i) => (
             <Cell key={i} fill={getColor(data.length, i)} />

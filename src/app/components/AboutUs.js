@@ -4,8 +4,8 @@ import React from 'react'
 
 export default function AboutUs() {
   return (
-    <section className='py-16 bg-gray-100'>
-<div className='max-w-7xl mx-auto  px-6 grid grid-cols-1 lg:grid-cols-2 gap-10'>
+    <section className='py-16  view mt-20'>
+<div className='max-w-7xl mx-auto  px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 block'>
     {/* Left image  */}
     <div className='relative w-full h-[400px] '>
       <Image
@@ -53,7 +53,7 @@ export default function AboutUs() {
 
  
  {/* Our Vision  */}
-   <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-5  lg:gap-10 items-center sm:mb-5">
+   <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-5  lg:gap-10 items-center sm:mb-5 block">
     
       {/* Left Image */}
       <div className="w-full sm:h-[300px] p-3 flex  justify-center text-center ">
@@ -78,7 +78,7 @@ Our determination to excel is matched only by our drive to achieve greatness. Wi
     </div>
    
 {/* organization */}
-<div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-5 lg:gap-10 items-center mb-5">
+<div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-5 lg:gap-10 items-center mb-5 block">
 
   {/* Content */}
   <div className="lg:col-span-4 order-2 lg:order-1">
@@ -106,7 +106,7 @@ COCL is proud of to fulfill its obligations, commitments, expectations, requirem
 
   
 {/* facilities  */}
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-5 lg:gap-10 items-center ">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-5 lg:gap-10 items-center block">
     
       {/* Left Image */}
       <div className="w-full sm:h-[300px] p-3 flex  justify-center text-center">
@@ -132,7 +132,7 @@ Our steadfast commitment and dedication to our customers along with our future o
 
   
 {/* organigation chart  */}
-    <div className="max-w-7xl mx-auto px-6  text-center ">
+    <div className="max-w-7xl mx-auto px-6  text-center block">
      <h2 className="text-2xl md:text-4xl font-bold md:mb-10  mt-5">
      Our Organization Chart
         </h2>
@@ -151,7 +151,7 @@ Our steadfast commitment and dedication to our customers along with our future o
 </div>
 </div>
  {/* The founders */}
-<div className='max-w-7xl mx-auto px-6 py-6 border-2 grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch'>
+<div className='max-w-7xl mx-auto px-6 py-6 border-2 grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch block'>
      
   {/* Left image */}
   <div className='w-full h-full relative'>

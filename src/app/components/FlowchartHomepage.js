@@ -1,81 +1,367 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import TotalCountryWeWork from './TotalCountryWeWork'
+import { motion } from "framer-motion"
+import { FaUserTie, FaGlobeAsia, FaUsers, FaAward, FaBriefcase, FaColumns, FaBullhorn, FaMobileAlt} from "react-icons/fa";
+import { FaGraduationCap, FaPlane, FaUserCheck, FaHospital, FaHeadset, FaExchangeAlt } from "react-icons/fa";
+import { FaShieldAlt, FaBuilding, FaMapMarkerAlt, FaPlaneDeparture, FaTools } from "react-icons/fa";
+import CandidateProcessChart from './CandidateProcessChart'
 
 export default function FlowchartHomepage() {
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.25
+    }
+  }
+}
+
+const item = {
+  hidden: { opacity: 0, y: 60 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1] // smooth cubic-bezier
+    }
+  }
+}
   return (
     <section className='py-16 '>
+<motion.div
+  variants={container}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}
+>
+  <motion.div variants={item}>
+ <section className="py-5">
+      <div className="container">
 
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 items-center ">
+        <div className="row">
 
-  {/* Left Image */}
-  <div className="w-full h-[300px] flex  justify-center text-center">
-  <Image
-    src="/manpower_services-removebg-preview.png"
-    alt="Manpower Services"
-    width={300}
-    height={300}
-    className="object-contain"
-  />
-</div>
+          {/* Card 1 */}
+          <div className="col-lg-4 my-3">
+            <div className="d-flex py-4 px-3 shadow rounded hover-top">
 
-  {/* Right Content */}
-  <div className="lg:col-span-2">
+              <div className="icon icon-lg  rounded-circle me-3 fs-3" style={{ color: "#ef8788" }} >
+                <FaUsers />
+              </div>
 
-    <h2 className="text-1xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 leading-tight text-center lg:text-left">
-      Manpower Services
-    </h2>
+              <div>
+                <h5>Global Manpower Supply</h5>
+                <p className="mb-2">
+                  COCL provides <b>technical, non-technical, and professional manpower</b> solutions to meet international client requirements across different countries.
+                </p>
+             
+              </div>
 
-    <div className="p-4 sm:p-6 rounded-[30px_10px_30px_10px] lg:rounded-[60px_20px_60px_20px] bg-[#111827] shadow-md">
-      <p className="text-white text-sm sm:text-base leading-relaxed">
-    
-          Career Overseas Consultants Ltd. (COCL) was set up as one of the subsidiartes of Ahmed Amin Group in order to effectively cater to the need of supply of technical, non-technical and professional manpower as per specific needs of the clients in different countries.
-COCL is geared to meet the servicing requirements of International recruitments which call for possession of profes- slonal knowledge and experience in getting the proper person for the proper Job as per requirements of the clients. The capabilities of the COCL in accurately catering to the needs of the clients have been amply proved over two decade. The clients have greatly acknowledged and praised the capabilities of the COCL through innumerable letters of appreciation and their continuous cooperation with the COCL. On its part, the COCL has developed a very meticulous method of selection of manpower for different trades and professions through its highly trained and dedicated managers who devote their whole time in locating the best of the manpower for particular job whether technical or nontechnical. The result of all these efforts have served the purpose well to our clients and have given recognition to COCL as an excellent service provider organization.
-Besides appredation and recognition received by COCL from the esteemed clients, the Government of Bangladesh has also recognized the valued services rendered by the COCL and has conferred the status of a Commercially Important Person (CIP) on the President of the Company.
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="col-lg-4 my-3">
+            <div className="d-flex py-4 px-3 shadow rounded hover-top">
+
+              <div className="icon icon-lg  rounded-circle me-3 fs-3" style={{ color: "#ef8788" }} >
+                <FaGlobeAsia />
+              </div>
+
+              <div>
+                <h5>International Recruitment Expertise</h5>
+                <p className="mb-2">
+                  With <b>two decades of experience</b>, COCL ensures proper selection of candidates using a <b>meticulous recruitment process</b>.
+                </p>
+            
+              </div>
+
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="col-lg-4 my-3">
+            <div className="d-flex py-4 px-3 shadow rounded hover-top">
+
+              <div className="icon icon-lg  rounded-circle me-3 fs-3" style={{ color: "#ef8788" }} >
+                <FaAward />
+              </div>
+
+              <div>
+                <h5>Trusted & Government Recognized</h5>
+                <p className="mb-2">
+                  COCL is widely appreciated by clients and recognized by the <b>Government of Bangladesh (CIP status)</b>.
+                </p>
+            
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </motion.div>
   
-      </p>
-    </div>
+</motion.div>
+<motion.div
+  variants={container}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}
+>
+  <motion.div variants={item}>
+    {/* manpower services  */}
+    <section className="py-5 bg-light">
+      <div className="container">
 
-  </div>
-</div>
-      
-         <div className="max-w-6xl mx-auto px-6 mt-6 text-center mb-10">
-             {/* <h2 className="text-3xl md:text-4xl font-bold  ">
-          Why Choose Us
-                </h2> */}
-        
-             <div className='flex justify-center'>
-              <Image
-              src="/Why choose us design 2.png"
-              alt="About Us"
-              width={1000}
-          height={600}
-            
-              />
-        
-            </div>
-        
-       
+        {/* Title */}
+        <div className="text-center mb-5">
+          <h2 className="display-5 fw-bold">Manpower Services</h2>
+          <p className="text-muted">
+            Professional recruitment & global workforce solutions
+          </p>
         </div>
-         <div className="max-w-6xl mx-auto px-6 mt-6 text-center sm:mb-15">
-             <h2 className="max-w-6xl md:max-w-3xl text-1xl md:text-4xl font-bold bg-[#c1dff2] mb-10 mx-auto  p-2  rounded-[50px_10px_50px_10px] ">
-            Candidate Process Flow Chart
-                </h2>
-                
-        
-             <div className='flex justify-center'>
-              <Image
-              src="/candidate_Process.png"
-              alt="About Us"
-              width={1000}
-          height={600}
-            
-              />
-        
+
+        <div className="row align-items-center">
+
+          {/* Left - Key Points */}
+          <div className="col-lg-6">
+
+            {/* Point 1 */}
+            <div className="d-flex mb-4">
+              <div className="me-3  fs-3" style={{ color: "#ef8788" }} >
+                <FaUserTie />
+              </div>
+              <div>
+                <h5 className="mb-1">Professional Recruitment</h5>
+                <p className="text-muted mb-0">
+                  Skilled selection of technical, non-technical and professional manpower.
+                </p>
+              </div>
             </div>
-        
-       
+
+            {/* Point 2 */}
+            <div className="d-flex mb-4">
+              <div className="me-3  fs-3" style={{ color: "#ef8788" }} >
+                <FaGlobeAsia />
+              </div>
+              <div>
+                <h5 className="mb-1">Global Workforce Supply</h5>
+                <p className="text-muted mb-0">
+                  Meeting international manpower demands across multiple countries.
+                </p>
+              </div>
+            </div>
+
+            {/* Point 3 */}
+            <div className="d-flex mb-4">
+              <div className="me-3  fs-3" style={{ color: "#ef8788" }} >
+                <FaUsers />
+              </div>
+              <div>
+                <h5 className="mb-1">Expert Selection Team</h5>
+                <p className="text-muted mb-0">
+                  Highly trained managers ensure the right person for the right job.
+                </p>
+              </div>
+            </div>
+
+            {/* Point 4 */}
+            <div className="d-flex mb-4">
+              <div className="me-3  fs-3" style={{ color: "#ef8788" }} >
+                <FaAward />
+              </div>
+              <div>
+                <h5 className="mb-1">Trusted & Certified</h5>
+                <p className="text-muted mb-0">
+                  Recognized by clients and honored by the Government of Bangladesh (CIP status).
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Right - Description */}
+           <div className="col-lg-6 col-xl-5 my-3">
+
+            <Image
+              src="/manpower_services-removebg-preview.png"
+              alt="Feature Image"
+              width={600}
+              height={600}
+              className="rounded img-fluid"
+            />
+
+          </div>
+
         </div>
+      </div>
+    </section>
+
+  </motion.div>
+  
+</motion.div>
+
+ <motion.div variants={item}>
+  {/* why choose us  */}
+          <section className="py-5 bg-light mt-5">
+      <div className="container">
+
+        {/* Heading */}
+        <div className="text-center mb-5">
+          <h2 className="display-6 fw-bold">Why Choose COCL</h2>
+          <p className="text-muted">
+            Complete manpower solutions with training, support & global service excellence
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="row g-3">
+
+          {/* Card 1 */}
+          <div className="col-md-6 col-lg-4">
+            <div className="d-flex p-3 shadow-sm rounded bg-white">
+              <FaGraduationCap style={{ color: "#ef8788" }} className=" fs-3 me-3 " />
+              <div>
+                <h6>Dedicated Technical Training Center</h6>
+                <p className="mb-0 text-muted">Professional skill development for workers.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="col-md-6 col-lg-4">
+            <div className="d-flex p-3 shadow-sm rounded bg-white">
+              <FaPlane className=" fs-3 me-3" style={{ color: "#ef8788" }}  />
+              <div>
+                <h6>Air Ticket & Travel Support (CTIL)</h6>
+                <p className="mb-0 text-muted">Complete travel assistance for workers.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="col-md-6 col-lg-4">
+            <div className="d-flex p-3 shadow-sm rounded bg-white">
+              <FaUserCheck className=" fs-3 me-3"  style={{ color: "#ef8788" }} />
+              <div>
+                <h6>Skilled & Certified Workforce</h6>
+                <p className="mb-0 text-muted">Verified and job-ready professionals.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 4 */}
+          <div className="col-md-6 col-lg-4">
+            <div className="d-flex p-3 shadow-sm rounded bg-white">
+              <FaHospital className=" fs-3 me-3" style={{ color: "#ef8788" }}  />
+              <div>
+                <h6>In-House Medical Center</h6>
+                <p className="mb-0 text-muted">Health check & medical support system.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 5 */}
+          <div className="col-md-6 col-lg-4">
+            <div className="d-flex p-3 shadow-sm rounded bg-white">
+              <FaHeadset className="fs-3 me-3" style={{ color: "#ef8788" }} />
+              <div>
+                <h6>Strong Client Support & Backup</h6>
+                <p className="mb-0 text-muted">24/7 assistance for clients & workers.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 6 */}
+          <div className="col-md-6 col-lg-4">
+            <div className="d-flex p-3 shadow-sm rounded bg-white">
+              <FaExchangeAlt className=" fs-3 me-3" style={{ color: "#ef8788" }}  />
+              <div>
+                <h6>Worker Replacement Guarantee</h6>
+                <p className="mb-0 text-muted">Reliable replacement assurance system.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 7 */}
+          <div className="col-md-6 col-lg-4">
+            <div className="d-flex p-3 shadow-sm rounded bg-white">
+              <FaBuilding className=" fs-3 me-3" style={{ color: "#ef8788" }}  />
+              <div>
+                <h6>In-House One-Stop Services</h6>
+                <p className="mb-0 text-muted">All recruitment services under one roof.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 8 */}
+          <div className="col-md-6 col-lg-4">
+            <div className="d-flex p-3 shadow-sm rounded bg-white">
+              <FaMobileAlt className=" fs-3 me-3" style={{ color: "#ef8788" }}  />
+              <div>
+                <h6>Direct Application via App</h6>
+                <p className="mb-0 text-muted">Apply easily using Probashkormi App.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 9 */}
+          <div className="col-md-6 col-lg-4">
+            <div className="d-flex p-3 shadow-sm rounded bg-white">
+              <FaMapMarkerAlt className=" fs-3 me-3"  style={{ color: "#ef8788" }} />
+              <div>
+                <h6>Real-Time Application Tracking</h6>
+                <p className="mb-0 text-muted">Track your application instantly.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 10 */}
+          <div className="col-md-6 col-lg-4">
+            <div className="d-flex p-3 shadow-sm rounded bg-white">
+              <FaShieldAlt className="fs-3 me-3"  style={{ color: "#ef8788" }} />
+              <div>
+                <h6>Safety & Compliance Guidance</h6>
+                <p className="mb-0 text-muted">Ensuring legal and safe recruitment.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 11 */}
+          <div className="col-md-6 col-lg-4">
+            <div className="d-flex p-3 shadow-sm rounded bg-white">
+              <FaPlaneDeparture className=" fs-3 me-3" style={{ color: "#ef8788" }}  />
+              <div>
+                <h6>Pre-Departure Briefing</h6>
+                <p className="mb-0 text-muted">Training before overseas deployment.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 12 */}
+          <div className="col-md-6 col-lg-4">
+            <div className="d-flex p-3 shadow-sm rounded bg-white">
+              <FaTools className=" fs-3 me-3"  style={{ color: "#ef8788" }} />
+              <div>
+                <h6>On-Site Problem Solution</h6>
+                <p className="mb-0 text-muted">Quick resolution at job locations.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+        </motion.div>
+         <motion.div variants={item}>
+       <CandidateProcessChart/>
+        </motion.div>
          {/* <div className="max-w-4xl mx-auto px-6 mt-6 text-center">
              <h2 className="text-3xl md:text-4xl font-bold mb-10 ">
              Our Detailed Manpower Section Processing & Flow
@@ -94,7 +380,9 @@ Besides appredation and recognition received by COCL from the esteemed clients, 
         
        
         </div> */}
+         <motion.div variants={item}>
 <TotalCountryWeWork/>
+</motion.div>
     </section>
   )
 }
@@ -145,7 +433,7 @@ Besides appredation and recognition received by COCL from the esteemed clients, 
 //         text-white font-bold 
 //         border-4 lg:border-8 border-double 
 //         flex items-center justify-center text-center 
-//         bg-[#e82e31] rounded-full box-border">
+//         bg-[#ef8788] rounded-full box-border">
 //         Why Choose Us!
 //       </div>
 //     </div>

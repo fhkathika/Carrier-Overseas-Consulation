@@ -29,6 +29,7 @@ export default async function Home() {
   const poster = await getJobsPoster()
   return (
     <>
+    
       <Hero />
       {/* <Chart/> */}
      <FlowchartHomepage/>

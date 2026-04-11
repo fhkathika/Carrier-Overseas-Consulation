@@ -18,7 +18,7 @@ export default function galary() {
   const [index,setIndex]=useState(0)
   const [open,setOpen]=useState(false)
   return (
- <section className="py-16 bg-gray-50">
+ <section className="py-16 mt-20">
   <div className='max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-8'>
     <h3 className='text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center'>
  A Glance at Client Journeys

@@ -21,7 +21,7 @@ export default async function   Circular() {
     const jobs = await getJobs()
       const poster = await getJobsPoster()
   return (
-    <div>
+    <div className='mt-20'>
       {
         poster?.length>0 && <JobPoster poster={poster}/>
       }
