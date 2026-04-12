@@ -1,64 +1,102 @@
 "use client"
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+"use client";
+
+import Link from "next/link";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
+
 export default function Footer() {
   return (
-   <footer className='bg-[#0f172a] text-white pt-14 pb-8'>
-    <div className='max-w-7xl mx-auto px-6'>
-        {/* grid section  */}
-<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10'>
+    <footer className="bg-gray-300 border-top footer">
+      <div className="footer-top py-5">
+        <div className="container">
+          <div className="row">
 
-  {/* column 1  */}
-  <div>
-{/* <h2 className='text-2xl font-bold text-white mb-4'>COCL</h2> */}
- <Link href="/" className="flex items-center">
-  <Image
-  src="/COC (5).png"
-  alt="Company Logo"
-  width={240}
-  height={40}
-/>
-    </Link>
-{/* <p className='text-sm leading-relaxed'> Short description about the company. 
-          What your business does and your mission.</p> */}
-  </div>
-  {/* column 2 */}
-  <div className='text-lg font-semibold text-white mb-4'>
-{/* <h3>Links </h3> */}
-<ul className='space-y-2'>
-  <li><a href="/" className="hover:text-[color:#e82e31] transition">Home</a></li>
-  <li><a href="/#about" className="hover:text-[color:#e82e31] transition">About</a></li>
-  <li><a href="/#jobPortal" className="hover:text-[color:#e82e31] transition">Jobs</a></li>
-  {/* <li><a href="/contact" className="hover:text-[color:#e82e31] transition">Conatct</a></li> */}
-</ul>
-  </div>
-  {/* column 3 */}
-  <div>
-<h3 className='text-lg font-semibold text-white mb-2'>Key Services & Capabilities</h3>
-<ul>
-          <li><a  className="">•  International manpower sourcing</a></li>
-          <li><a  className="">•  Visa & documentation processing</a></li>
-          <li><a  className="">•  Recruitment consulting</a></li>
-          <li><a  className="">•  Skills testing & evaluation</a></li>
-          <li><a  className="">•  Worker deployment</a></li>
+            {/* Logo + About */}
+            <div className="col-lg-3 my-4 d-flex  align-items-center">
+              <div className="pb-4">
+                <img
+                  src="/COCL logo - V2.png"
+                  alt="Logo"
+                  style={{ maxWidth: "150px" }}
+                />
+              </div>
 
-</ul>
+            
+
+          
+            </div>
+
+            {/* Customer */}
+            {/* <div className="col-sm-6 col-lg-2 my-4 ms-auto">
+              <h5 className="text-white mb-3">Customer</h5>
+              <ul className="list-unstyled footer-links ">
+                <li><Link href="#" className="text-gray-700">Apps Store</Link></li>
+                <li><Link href="#">Google Store</Link></li>
+                <li><Link href="#">Latest News</Link></li>
+                <li><Link href="#">Our Blog</Link></li>
+                <li><Link href="#">Help Center</Link></li>
+              </ul>
+            </div> */}
+
+            {/* Product */}
+            <div className="col-sm-6 col-lg-3 my-4">
+              <h5 className="text-black mb-3">Links</h5>
+              <ul className="list-unstyled footer-links">
+                <li><Link href="/" className="text-gray-700">Home</Link></li>
+                <li><Link href="/about" className="text-gray-700">About Us</Link></li>
+                <li><Link href="/success" className="text-gray-700">Our Success</Link></li>
+                <li><Link href="/galary" className="text-gray-700">Gallary</Link></li>
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div className="col-sm-6 col-lg-3 my-4">
+              <h5 className="text-black mb-3">Conatct</h5>
+              <p className='text-sm'>House 25, Road 34, Gulshan 2,
+ Dhaka 1212, Bangladesh</p>
+ <p className='text-sm'>info@ahmedamin.com</p>
+ <p className='text-sm'>+88 02 8812395</p>
+            </div>
+            <div className="col-sm-6 col-lg-3 my-4 border-2 d-flex justify-content-center align-items-center">
+
+  <div className="d-flex justify-content-center align-items-center">
+
+    <a className="icon rounded-circle me-2 text-white d-flex align-items-center justify-content-center"
+       style={{ background: "#2e44e8", width: "35px", height: "35px" }}>
+      <FaFacebookF />
+    </a>
+
+    <a className="icon rounded-circle me-2 text-white d-flex align-items-center justify-content-center"
+       style={{ background: "#2e44e8", width: "35px", height: "35px" }}>
+      <FaTwitter />
+    </a>
+
+    <a className="icon rounded-circle me-2 text-white d-flex align-items-center justify-content-center"
+       style={{ background: "#2e44e8", width: "35px", height: "35px" }}>
+      <FaInstagram />
+    </a>
+
+    <a className="icon rounded-circle me-2 text-white d-flex align-items-center justify-content-center"
+       style={{ background: "#2e44e8", width: "35px", height: "35px" }}>
+      <FaLinkedinIn />
+    </a>
+
   </div>
-  {/* column 4 */}
-  <div>
-<h3 className='text-lg font-semibold text-white mb-4'>Conatct</h3>
-<p className='text-sm'>House 25, Road 34, Gulshan 2,
-Dhaka 1212, Bangladesh</p>
-<p className='text-sm'>info@ahmedamin.com</p>
-<p className='text-sm'>+88 02 8812395</p>
+
 </div>
-</div>
-{/* footer bottom  */}
-<div className='border-t border-gray-700 mt-10 pt-6 text-center text-sm'>
-  <p>© {new Date().getFullYear()} COCL All rights reserved.</p>
-</div>
+
+          </div>
+        </div>
+        <div className='border-t border-gray-700 mt-10 pt-6 text-center text-sm'>
+   <p>© {new Date().getFullYear()} COCL All rights reserved.</p>
  </div>
-   </footer>
-  )
+      </div>
+    </footer>
+  );
 }
+

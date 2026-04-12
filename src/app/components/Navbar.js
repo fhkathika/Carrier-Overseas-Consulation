@@ -7,6 +7,7 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import '../style.css'
+import { FaClock, FaHeadset, FaUser, FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen,setIsOpen]=useState(false)
@@ -30,6 +31,115 @@ const handleLogout=async()=>{
   router.refresh()
 }
   return (
+
+    <>
+ 
+
+
+    <div className="header-top header-border-bottom small py-2">
+      <div className="container">
+        <div className="d-flex justify-content-between align-items-center">
+
+          {/* LEFT */}
+          <div className="d-flex align-items-center d-none d-lg-block">
+            <ul className="nav">
+
+              <li className="nav-item me-3">
+                <span className="d-flex align-items-center">
+                  <FaClock className="me-2" />
+                  Visit time: Mon-Sat 9:00am-5:30pm
+                </span>
+              </li>
+
+              <li className="nav-item">
+                <a href="#" className="navbar-link text-reset d-flex align-items-center">
+                  <FaHeadset className="me-2" />
+                  Call us now: +88 02 8812395
+                </a>
+              </li>
+
+            </ul>
+          </div>
+
+          {/* RIGHT */}
+          <div className="d-flex align-items-center w-100 w-lg-auto justify-content-center justify-content-lg-end">
+
+            {/* LANGUAGE DROPDOWN */}
+            {/* <div className="dropdown ms-0 ms-lg-3">
+              <button
+                className="btn dropdown-toggle text-reset d-flex align-items-center"
+                type="button"
+                data-bs-toggle="dropdown"
+              >
+                <img
+                  src="/flags/uk.svg"
+                  alt="English"
+                  style={{ width: "20px" }}
+                  className="me-2"
+                />
+                English
+              </button>
+
+              <ul className="dropdown-menu mt-2 shadow">
+                <li className="dropdown-item-text">Select language</li>
+                <li><hr className="dropdown-divider" /></li>
+
+                <li>
+                  <a className="dropdown-item" href="#">
+                    <img src="/flags/sp.svg" alt="" width="20" className="me-2" />
+                    Español
+                  </a>
+                </li>
+
+                <li>
+                  <a className="dropdown-item" href="#">
+                    <img src="/flags/fr.svg" alt="" width="20" className="me-2" />
+                    Français
+                  </a>
+                </li>
+
+                <li>
+                  <a className="dropdown-item" href="#">
+                    <img src="/flags/gr.svg" alt="" width="20" className="me-2" />
+                    Deutsch
+                  </a>
+                </li>
+              </ul>
+            </div> */}
+
+            {/* TOP LINKS */}
+            {/* <ul className="nav ms-auto ms-lg-3">
+              <li className="nav-item">
+                <a href="#" className="nav-link text-reset">Contact</a>
+              </li>
+
+              <li className="nav-item">
+                <a href="#" className="nav-link text-reset">
+                  <FaUser className="me-1" />
+                  Login
+                </a>
+              </li>
+            </ul> */}
+
+            {/* SOCIAL ICONS */}
+            <div className="d-none d-lg-flex gap-3 ms-3">
+              <a href="#" className="text-dark">
+                <FaFacebookF />
+              </a>
+              <a href="#" className="text-dark">
+                <FaTwitter />
+              </a>
+              <a href="#" className="text-dark">
+                <FaLinkedinIn />
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+ 
 <nav className="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
       <div className="container">
 
@@ -40,9 +150,8 @@ const handleLogout=async()=>{
   <Image
     src="/COCL logo - V2.png"
     alt="Logo"
-    width={80}
-    height={50}
-    className="h-12 w-auto object-contain"
+   fill
+    className=" w-auto object-contain"
     priority
   />
 </Link>
@@ -104,11 +213,20 @@ const handleLogout=async()=>{
             
             </ul>
 
-        
+          {/* Right Side */}
+            <div className="d-none d-lg-flex align-items-center">
+
+           
+              <Link href="#" className="btn btn-primary">
+                Contact Us
+              </Link>
+
+            </div>
           </div>
         </div>
       </div>
     </nav>
+     </>  
   )
 }
 

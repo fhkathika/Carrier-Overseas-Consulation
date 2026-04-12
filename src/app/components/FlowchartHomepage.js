@@ -206,6 +206,32 @@ const item = {
   
 </motion.div>
 
+
+         {/* <div className="max-w-4xl mx-auto px-6 mt-6 text-center">
+             <h2 className="text-3xl md:text-4xl font-bold mb-10 ">
+             Our Detailed Manpower Section Processing & Flow
+                </h2>
+        
+             <div className='relative w-full aspect-[16/9]   flex justify-center'>
+              <Image
+              src="/detail_menpowerSectionFlow-copy1.png"
+              alt="About Us"
+              width={800}
+          height={400}
+              className='object-container rounded-xl '
+              />
+        
+            </div>
+        
+       
+        </div> */}
+       
+<motion.div
+  variants={container}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}
+>
  <motion.div variants={item}>
   {/* why choose us  */}
           <section className="py-5 bg-light mt-5">
@@ -359,29 +385,28 @@ const item = {
     </section>
 
         </motion.div>
+</motion.div>
+
+<motion.div
+  variants={container}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}
+>
          <motion.div variants={item}>
        <CandidateProcessChart/>
         </motion.div>
-         {/* <div className="max-w-4xl mx-auto px-6 mt-6 text-center">
-             <h2 className="text-3xl md:text-4xl font-bold mb-10 ">
-             Our Detailed Manpower Section Processing & Flow
-                </h2>
-        
-             <div className='relative w-full aspect-[16/9]   flex justify-center'>
-              <Image
-              src="/detail_menpowerSectionFlow-copy1.png"
-              alt="About Us"
-              width={800}
-          height={400}
-              className='object-container rounded-xl '
-              />
-        
-            </div>
-        
-       
-        </div> */}
-         <motion.div variants={item}>
+        </motion.div>
+
+<motion.div
+  variants={container}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}
+>
+          <motion.div variants={item}>
 <TotalCountryWeWork/>
+</motion.div>
 </motion.div>
     </section>
   )
