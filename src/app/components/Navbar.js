@@ -33,10 +33,7 @@ const handleLogout=async()=>{
   return (
 
     <>
- 
-
-
-    <div className="header-top header-border-bottom small py-2">
+  <div className="header-top header-border-bottom small py-2">
       <div className="container">
         <div className="d-flex justify-content-between align-items-center">
 
@@ -201,10 +198,10 @@ const handleLogout=async()=>{
                 <Link className="nav-link" href="/achievement">Achievement</Link>
               
               </li>
-              <li className="nav-item  font-bold">
+              {/* <li className="nav-item  font-bold">
                 <Link className="nav-link" href="/Circular">Job Circular</Link>
               
-              </li>
+              </li> */}
               <li className="nav-item  font-bold">
                 <Link className="nav-link" href="/galary">Gallary</Link>
               
@@ -217,7 +214,7 @@ const handleLogout=async()=>{
             <div className="d-none d-lg-flex align-items-center">
 
            
-              <Link href="#" className="btn btn-primary">
+              <Link href="/contactUs" className="btn btn-danger">
                 Contact Us
               </Link>
 

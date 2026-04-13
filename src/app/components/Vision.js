@@ -9,7 +9,11 @@ import {
 
 export default function Vision() {
   return (
-    <section className="section bg-gray-100 py-5">
+    <>
+    
+    
+    
+    <section className="section bg-light py-5">
       <div className="container">
 
         {/* STEP 1 */}
@@ -101,7 +105,12 @@ export default function Vision() {
 
         <div className="divider opacity-2 mx-auto w-60 my-5"></div>
 
-        {/* STEP 2 */}
+       
+      </div>
+    </section>
+    <section className="section  py-5">
+      <div className="container">
+ {/* STEP 2 */}
         <div className="row justify-content-center align-items-center flex-row-reverse">
         
 
@@ -193,7 +202,15 @@ export default function Vision() {
 
         <div className="divider opacity-2 mx-auto w-60 my-5"></div>
 
-        {/* STEP 3 */}
+      
+    
+       
+      </div>
+    </section>
+    <section className="section bg-light py-5">
+      <div className="container">
+
+         {/* STEP 3 */}
         <div className="row justify-content-center align-items-center">
          <div className="col-xxl-12 col-lg-12 my-3">
           <section className="section py-5">
@@ -282,8 +299,9 @@ export default function Vision() {
 
         <div className="divider opacity-2 mx-auto w-60 my-5"></div>
 
-    
+       
       </div>
     </section>
+    </>
   );
 }

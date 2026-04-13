@@ -60,7 +60,7 @@ const item = {
                 <motion.div variants={item}>
   
 {/* organigation chart  */}
-    <div className="max-w-7xl mx-auto px-6  text-center block bg-success bg-opacity-10">
+    <div className="max-w-7xl mx-auto px-6  text-center block">
    <h3 className="display-4 m-0">
               Our Organization Chart
             </h3>
@@ -117,7 +117,7 @@ Alongside their father, they successfully established what is now known as the A
 </section>
 
 
-<div className="text-center mt-12">
+<div className="text-center mt-10 mb-5">
   <a
     href="/Brochure _COCL.pdf"
     download="Brochure _COCL.pdf"

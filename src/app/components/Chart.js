@@ -114,48 +114,24 @@ const blues = [
 
 const colors = 
  [
- ["#264F73", "#457AA6", "#A2BBD2", "#E3EBF2"],
-  ["#1A334A", "#264F73", "#457AA6"]
-  ["#264F73", "#457AA6"],
-  ["#264F73", "#457AA6"],
-  ["#1A334A", "#264F73", "#457AA6", "#678097", "#E3EBF2"]
+ "#6050DC",
+  "#D52DB7",
+  "#FF2E7E",
+  "#FF6B45",
+  "#FFAB05",
 ];
 
-// [
 
-//  "#64b76b", 
-//   "#cf9ea2", 
-//   "#b1a1e0",  
-   
-
-//    "#f08c70",
-//       "#8e9b4c",
-//   "#a7cfd4",
-//    "#71c4f8", 
-// ];
-
-
-// [
-//  ["#264F73", "#457AA6", "#A2BBD2", "#E3EBF2"],
-//   ["#1A334A", "#264F73", "#457AA6"]
-//   ["#264F73", "#457AA6"],
-//   ["#264F73", "#457AA6"],
-//   ["#1A334A", "#264F73", "#457AA6", "#678097", "#E3EBF2"]
-// ]
-
-
-
-
-// const getColor = (length, index) => {
-//   return colors[index % colors.length];
-// };
 const getColor = (length, index) => {
-  if (length <= colors.length) {
-    return colors[length - 1][index];
-  }
-
-  return colors[colors.length - 1][index % colors.length];
+  return colors[index % colors.length];
 };
+// const getColor = (length, index) => {
+//   if (length <= colors.length) {
+//     return colors[length - 1][index];
+//   }
+
+//   return colors[colors.length - 1][index % colors.length];
+// };
 const data = [
  { name: "Iraq", pv: 9504 },
   { name: "UAE & Dubai", pv: 13315 },

@@ -10,17 +10,17 @@ export default function page() {
 
   return (
     <>
-<section className='view'>
-  <div className='block'>
+<section>
+  <div >
  <Chart/>
   </div>
-  <div className='block'>
+  <div >
  <CountManPowerStatics/>
   </div>
-  <div className='block'>
+  <div >
     <Chart2/>
   </div>
-  <div className='block'>
+  <div>
      
     <GloballyMobilizedCount/>
   </div>

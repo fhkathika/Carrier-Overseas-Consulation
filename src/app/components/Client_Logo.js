@@ -2,8 +2,9 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Autoplay } from "swiper/modules";
+import { Autoplay,Pagination } from "swiper/modules";
 import { motion } from "framer-motion"
+import { useRef, useState } from "react";
 const client_logos = [];
 
 for (let i = 3; i <= 178; i++) {
@@ -34,6 +35,8 @@ const item = {
     }
   }
 }
+const swiperRef = useRef();
+const [activeIndex, setActiveIndex] = useState(0);
   return (
     <section
       className="section position-relative py-5"
@@ -55,11 +58,11 @@ const item = {
         style={{
           position: "absolute",
           inset: 0,
-          background: "rgba(0, 0, 0, 0.2)",
+          background: "rgba(0, 0, 0, 0.1)",
         }}
       ></div>
 
-      <div className="container position-relative">
+      <div className="container position-relative border-4">
         <div className="row justify-content-center">
           <div className="col-xl-12 text-center">
 
@@ -69,50 +72,77 @@ const item = {
             </h3>
 
             {/* Card */}
-            <div className="card">
-              <div className="card-body">
+           
+      <div className="container">
 
-                {/* 🔥 SWIPER START */}
-                <Swiper
-                  modules={[Autoplay]}
-                  spaceBetween={30}
-                  slidesPerView={2}
-                  loop={true}
-                  speed={2000}
-                  autoplay={{
-                    delay: 0,
-                    disableOnInteraction: false,
-                  }}
-                  breakpoints={{
-                    576: { slidesPerView: 3 },
-                    768: { slidesPerView: 4 },
-                    992: { slidesPerView: 5 },
-                    1200: { slidesPerView: 8 },
-                  }}
-                >
-                  {client_logos.map((item) => (
-                    <SwiperSlide key={item.id}>
-                      <div className="d-flex justify-content-center align-items-center">
-                        <img
-                          src={item.src}
-                          alt="logo"
-                          style={{
-                            maxHeight: "100px",
-                            objectFit: "contain",
-                            filter: "grayscale(0%)",
-                            transition: "0.3s",
-                          }}
-                        
-                        />
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-                {/* 🔥 SWIPER END */}
+        <Swiper
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+  modules={[Autoplay]}
+  spaceBetween={20}
+  slidesPerView={6}
+  autoplay={{
+    delay: 2000,
+    disableOnInteraction: false,
+  }}
+  loop={true}
+  breakpoints={{
+    0: { slidesPerView: 3 },
+    576: { slidesPerView: 4 },
+    768: { slidesPerView: 4 },
+    992: { slidesPerView: 6 },
+  }}
+  onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+>
+          {client_logos.map((logo, index) => (
+            <SwiperSlide key={index}>
+              <div
+  className="p-2 card text-center logo-card"
+>
+  <img
+    src={logo?.src}
+    alt="logo"
+    className="img-fluid"
+    style={{ maxHeight: "65px", objectFit: "contain" }}
+  />
+</div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-              </div>
-            </div>
+      </div>
+  
+<div className="d-flex justify-content-center gap-2 mt-3 flex-wrap">
+  
+  {/* First 10 dots */}
+  {Array.from({ length: 30 }).map((_, i) => (
+    <div
+      key={i}
+      onClick={() => swiperRef.current?.slideTo(i * 17)}
+      style={{
+        width: activeIndex === i ? "9px" : "9px",
+        height: activeIndex === i ? "9px" : "9px",
+        borderRadius: "50%",
+        background: activeIndex === i ? "#e82e31" : "#ccc",
+        cursor: "pointer",
+        transition: "0.3s",
+      }}
+    />
+  ))}
 
+  {/* Last number */}
+  {/* <div
+    onClick={() => swiperRef.current?.slideTo(177)}
+    style={{
+    
+      color: activeIndex === 177 ? "#e82e31" : "#000",
+      cursor: "pointer",
+      fontSize: "12px",
+    }}
+  >
+    178
+  </div> */}
+
+</div>
           </div>
         </div>
       </div>

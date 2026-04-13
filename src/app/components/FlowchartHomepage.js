@@ -234,7 +234,7 @@ const item = {
 >
  <motion.div variants={item}>
   {/* why choose us  */}
-          <section className="py-5 bg-light mt-5">
+          <section className="py-5 bg-success bg-opacity-10 mt-5">
       <div className="container">
 
         {/* Heading */}

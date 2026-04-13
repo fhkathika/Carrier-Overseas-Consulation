@@ -13,18 +13,18 @@ for (let i = 1; i <= 21; i++) {
     `
   });
 }
-console.log("galaryImg.....",galaryImg)
+
 export default function galary() {
   const [index,setIndex]=useState(0)
   const [open,setOpen]=useState(false)
   return (
- <section className="py-16 mt-20">
+ <section className=" mt-5">
   <div className='max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-8'>
     <h3 className='text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center'>
  A Glance at Client Journeys
     </h3>
   </div>
-<div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto py-10">
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto py-5">
   {
     galaryImg?.map((item,i)=>(
  <div key={item?.id}>
