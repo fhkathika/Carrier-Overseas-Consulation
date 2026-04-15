@@ -6,12 +6,38 @@ import {
   FaTools,
   FaClipboardCheck,
 } from "react-icons/fa";
-
+import { motion } from "framer-motion"
 export default function Vision() {
+  const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.25
+    }
+  }
+}
+
+const item = {
+  hidden: { opacity: 0, y: 60 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1] // smooth cubic-bezier
+    }
+  }
+}
   return (
     <>
     
-    
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+                <motion.div variants={item}>
     
     <section className="section bg-light py-5">
       <div className="container">
@@ -108,6 +134,16 @@ export default function Vision() {
        
       </div>
     </section>
+    </motion.div>
+    </motion.div>
+
+     <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+                <motion.div variants={item}>
     <section className="section  py-5">
       <div className="container">
  {/* STEP 2 */}
@@ -207,6 +243,15 @@ export default function Vision() {
        
       </div>
     </section>
+    </motion.div>
+    </motion.div>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+                <motion.div variants={item}>
     <section className="section bg-light py-5">
       <div className="container">
 
@@ -302,6 +347,8 @@ export default function Vision() {
        
       </div>
     </section>
+    </motion.div>
+    </motion.div>
     </>
   );
 }

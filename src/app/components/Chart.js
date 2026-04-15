@@ -99,7 +99,7 @@ import {
   Tooltip,
   Legend
 } from "recharts";
-
+import { motion } from "framer-motion"
 
 
 const blues = [
@@ -114,11 +114,18 @@ const blues = [
 
 const colors = 
  [
- "#6050DC",
-  "#D52DB7",
-  "#FF2E7E",
-  "#FF6B45",
-  "#FFAB05",
+   "#2D87BB",
+ "#58508D",
+   "#FF6361",
+    "#F47A1F",
+     "#377B2B",
+      "#64C2A6",
+
+ 
+  "#BC5090",
+  
+ 
+ 
 ];
 
 
@@ -185,10 +192,36 @@ export default function Chart() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.25
+    }
+  }
+}
 
+const item = {
+  hidden: { opacity: 0, y: 60 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1] // smooth cubic-bezier
+    }
+  }
+}
   return (
     <section className="w-full sm:max-w-6xl mx-auto sm:px-6 mt-6 text-center mb-2">
-      
+       <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+                <motion.div variants={item}>
+
       <h3 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center mt-20">
    Country-wise Total Manpower Mobilized Through COCL(2000-2024)
       </h3>
@@ -218,7 +251,8 @@ export default function Chart() {
       </PieChart>
     </ResponsiveContainer>
 
-
+ </motion.div>
+                </motion.div>
 
     </section>
   );

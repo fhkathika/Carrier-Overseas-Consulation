@@ -3,7 +3,7 @@
 import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-
+import { motion } from "framer-motion"
 const data = [
   {
     country: "Saudi Arabia",
@@ -60,9 +60,35 @@ export default function GloballyMobilizedCount() {
     threshold: 0.3,
     triggerOnce: true, // runs only once when visible
   });
+  const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.25
+    }
+  }
+}
 
+const item = {
+  hidden: { opacity: 0, y: 60 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1] // smooth cubic-bezier
+    }
+  }
+}
   return (
     <div className="mx-auto p-6 mt-3 text-center mb-3 bg-light">
+     <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+                <motion.div variants={item}>
       <h2 className="text-1xl md:text-4xl font-bold mb-10">
         Total Manpower Mobilized Globally (2000-2024)
       </h2>
@@ -150,6 +176,8 @@ export default function GloballyMobilizedCount() {
           </div>
         ))}
       </div>
+      </motion.div>
+      </motion.div>
     </div>
   );
 }

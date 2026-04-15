@@ -9,7 +9,8 @@ import {
   Legend,
   Cell
 } from "recharts";
-
+import { motion } from "framer-motion"
+import { ResponsiveContainer } from "recharts";
 // Sample data
 const data = [
   { name: "2000", uv: 4000, totalManpower: 3384, amt: 2400 },
@@ -38,34 +39,55 @@ const data = [
   { name: "2023", uv: 3490, totalManpower: 4920, amt: 2100 },
 ];
 const colors =  [
- ["#264F73", "#457AA6", "#A2BBD2", "#E3EBF2"],
-  ["#1A334A", "#264F73", "#457AA6"]
-  ["#264F73", "#457AA6"],
-  ["#264F73", "#457AA6"],
-  ["#1A334A", "#264F73", "#457AA6", "#678097", "#E3EBF2"]
+"#1c3464",
+ "#034569",
+ "#235b79",
+  "#086ca2",
+  "#3c9dd0"
 ];
 
 const getColor = (length, index) => {
-  if (length <= colors.length) {
-    return colors[length - 1][index];
-  }
-
-  return colors[colors.length - 1][index % colors.length];
+  return colors[index % colors.length];
 };
+ const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.25
+    }
+  }
+}
 
+const item = {
+  hidden: { opacity: 0, y: 60 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1] // smooth cubic-bezier
+    }
+  }
+}
 export default function Chart2() {
   
   return (
-   <div  className="max-w-6xl mx-auto px-6 mt-6 text-center mb-2">
-  
+   <div  className="w-full sm:max-w-6xl mx-auto px-6 mt-6 text-center  sm:h-[350px] md:h-[400px]">
+    <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+                  <motion.div variants={item}>
   <div className="max-w-7xl mx-auto px-2 md:px-6 lg:px-8  sm:mb-15">
     <h3 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center">
       Total Manpower Mobilized Through COCL (2000-2024)
     </h3>
   </div>
 
-  <div className="flex justify-center" >
-    
+  <div className="flex justify-center px-2 md:px-3 lg:px-3  h-[300px] sm:h-[200px] md:h-[300px]" >
+      <ResponsiveContainer >
     <BarChart
       width={900}
       height={300}
@@ -90,8 +112,11 @@ export default function Chart2() {
   ))}
 </Bar>
     </BarChart>
+    </ResponsiveContainer>
   </div>
-
+</motion.div>
+</motion.div>
 </div>
+
   );
 }

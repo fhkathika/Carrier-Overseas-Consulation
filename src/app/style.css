@@ -44352,4 +44352,9 @@ mark, .mark {
 /* .logo-card:hover img {
   transform: scale(1.5);
 } */
-
+.swiper-slide-active {
+  transform: scale(1.1);
+}
+.swiper-slide {
+  transition: all 0.3s ease;
+}

@@ -41,16 +41,9 @@ const item = {
 <AboutFeatueSection/>
                 </motion.div>
                 </motion.div>
-  <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-      >
-                <motion.div variants={item}>
+
  <Vision/>
-                </motion.div>
-                </motion.div>
+              
   <motion.div
         variants={container}
         initial="hidden"
@@ -85,6 +78,15 @@ const item = {
 
 
  {/* The founders */}
+ <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+                <motion.div variants={item}>
+
+             
  <section className="section bg-gray-100 py-5">
       <div className="container">
 
@@ -115,7 +117,8 @@ Alongside their father, they successfully established what is now known as the A
         <div className="divider opacity-2 mx-auto w-60 my-5"></div>
 </div>
 </section>
-
+   </motion.div>
+                </motion.div>
 
 <div className="text-center mt-10 mb-5">
   <a

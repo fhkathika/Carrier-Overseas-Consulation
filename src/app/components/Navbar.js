@@ -33,7 +33,7 @@ const handleLogout=async()=>{
   return (
 
     <>
-  <div className="header-top header-border-bottom small py-2">
+<div className="header-top header-border-bottom small py-2 d-none d-lg-block">
       <div className="container">
         <div className="d-flex justify-content-between align-items-center">
 
@@ -137,20 +137,22 @@ const handleLogout=async()=>{
     </div>
 
  
-<nav className="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
+<nav className="navbar navbar-expand-lg sticky-top bg-white shadow-sm p-2">
       <div className="container">
 
         {/* Logo */}
    
 
 <Link href="/" className="navbar-brand flex items-center">
-  <Image
-    src="/COCL logo - V2.png"
-    alt="Logo"
-   fill
-    className=" w-auto object-contain"
-    priority
-  />
+  <div className="relative w-[120px] h-[60px] md:w-[160px] md:h-[50px]">
+    <Image
+      src="/COCL logo - V2.png"
+      alt="Logo"
+      fill
+      className="object-contain"
+      priority
+    />
+  </div>
 </Link>
 
         {/* Mobile Toggle */}
@@ -194,10 +196,10 @@ const handleLogout=async()=>{
                 <Link className="nav-link" href="/success">Our Success</Link>
               
               </li>
-              <li className="nav-item  font-bold">
+              {/* <li className="nav-item  font-bold">
                 <Link className="nav-link" href="/achievement">Achievement</Link>
               
-              </li>
+              </li> */}
               {/* <li className="nav-item  font-bold">
                 <Link className="nav-link" href="/Circular">Job Circular</Link>
               

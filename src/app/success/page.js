@@ -10,25 +10,11 @@ export default function page() {
 
   return (
     <>
-<section>
-  <div >
+
  <Chart/>
-  </div>
-  <div >
- <CountManPowerStatics/>
-  </div>
-  <div >
-    <Chart2/>
-  </div>
-  <div>
-     
-    <GloballyMobilizedCount/>
-  </div>
-
-
-</section>
-   
-           
-    </>
+<CountManPowerStatics/>
+  <Chart2/>
+ <GloballyMobilizedCount/>
+  </>
   )
 }

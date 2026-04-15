@@ -1,23 +1,23 @@
-import Hero from "./components/Hero"
-import AllJobs from "./components/AllJobs"
-import AboutUs from "./components/AboutUs"
-import Reviews from "./components/Reviews"
+import dynamicImport from "next/dynamic"
 import connectDB from "@/lib/db"
 import Jobs from "@/models/Jobs"
 import jobPoster from "@/models/jobPoster"
-import Client_Logo from "./components/Client_Logo"
-import JobPoster from "./components/JobPoster"
-import Chart from "./components/Chart"
-import FlowchartHomepage from "./components/FlowchartHomepage"
-
 
 export const dynamic = "force-dynamic"
+
+// ✅ Lazy components
+const Hero = dynamicImport(() => import("./components/Hero"))
+const FlowchartHomepage = dynamicImport(() => import("./components/FlowchartHomepage"))
+const Client_Logo = dynamicImport(() => import("./components/Client_Logo"))
+const Reviews = dynamicImport(() => import("./components/Reviews"))
+const Testimonials = dynamicImport(() => import("./components/Testimonials"))
 
 async function getJobs() {
   await connectDB()
   const jobs = await Jobs.find().lean()
   return JSON.parse(JSON.stringify(jobs))
 }
+
 async function getJobsPoster() {
   await connectDB()
   const poster = await jobPoster.find().lean()
@@ -27,16 +27,14 @@ async function getJobsPoster() {
 export default async function Home() {
   const jobs = await getJobs()
   const poster = await getJobsPoster()
+
   return (
     <>
-    
       <Hero />
-      {/* <Chart/> */}
-     <FlowchartHomepage/>
-      <Client_Logo/>
+      <FlowchartHomepage />
+      <Client_Logo />
       <Reviews />
-   
-      
+      <Testimonials />
     </>
   )
 }
