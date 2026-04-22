@@ -100,33 +100,14 @@ import {
   Legend
 } from "recharts";
 import { motion } from "framer-motion"
+import Image from "next/image";
 
 
-const blues = [
- ["#264F73", "#457AA6", "#A2BBD2", "#E3EBF2"],
-  ["#1A334A", "#264F73", "#457AA6"]
-  ["#264F73", "#457AA6"],
-  ["#264F73", "#457AA6"],
-  ["#1A334A", "#264F73", "#457AA6", "#678097", "#E3EBF2"]
-];
-
-
-
-const colors = 
- [
-   "#2D87BB",
- "#58508D",
-   "#FF6361",
-    "#F47A1F",
-     "#377B2B",
-      "#64C2A6",
-
- 
-  "#BC5090",
-  
- 
- 
-];
+ const colors = [
+"#056875", "#50C2E5", "#C9495E", "#086ca2", "	#D46600",
+  "#A8DADC", // light cyan
+  "#1D3557"  // dark navy
+  ];
 
 
 const getColor = (length, index) => {
@@ -221,8 +202,20 @@ const item = {
         viewport={{ once: true }}
       >
                 <motion.div variants={item}>
+                       <h2 className="text-1xl md:text-4xl font-bold ">
+                                 Country-wise Total Manpower Mobilized Through COCL(2000-2024)
+                               </h2>
+                          
+                      <div className="w-full flex justify-center">
+                        <Image
+                          src="/pieC.png"
+                          alt="About Us"
+                          width={600}
+                          height={400}
+                        />
+                      </div>
 
-      <h3 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center mt-20">
+      {/* <h3 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center mt-20">
    Country-wise Total Manpower Mobilized Through COCL(2000-2024)
       </h3>
 
@@ -249,7 +242,7 @@ const item = {
         <Tooltip formatter={(value) => value.toLocaleString()} />
         <Legend />
       </PieChart>
-    </ResponsiveContainer>
+    </ResponsiveContainer> */}
 
  </motion.div>
                 </motion.div>

@@ -234,7 +234,7 @@ const item = {
 >
  <motion.div variants={item}>
   {/* why choose us  */}
-          <section className="py-5 bg-success bg-opacity-10 mt-5">
+          <section className="py-5 bg-gray-100 mt-5 " >
       <div className="container">
 
         {/* Heading */}
@@ -246,141 +246,19 @@ const item = {
         </div>
 
         {/* Cards */}
-        <div className="row g-3">
-
-          {/* Card 1 */}
-          <div className="col-md-6 col-lg-4">
-            <div className="d-flex p-3 shadow-sm rounded bg-white">
-              <FaGraduationCap style={{ color: "#ef8788" }} className=" fs-3 me-3 " />
-              <div>
-                <h6>Dedicated Technical Training Center</h6>
-                <p className="mb-0 text-muted">Professional skill development for workers.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="col-md-6 col-lg-4">
-            <div className="d-flex p-3 shadow-sm rounded bg-white">
-              <FaPlane className=" fs-3 me-3" style={{ color: "#ef8788" }}  />
-              <div>
-                <h6>Air Ticket & Travel Support (CTIL)</h6>
-                <p className="mb-0 text-muted">Complete travel assistance for workers.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="col-md-6 col-lg-4">
-            <div className="d-flex p-3 shadow-sm rounded bg-white">
-              <FaUserCheck className=" fs-3 me-3"  style={{ color: "#ef8788" }} />
-              <div>
-                <h6>Skilled & Certified Workforce</h6>
-                <p className="mb-0 text-muted">Verified and job-ready professionals.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 4 */}
-          <div className="col-md-6 col-lg-4">
-            <div className="d-flex p-3 shadow-sm rounded bg-white">
-              <FaHospital className=" fs-3 me-3" style={{ color: "#ef8788" }}  />
-              <div>
-                <h6>In-House Medical Center</h6>
-                <p className="mb-0 text-muted">Health check & medical support system.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 5 */}
-          <div className="col-md-6 col-lg-4">
-            <div className="d-flex p-3 shadow-sm rounded bg-white">
-              <FaHeadset className="fs-3 me-3" style={{ color: "#ef8788" }} />
-              <div>
-                <h6>Strong Client Support & Backup</h6>
-                <p className="mb-0 text-muted">24/7 assistance for clients & workers.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 6 */}
-          <div className="col-md-6 col-lg-4">
-            <div className="d-flex p-3 shadow-sm rounded bg-white">
-              <FaExchangeAlt className=" fs-3 me-3" style={{ color: "#ef8788" }}  />
-              <div>
-                <h6>Worker Replacement Guarantee</h6>
-                <p className="mb-0 text-muted">Reliable replacement assurance system.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 7 */}
-          <div className="col-md-6 col-lg-4">
-            <div className="d-flex p-3 shadow-sm rounded bg-white">
-              <FaBuilding className=" fs-3 me-3" style={{ color: "#ef8788" }}  />
-              <div>
-                <h6>In-House One-Stop Services</h6>
-                <p className="mb-0 text-muted">All recruitment services under one roof.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 8 */}
-          <div className="col-md-6 col-lg-4">
-            <div className="d-flex p-3 shadow-sm rounded bg-white">
-              <FaMobileAlt className=" fs-3 me-3" style={{ color: "#ef8788" }}  />
-              <div>
-                <h6>Direct Application via App</h6>
-                <p className="mb-0 text-muted">Apply easily using Probashkormi App.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 9 */}
-          <div className="col-md-6 col-lg-4">
-            <div className="d-flex p-3 shadow-sm rounded bg-white">
-              <FaMapMarkerAlt className=" fs-3 me-3"  style={{ color: "#ef8788" }} />
-              <div>
-                <h6>Real-Time Application Tracking</h6>
-                <p className="mb-0 text-muted">Track your application instantly.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 10 */}
-          <div className="col-md-6 col-lg-4">
-            <div className="d-flex p-3 shadow-sm rounded bg-white">
-              <FaShieldAlt className="fs-3 me-3"  style={{ color: "#ef8788" }} />
-              <div>
-                <h6>Safety & Compliance Guidance</h6>
-                <p className="mb-0 text-muted">Ensuring legal and safe recruitment.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 11 */}
-          <div className="col-md-6 col-lg-4">
-            <div className="d-flex p-3 shadow-sm rounded bg-white">
-              <FaPlaneDeparture className=" fs-3 me-3" style={{ color: "#ef8788" }}  />
-              <div>
-                <h6>Pre-Departure Briefing</h6>
-                <p className="mb-0 text-muted">Training before overseas deployment.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 12 */}
-          <div className="col-md-6 col-lg-4">
-            <div className="d-flex p-3 shadow-sm rounded bg-white">
-              <FaTools className=" fs-3 me-3"  style={{ color: "#ef8788" }} />
-              <div>
-                <h6>On-Site Problem Solution</h6>
-                <p className="mb-0 text-muted">Quick resolution at job locations.</p>
-              </div>
-            </div>
-          </div>
-
+        <div className="max-w-7xl mx-auto px-6  text-center block">
+          
+        <div className="w-full flex justify-center">
+          <Image
+            src="/WhyChooseF.png"
+            alt="About Us"
+            width={800}
+            height={500}
+            className=""
+          />
         </div>
+        </div>
+      
       </div>
     </section>
 

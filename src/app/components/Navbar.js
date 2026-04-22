@@ -120,7 +120,7 @@ const handleLogout=async()=>{
 
             {/* SOCIAL ICONS */}
             <div className="d-none d-lg-flex gap-3 ms-3">
-              <a href="#" className="text-dark">
+              <a href="https://www.facebook.com/profile.php?id=61585925261061" className="text-dark">
                 <FaFacebookF />
               </a>
               <a href="#" className="text-dark">

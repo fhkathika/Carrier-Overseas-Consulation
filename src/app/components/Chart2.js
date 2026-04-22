@@ -1,55 +1,53 @@
 "use client"
 import {
-  BarChart,
+  ComposedChart,
   Bar,
+  Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
-  Cell
+  Cell,
+  ResponsiveContainer
 } from "recharts";
-import { motion } from "framer-motion"
-import { ResponsiveContainer } from "recharts";
+import { motion } from "framer-motion";
+import Image from "next/image";
 // Sample data
 const data = [
-  { name: "2000", uv: 4000, totalManpower: 3384, amt: 2400 },
-  { name: "2001", uv: 3000, totalManpower: 2858, amt: 2210 },
-  { name: "2002", uv: 2000, totalManpower: 3683, amt: 2290 },
-  { name: "2003", uv: 2780, totalManpower: 4301, amt: 2000 },
-  { name: "2004", uv: 1890, totalManpower: 4920, amt: 2181 },
-  { name: "2005", uv: 2390, totalManpower: 5826, amt: 2500 },
-  { name: "2006", uv: 3490, totalManpower: 6062, amt: 2100 },
-  { name: "2007", uv: 3490, totalManpower: 7800, amt: 2100 },
-  { name: "2008", uv: 3490, totalManpower: 3534, amt: 2100 },
-  { name: "2009", uv: 3490, totalManpower: 1768, amt: 2100 },
-  { name: "2010", uv: 3490, totalManpower: 4209, amt: 2100 },
-  { name: "2011", uv: 3490, totalManpower: 5165, amt: 2100 },
-  { name: "2012", uv: 3490, totalManpower: 5721, amt: 2100 },
-  { name: "2013", uv: 3490, totalManpower: 6535, amt: 2100 },
-  { name: "2014", uv: 3490, totalManpower: 7402, amt: 2100 },
-  { name: "2015", uv: 3490, totalManpower: 8096, amt: 2100 },
-  { name: "2016", uv: 3490, totalManpower: 8804, amt: 2100 },
-  { name: "2017", uv: 3490, totalManpower: 9497, amt: 2100 },
-  { name: "2018", uv: 3490, totalManpower: 10903, amt: 2100 },
-  { name: "2019", uv: 3490, totalManpower: 74, amt: 2100 },
-  { name: "2020", uv: 3490, totalManpower: 3807, amt: 2100 },
-  { name: "2021", uv: 3490, totalManpower: 3333, amt: 2100 },
-  { name: "2022", uv: 3490, totalManpower: 4297, amt: 2100 },
-  { name: "2023", uv: 3490, totalManpower: 4920, amt: 2100 },
-];
-const colors =  [
-"#1c3464",
- "#034569",
- "#235b79",
-  "#086ca2",
-  "#3c9dd0"
+  { name: "2000", totalManpower: 3384 },
+  { name: "2001", totalManpower: 2858 },
+  { name: "2002", totalManpower: 3683 },
+  { name: "2003", totalManpower: 4301 },
+  { name: "2004", totalManpower: 4920 },
+  { name: "2005", totalManpower: 5826 },
+  { name: "2006", totalManpower: 6062 },
+  { name: "2007", totalManpower: 7800 },
+  { name: "2008", totalManpower: 3534 },
+  { name: "2009", totalManpower: 1768 },
+  { name: "2010", totalManpower: 4209 },
+  { name: "2011", totalManpower: 5165 },
+  { name: "2012", totalManpower: 5721 },
+  { name: "2013", totalManpower: 6535 },
+  { name: "2014", totalManpower: 7402 },
+  { name: "2015", totalManpower: 8096 },
+  { name: "2016", totalManpower: 8804 },
+  { name: "2017", totalManpower: 9497 },
+  { name: "2018", totalManpower: 10903 },
+  { name: "2019", totalManpower: 74 },
+  { name: "2020", totalManpower: 3807 },
+  { name: "2021", totalManpower: 3333 },
+  { name: "2022", totalManpower: 4297 },
+  { name: "2023", totalManpower: 4920 },
 ];
 
-const getColor = (length, index) => {
-  return colors[index % colors.length];
-};
- const container = {
+// const colors = ["#a5a1f7", "#d6d727", "#92cad1", "#086ca2", "	#79ccb3"];
+const colors = ["#056875", "#086ca2", "	#D46600"];
+
+
+const getColor = (index) => colors[index % colors.length];
+
+export default function Chart2() {
+  const container = {
   hidden: {},
   show: {
     transition: {
@@ -69,54 +67,76 @@ const item = {
     }
   }
 }
-export default function Chart2() {
-  
   return (
-   <div  className="w-full sm:max-w-6xl mx-auto px-6 mt-6 text-center  sm:h-[350px] md:h-[400px]">
+      <div className="max-w-7xl mx-auto px-6  text-center block  mt-5 pt-8">
     <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-                  <motion.div variants={item}>
-  <div className="max-w-7xl mx-auto px-2 md:px-6 lg:px-8  sm:mb-15">
-    <h3 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center">
-      Total Manpower Mobilized Through COCL (2000-2024)
-    </h3>
-  </div>
-
-  <div className="flex justify-center px-2 md:px-3 lg:px-3  h-[300px] sm:h-[200px] md:h-[300px]" >
-      <ResponsiveContainer >
-    <BarChart
-      width={900}
-      height={300}
-      data={data}
-      margin={{
-        top: 5,
-        right: 20,
-        left: 10,
-        bottom: 5,
-      }}
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
     >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      
-   
-    <Bar dataKey="totalManpower" barSize={30}>
-  {data.map((entry, index) => (
-    <Cell key={`cell-${index}`} fill={getColor(data.length, index)}  />
-  ))}
-</Bar>
-    </BarChart>
-    </ResponsiveContainer>
-  </div>
-</motion.div>
-</motion.div>
-</div>
+             <motion.div variants={item}>
+             <h2 className="text-1xl md:text-4xl font-bold ">
+               Total Manpower Mobilized Through COCL (2000-2024)
+             </h2>
+        
+    <div className="w-full flex justify-center">
+      <Image
+        src="/barChartUpdate.png"
+        alt="About Us"
+        width={900}
+        height={900}
+      />
+  
+    </div>
+      </motion.div>
+      </motion.div>
+    </div>
+    // <div className="w-full sm:max-w-6xl mx-auto px-6 mt-12 text-center">
+    //   <div className="mb-8">
+    //     <h3 className="text-xl sm:text-3xl md:text-3xl lg:text-4xl font-bold">
+    //       Total Manpower Mobilized Through COCL (2000-2024)
+    //     </h3>
+    //   </div>
 
+    //   <div className="w-full h-[400px] bg-white rounded-3xl p-6 shadow-sm">
+    //     <ResponsiveContainer width="100%" height="100%">
+    //       <ComposedChart data={data} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+    //         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
+    //         <XAxis 
+    //           dataKey="name" 
+    //           axisLine={false} 
+    //           tickLine={false} 
+    //           interval={"preserveStartEnd"} 
+    //         />
+    //         <YAxis axisLine={false} tickLine={false} />
+    //         <Tooltip 
+    //           contentStyle={{ borderRadius: '15px', border: 'none', boxShadow: '0 10px 15px rgba(0,0,0,0.1)' }}
+    //         />
+            
+    //         {/* The Capsule Bars */}
+    //         <Bar 
+    //           dataKey="totalManpower" 
+    //           barSize={25} 
+    //           // radius={[5, 5, 5, 5]}
+    //         >
+    //           {data.map((entry, index) => (
+    //             <Cell key={`cell-${index}`} fill={getColor(index)} />
+    //           ))}
+    //         </Bar>
+
+    //         {/* The Line connecting the tops of the bars */}
+    //         <Line 
+    //           type="monotone" 
+    //           dataKey="totalManpower" 
+    //           stroke="#FF8042" // A contrasting color to make it visible
+    //           strokeWidth={3} 
+    //           dot={{ r: 4, fill: '#FF8042', strokeWidth: 2, stroke: '#fff' }} 
+    //           activeDot={{ r: 6 }}
+    //         />
+    //       </ComposedChart>
+    //     </ResponsiveContainer>
+    //   </div>
+    // </div>
   );
 }

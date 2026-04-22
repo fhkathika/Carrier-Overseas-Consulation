@@ -66,7 +66,7 @@ export default function Footer() {
 
   <div className="d-flex justify-content-center align-items-center">
 
-    <a className="icon rounded-circle me-2 text-white d-flex align-items-center justify-content-center"
+    <a  href="https://www.facebook.com/profile.php?id=61585925261061" className="icon rounded-circle me-2 text-white d-flex align-items-center justify-content-center"
        style={{ background: "#2e44e8", width: "35px", height: "35px" }}>
       <FaFacebookF />
     </a>

@@ -61,15 +61,18 @@ const [activeIndex, setActiveIndex] = useState(0);
           background: "rgba(0, 0, 0, 0.1)",
         }}
       ></div>
-
+ <div className="text-center mb-5">
+          <h2 className="display-6 fw-bold">Our Global Partners
+            </h2>
+          <p className="text-muted">
+          Trusted by over 178 of the world’s leading companies
+          </p>
+        </div>
       <div className="container position-relative border-4">
         <div className="row justify-content-center">
           <div className="col-xl-12 text-center">
 
-            {/* Heading */}
-            <h3 className="text-black pb-4">
-              Trusted by over 178 of the world’s leading companies
-            </h3>
+          
 
             {/* Card */}
            

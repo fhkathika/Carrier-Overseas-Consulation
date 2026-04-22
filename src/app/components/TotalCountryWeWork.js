@@ -2,6 +2,8 @@
 
 import { FaBriefcase, FaColumns, FaCogs, FaMobileAlt, FaEnvelope, FaPenFancy, FaGlobeAsia } from "react-icons/fa";
 import { motion } from "framer-motion"
+import Image from "next/image";
+
 export default function TotalCountryWeWork() {
   const features = [
     {
@@ -35,59 +37,109 @@ export default function TotalCountryWeWork() {
       desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.",
     },
   ];
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.25
+    }
+  }
+}
 
+const item = {
+  hidden: { opacity: 0, y: 60 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1] // smooth cubic-bezier
+    }
+  }
+}
   return (
-    <section className="section bg-[#90A6BB] position-relative py-5">
+//     <section className="section bg-[#90A6BB] position-relative py-5">
 
-  
+//     <div className="text-center mb-5">
+//           <h2 className="display-6 fw-bold">Countries We Work</h2>
+//           <p className="text-gray-600">
+//               COCL has mobilized candidates for the following countries
+//           </p>
+//         </div>
 
-      <div className="container position-relative ">
-        <div className="row">
-<div className=" d-flex justify-content-center align-items-center mb-4">
-      <h1>
-        COCL has mobilized candidates for the following countries
-      </h1>
-    </div>
+//       <div className="container position-relative ">
+      
+
      
-     <div
-  className="col-lg-12 position-relative rounded"
-  style={{ minHeight: "700px" ,minWeight: "600px" }}
->
+//      <div
+//   className="col-lg-12 position-relative rounded"
+//   style={{ minHeight: "700px" ,minWeight: "600px" }}
+// >
    
 
-  {/* Background */}
-  <div
-    className="position-absolute top-0 start-0 w-100 h-100 "
+//   {/* Background */}
+//   <div
+//     className="position-absolute top-0 start-0 w-100 h-100 "
   
-  >
- <img
-  src="/asia_Map2.png"
-  alt="asia"
-  style={{
-    width: "100%",
-    height: "100%",
-    objectFit: "contain",
+//   >
+//  <img
+//   src="/asia_Map2.png"
+//   alt="asia"
+//   style={{
+//     width: "100%",
+//     height: "100%",
+//     objectFit: "contain",
 
-    WebkitMaskImage: `
-      linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%),
-      linear-gradient(to left, transparent 0%, black 15%, black 85%, transparent 100%)
-    `,
-    maskImage: `
-      linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%),
-      linear-gradient(to left, transparent 0%, black 15%, black 85%, transparent 100%)
-    `,
+//     WebkitMaskImage: `
+//       linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%),
+//       linear-gradient(to left, transparent 0%, black 15%, black 85%, transparent 100%)
+//     `,
+//     maskImage: `
+//       linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%),
+//       linear-gradient(to left, transparent 0%, black 15%, black 85%, transparent 100%)
+//     `,
 
-    WebkitMaskComposite: "intersect",
-    maskComposite: "intersect",
-  }}
-/>
-  </div>
+//     WebkitMaskComposite: "intersect",
+//     maskComposite: "intersect",
+//   }}
+// />
+//   </div>
 
  
-</div>
+// </div>
 
+     
+//       </div>
+//     </section>
+  <section className='py-8  '>
+
+  <section className=" " >
+      <div className="container">
+
+        {/* Heading */}
+        <div className="text-center mb-5">
+          <h2 className="display-6 fw-bold">Countries We Work</h2>
+          <p className="text-muted">
+           COCL has mobilized candidates for the following countries
+          </p>
         </div>
+
+        {/* Cards */}
+        <div className="max-w-7xl mx-auto px-6  text-center block">
+          
+        <div className="w-full flex justify-center">
+          <Image
+            src="/country_work.png"
+            alt="About Us"
+            width={900}
+            height={600}
+            className="w-full h-auto object-content"
+          />
+        </div>
+        </div>
+      
       </div>
+    </section>
     </section>
   );
 }

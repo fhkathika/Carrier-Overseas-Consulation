@@ -51,10 +51,11 @@ const item = {
         {/* HEADING */}
         <div className="row section-heading mb-4">
           <div className="col-lg-7 col-md-12">
-            <h3 className="display-4 m-0">
+            <h2 className="display-6 m-0">
               Our Vision
-            </h3>
+            </h2>
           </div>
+         
 
           <div className="col-lg-5 col-md-12">
             <div className="fs-5 w-lg-80">
@@ -157,9 +158,9 @@ const item = {
         {/* HEADING */}
         <div className="row section-heading mb-4">
           <div className="col-lg-7 col-md-12">
-            <h3 className="display-4 m-0">
+            <h2 className="display-6 m-0">
               Our Organization
-            </h3>
+            </h2>
           </div>
 
           <div className="col-lg-5 col-md-12">
@@ -264,9 +265,9 @@ const item = {
         {/* HEADING */}
         <div className="row section-heading mb-4">
           <div className="col-lg-7 col-md-12">
-            <h3 className="display-4 m-0">
+            <h2 className="display-6 m-0">
               Our Facilities
-            </h3>
+            </h2>
           </div>
 
           <div className="col-lg-5 col-md-12">

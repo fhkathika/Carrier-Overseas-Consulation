@@ -54,21 +54,20 @@ const item = {
   
 {/* organigation chart  */}
     <div className="max-w-7xl mx-auto px-6  text-center block">
-   <h3 className="display-4 m-0">
-              Our Organization Chart
-            </h3>
-   <div className=" ">
-     <div className=' w-full '>
-      <Image
-      src="/Frame 2.png"
-      alt="About Us"
-      width={1200}
-  height={500}
-      className='object-container '
-      />
-
-    </div>
-
+   
+          
+             <div className="text-center mb-5 pt-5">
+          <h2 className="display-6 fw-bold">Our Organizational Chart</h2>
+        
+        </div>
+<div className="w-full flex justify-center">
+  <Image
+    src="/organizationC.png"
+    alt="About Us"
+    width={1200}
+    height={800}
+    className="bg-white"
+  />
 </div>
 </div>
                 </motion.div>
@@ -94,7 +93,7 @@ const item = {
         <div className="row justify-content-center align-items-center">
           <div className="col-xxl-5 col-lg-6 my-3">
             <Image
-              src="/Founder Photo v2.png"
+              src="/founder.jpeg"
               alt="feature"
               width={500}
               height={400}
