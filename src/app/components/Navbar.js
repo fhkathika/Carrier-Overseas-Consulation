@@ -44,7 +44,7 @@ const handleLogout=async()=>{
               <li className="nav-item me-3">
                 <span className="d-flex align-items-center">
                   <FaClock className="me-2" />
-                  Visit time: Mon-Sat 9:00am-5:30pm
+                  Visit time: Sat-Thu 9:00am-5:30pm
                 </span>
               </li>
 
