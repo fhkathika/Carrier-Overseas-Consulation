@@ -5,6 +5,7 @@ import "swiper/css";
 import { Autoplay,Pagination } from "swiper/modules";
 import { motion } from "framer-motion"
 import { useRef, useState } from "react";
+import Image from "next/image";
 const client_logos = [];
 
 for (let i = 3; i <= 178; i++) {
@@ -98,14 +99,15 @@ const [activeIndex, setActiveIndex] = useState(0);
 >
           {client_logos.map((logo, index) => (
             <SwiperSlide key={index}>
-              <div
-  className="p-2 card text-center logo-card"
->
-  <img
+           
+<div className="d-flex justify-content-center align-items-center p-2 card text-center logo-card">
+  <Image
     src={logo?.src}
     alt="logo"
-    className="img-fluid"
-    style={{ maxHeight: "65px", objectFit: "contain" }}
+    width={65}
+    height={65}
+    style={{ objectFit: "contain" }}
+    priority
   />
 </div>
             </SwiperSlide>
