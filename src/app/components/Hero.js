@@ -30,59 +30,56 @@ export default function Hero() {
 ];
   return (
 <section
-  className="relative min-vh-100 d-flex align-items-center"
-  style={{
-    backgroundImage: "url('/coc_bg_sample6update2.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
+  className="position-relative d-flex align-items-center"
+  style={{ height: '100vh' }}   
 >
-      {/* Overlay */}
-    <div className="absolute inset-0 bg-black/50"></div>
+  
+  {/* Background Image */}
+  <Image
+    src="/coc_bg_sample6update.png"
+    alt="Hero background"
+    fill
+   
+    style={{ objectFit: 'cover', zIndex: 0 }}
+    quality={80}
+     priority
+  />
 
-       <div className="container relative text-center text-white z-2 mt-90">
+  {/* Overlay */}
+  <div
+    style={{
+      position: 'absolute',
+      inset: 0,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      zIndex: 1,
+    }}
+  />
 
-        <div>
+  {/* Content */}
+  <div
+    className="container text-center text-white position-relative"
+    style={{ zIndex: 2 }}
+  >
+    <motion.h1
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      className="display-4 pt-50"
+    >
+      From dreams to destinations... we are here!
+    </motion.h1>
 
-          {/* Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="display-4 pt-3"
-          >
-           From dreams to destinations... we are here!
-          </motion.h1>
+    <motion.p
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.4 }}
+      className="fs-5"
+    >
+      Take the first step today! Turning dreams into real opportunities!
+    </motion.p>
+  </div>
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="fs-5"
-          >
-           Take the first step today! Turning dreams into real opportunities!
-          </motion.p>
-
-          {/* Buttons */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="pt-4"
-          >
-            <a className="btn btn-light m-1" href="#">
-              Order our services now
-            </a>
-
-            <a className="btn btn-outline-light m-1" href="#">
-              Explore core features
-            </a>
-          </motion.div> */}
-
-        </div>
-      </div>
-    </section>
+</section>
   )
 }
 

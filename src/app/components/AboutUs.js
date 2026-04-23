@@ -67,6 +67,7 @@ const item = {
     width={1200}
     height={800}
     className="bg-white"
+    priority
   />
 </div>
 </div>
@@ -98,6 +99,7 @@ const item = {
               width={500}
               height={400}
               className="img-fluid"
+              priority
             />
           </div>
 

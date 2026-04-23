@@ -86,6 +86,7 @@ const item = {
         alt="About Us"
         width={900}
         height={900}
+        priority
       />
   
     </div>

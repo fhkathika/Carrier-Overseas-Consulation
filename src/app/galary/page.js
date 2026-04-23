@@ -3,14 +3,14 @@ import React, { useState } from 'react'
 import Lightbox from 'yet-another-react-lightbox'
 import "yet-another-react-lightbox/styles.css"
 import Zoom from 'yet-another-react-lightbox/plugins/zoom'
+import Image from 'next/image'
 
 const galaryImg = [];
 
 for (let i = 1; i <= 21; i++) {
   galaryImg.push({
     id: i,
-    src: `/galary_img_cocl/IMG_${i}.JPG
-    `
+    src: `/galary_img_cocl/IMG_${i}.JPG`
   });
 }
 
@@ -28,9 +28,17 @@ export default function galary() {
   {
     galaryImg?.map((item,i)=>(
  <div key={item?.id}>
-        <img className="h-auto max-w-full rounded-base" src={item?.src} alt=""
-        onClick={()=>{setIndex(i);setOpen(true)}}
-        />
+       <Image
+  className="h-auto w-full rounded-base"
+  src={item?.src}
+  alt='gallary img'
+  priority
+  width={400}
+  height={400}
+  quality={80}
+  onClick={() => { setIndex(i); setOpen(true); }}
+  style={{ cursor: 'pointer' }}  
+/>
     </div>
     ))
   }

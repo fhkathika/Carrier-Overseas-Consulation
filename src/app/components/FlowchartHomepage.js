@@ -194,6 +194,7 @@ const item = {
               width={600}
               height={600}
               className="rounded img-fluid"
+              priority
             />
 
           </div>
@@ -254,7 +255,7 @@ const item = {
             alt="About Us"
             width={800}
             height={500}
-            className=""
+            priority
           />
         </div>
         </div>
