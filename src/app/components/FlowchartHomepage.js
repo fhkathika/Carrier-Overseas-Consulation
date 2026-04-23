@@ -194,7 +194,7 @@ const item = {
               width={600}
               height={600}
               className="rounded img-fluid"
-              priority
+              
             />
 
           </div>
@@ -235,7 +235,7 @@ const item = {
 >
  <motion.div variants={item}>
   {/* why choose us  */}
-          <section className="py-5 bg-gray-100 mt-5 " >
+          <section className="py-5 bg-[#F7F7F7] mt-5 " >
       <div className="container">
 
         {/* Heading */}
@@ -251,7 +251,7 @@ const item = {
           
         <div className="w-full flex justify-center">
           <Image
-            src="/WhyChooseF.png"
+            src="/demo2.jpeg"
             alt="About Us"
             width={800}
             height={500}
