@@ -86,6 +86,7 @@ export default function CandidateProcessChart() {
              width={800}
          height={400}
              className='object-container '
+             priority
              />
        
            </div>

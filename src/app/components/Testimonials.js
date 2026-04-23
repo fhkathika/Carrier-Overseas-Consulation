@@ -15,6 +15,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom"
 
 import all_certificates from "@/data/all_certificates"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function Testimonials() {
   const [open, setOpen] = useState(false)
@@ -91,10 +92,13 @@ const item = {
                   setOpen(true)
                 }}
               >
-                <img
+                <Image
                   src={item?.src}
                   alt={`certificate-${i}`}
+                  width={200}
+                  height={200}
                   className="w-full h-[350px] object-contain"
+                  priority
                 />
               </div>
             </SwiperSlide>

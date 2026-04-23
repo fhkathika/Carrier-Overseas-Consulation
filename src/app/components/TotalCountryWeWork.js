@@ -134,6 +134,7 @@ const item = {
             width={900}
             height={600}
             className="w-full h-auto object-content"
+            priority
           />
         </div>
         </div>
