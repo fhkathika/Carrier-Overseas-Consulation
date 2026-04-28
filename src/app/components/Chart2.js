@@ -56,14 +56,14 @@ export default function Chart2() {
   }
 }
 
-const item = {
-  hidden: { opacity: 0, y: 60 },
+const itemRight = {
+  hidden: { opacity: 0, x: 100 },
   show: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
       duration: 0.8,
-      ease: [0.25, 0.1, 0.25, 1] // smooth cubic-bezier
+      ease: [0.25, 0.1, 0.25, 1]
     }
   }
 }
@@ -73,18 +73,21 @@ const item = {
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true }}
+    viewport={{ once: false, amount: 0.3 }}
     >
-             <motion.div variants={item}>
+             <motion.div variants={itemRight}>
              <h2 className="text-1xl md:text-4xl font-bold ">
-               Total Manpower Mobilized Through COCL (2000-2024)
+               Total Manpower Mobilized Through COCL (2001-2025)
              </h2>
+             <p className="text-muted">
+              24 Years of Excellence
+          </p>
         
     <div className="w-full flex justify-center">
       <Image
-        src="/barChartUpdate.png"
+        src="/chart2Update.png"
         alt="About Us"
-        width={900}
+        width={1000}
         height={900}
         priority
       />

@@ -4,6 +4,7 @@ import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion"
+import Image from "next/image";
 const data = [
   {
     country: "Saudi Arabia",
@@ -69,115 +70,147 @@ export default function GloballyMobilizedCount() {
   }
 }
 
-const item = {
-  hidden: { opacity: 0, y: 60 },
+const itemLeft =  {
+  hidden: { opacity: 0, x: -100 }, // 👈 from LEFT
   show: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
       duration: 0.8,
-      ease: [0.25, 0.1, 0.25, 1] // smooth cubic-bezier
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  }
+}
+const itemRight = {
+  hidden: { opacity: 0, x: 100 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1]
     }
   }
 }
   return (
-    <div className="mx-auto p-6 mt-3 text-center mb-3 bg-light">
+    <div className="mx-auto p-6 mt-3 text-center mb-3 bg-[#E9E9E9]">
      <motion.div
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true }}
+        viewport={{ once: false,amount:0.3 }}
       >
-                <motion.div variants={item}>
-      <h2 className="text-1xl md:text-4xl font-bold mb-10">
-        Total Manpower Mobilized Globally (2000-2024)
+                <motion.div variants={itemLeft}>
+      <h2 className="text-1xl md:text-4xl font-bold">
+       Category-wise Per Year Total Manpower Mobilized Through COCL (2001-2025)
       </h2>
-
-      <div ref={ref} className="row g-4">
-        {data.map((info, i) => (
-          <div key={i} className="col-lg-6 col-md-6">
-            <div className="bg-white rounded shadow-sm p-4 d-flex align-items-center justify-content-between h-100">
-
-              {/* LEFT */}
-              <div className="d-flex flex-column align-items-center justify-content-center border-end pe-3">
-                <img
-                  src={info.src}
-                  alt={info.country}
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    objectFit: "contain",
-                  }}
+ <p className="text-muted">
+              24 Years of Excellence
+          </p>
+           <div className="w-full flex justify-center">
+                <Image
+                  src="/chart3.png"
+                  alt="About Us"
+                  width={1000}
+                  height={900}
+                  priority
                 />
-                <p className="mt-2 fw-semibold small text-center">
-                  {info.country}
-                </p>
+            
               </div>
-
-              {/* RIGHT */}
-              <div className="text-danger text-start ps-3 flex-grow-1">
-
-                <p className="text-xl fw-bold mb-3 text-center">
-                  {inView && (
-                    <CountUp
-                      key={inView}   // 🔥 IMPORTANT FIX
-                      end={info.percent}
-                      duration={2}
-                    />
-                  )}
-                  %
-                </p>
-
-                <div className="d-flex justify-content-between">
-                  <span className="fw-semibold">Labour</span>
-                  <span className="fw-semibold">
-                    {inView && (
-                      <CountUp
-                        key={inView + "l" + i}
-                        end={info.labour}
-                        duration={2}
-                        separator=","
-                      />
-                    )}
-                  </span>
-                </div>
-
-                <div className="d-flex justify-content-between">
-                  <span className="fw-semibold">Skilled</span>
-                  <span className="fw-semibold">
-                    {inView && (
-                      <CountUp
-                        key={inView + "s" + i}
-                        end={info.Skilled}
-                        duration={2}
-                        separator=","
-                      />
-                    )}
-                  </span>
-                </div>
-
-                <div className="d-flex justify-content-between">
-                  <span className="fw-semibold">Professional</span>
-                  <span className="fw-semibold">
-                    {inView && (
-                      <CountUp
-                        key={inView + "p" + i}
-                        end={info.Professionals}
-                        duration={2}
-                        separator=","
-                      />
-                    )}
-                  </span>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-        ))}
-      </div>
+  
       </motion.div>
       </motion.div>
     </div>
   );
 }
+
+
+
+
+
+
+
+
+    // <div ref={ref} className="row g-4">
+    //     {data.map((info, i) => (
+    //       <div key={i} className="col-lg-6 col-md-6">
+    //         <div className="bg-white rounded shadow-sm p-4 d-flex align-items-center justify-content-between h-100">
+
+    //           {/* LEFT */}
+    //           <div className="d-flex flex-column align-items-center justify-content-center border-end pe-3">
+    //             <img
+    //               src={info.src}
+    //               alt={info.country}
+    //               style={{
+    //                 width: "50px",
+    //                 height: "50px",
+    //                 objectFit: "contain",
+    //               }}
+    //             />
+    //             <p className="mt-2 fw-semibold small text-center">
+    //               {info.country}
+    //             </p>
+    //           </div>
+
+    //           {/* RIGHT */}
+    //           <div className="text-danger text-start ps-3 flex-grow-1">
+
+    //             <p className="text-xl fw-bold mb-3 text-center">
+    //               {inView && (
+    //                 <CountUp
+    //                   key={inView}   // 🔥 IMPORTANT FIX
+    //                   end={info.percent}
+    //                   duration={2}
+    //                 />
+    //               )}
+    //               %
+    //             </p>
+
+    //             <div className="d-flex justify-content-between">
+    //               <span className="fw-semibold">Labour</span>
+    //               <span className="fw-semibold">
+    //                 {inView && (
+    //                   <CountUp
+    //                     key={inView + "l" + i}
+    //                     end={info.labour}
+    //                     duration={2}
+    //                     separator=","
+    //                   />
+    //                 )}
+    //               </span>
+    //             </div>
+
+    //             <div className="d-flex justify-content-between">
+    //               <span className="fw-semibold">Skilled</span>
+    //               <span className="fw-semibold">
+    //                 {inView && (
+    //                   <CountUp
+    //                     key={inView + "s" + i}
+    //                     end={info.Skilled}
+    //                     duration={2}
+    //                     separator=","
+    //                   />
+    //                 )}
+    //               </span>
+    //             </div>
+
+    //             <div className="d-flex justify-content-between">
+    //               <span className="fw-semibold">Professional</span>
+    //               <span className="fw-semibold">
+    //                 {inView && (
+    //                   <CountUp
+    //                     key={inView + "p" + i}
+    //                     end={info.Professionals}
+    //                     duration={2}
+    //                     separator=","
+    //                   />
+    //                 )}
+    //               </span>
+    //             </div>
+
+    //           </div>
+
+    //         </div>
+    //       </div>
+    //     ))}
+    //   </div>

@@ -15,7 +15,7 @@ import {
   FaSignOutAlt,
   FaHeadset,
 } from "react-icons/fa";
-
+import { motion } from "framer-motion"
 const steps = [
   "Start",
   "Lesson With Candidates",
@@ -67,7 +67,25 @@ export default function CandidateProcessChart() {
 
     rows.push(row);
   }
-
+  const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.25
+    }
+  }
+}
+const itemLeft =  {
+  hidden: { opacity: 0, x: -100 }, // 👈 from LEFT
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  }
+}
   return (
     <section className="section py-5 mt-5 bg-primary bg-opacity-10">
        <div className="text-center ">
@@ -76,6 +94,13 @@ export default function CandidateProcessChart() {
           Manpower selection & processing flow
           </p>
         </div>
+        <motion.div
+  variants={container}
+  initial="hidden"
+  whileInView="show"
+ viewport={{ once: false,amount:0.3 }}
+>
+         <motion.div variants={itemLeft}>
       <div className="max-w-7xl mx-auto px-6  text-center block ">
          
           <div className=" ">
@@ -93,7 +118,8 @@ export default function CandidateProcessChart() {
        
        </div>
        </div>
-    
+    </motion.div>
+    </motion.div>
     </section>
   );
 }

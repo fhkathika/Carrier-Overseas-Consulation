@@ -28,6 +28,28 @@ const item = {
     }
   }
 }
+const itemLeft =  {
+  hidden: { opacity: 0, x: -100 }, // 👈 from LEFT
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  }
+}
+const itemRight = {
+  hidden: { opacity: 0, x: 100 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  }
+}
   return (
     <section className='py-5  view '>
 
@@ -35,7 +57,7 @@ const item = {
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true }}
+        viewport={{ once: false,amount:0.3 }}
       >
                 <motion.div variants={item}>
 <AboutFeatueSection/>
@@ -48,9 +70,10 @@ const item = {
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true }}
+        viewport={{ once: false,amount:0.3 }}
+
       >
-                <motion.div variants={item}>
+                <motion.div variants={itemRight}>
   
 {/* organigation chart  */}
     <div className="max-w-7xl mx-auto px-6  text-center block">
@@ -82,9 +105,9 @@ const item = {
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true }}
+      viewport={{ once: false,amount:0.3 }}
       >
-                <motion.div variants={item}>
+                <motion.div variants={itemLeft}>
 
              
  <section className="section bg-gray-100 py-5">

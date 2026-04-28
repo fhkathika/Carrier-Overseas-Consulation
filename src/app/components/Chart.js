@@ -158,21 +158,38 @@ const BAR_AXIS_SPACE = 10;
 export default function Chart() {
     const [radius, setRadius] = useState(200); // default desktop radius
     const [chartData, setChartData] = useState(); // default desktop radius
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setRadius(100); // small screens
-      
-      } else {
-        setRadius(200); // desktop
-      }
-  setChartData(window.innerWidth)
-    };
+const [isMobile, setIsMobile] = useState(false);
 
-    handleResize(); // set initial value
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+
+  handleResize();
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+const getAnimation = (direction = "right") => {
+  if (isMobile) {
+    return {
+      hidden: { opacity: 0, y: 60 },
+      show: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8 }
+      }
+    };
+  }
+
+  return {
+    hidden: { opacity: 0, x: direction === "left" ? -100 : 100 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8 }
+    }
+  };
+};
 const container = {
   hidden: {},
   show: {
@@ -193,62 +210,67 @@ const item = {
     }
   }
 }
+const itemRight = {
+  hidden: { opacity: 0, x: 100 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  }
+}
   return (
-    <section className="w-full sm:max-w-6xl mx-auto sm:px-6 mt-6 text-center mb-2">
-       <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-      >
-                <motion.div variants={item}>
-                       <h2 className="text-1xl md:text-4xl font-bold ">
-                                 Country-wise Total Manpower Mobilized Through COCL(2000-2024)
-                               </h2>
-                          
-                      <div className="w-full flex justify-center">
-                        <Image
-                          src="/pieC.png"
-                          alt="About Us"
-                          width={600}
-                          height={400}
-                          priority
-                        />
-                      </div>
+<section className="w-full sm:max-w-6xl mx-auto sm:px-6 mt-6 text-center mb-2">
+  
+  <motion.div
+    initial="hidden"
+    whileInView="show"
+  viewport={{ once: false, amount: 0.3 }}
+    variants={{
+      hidden: {},
+      show: {
+        transition: {
+          staggerChildren: 0.25
+        }
+      }
+    }}
+  >
 
-      {/* <h3 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center mt-20">
-   Country-wise Total Manpower Mobilized Through COCL(2000-2024)
-      </h3>
+    {/* TITLE (from left on desktop) */}
+    <motion.h2
+      variants={getAnimation("left")}
+      className="text-1xl md:text-4xl font-bold"
+    >
+      Country-wise Total Manpower Mobilized Through COCL(2001-2025)
+    </motion.h2>
 
-    <ResponsiveContainer width="100%" height={500}>
-      <PieChart>
-        <Pie
-          data={ chartData >= 640 ?data :data2}
-          dataKey="pv"
-          nameKey="name"
-          cx="50%"
-          cy="50%"
-          outerRadius={radius} // responsive
-            label={chartData >= 640 ? ({ name, percent }) => `${name} (${(percent*100).toFixed(0)}%)` : ({ name, percent }) => `${name}  (${(percent*100).toFixed(0)}%)`}
+    {/* SUBTITLE */}
+    <motion.p
+      variants={getAnimation("left")}
+      className="text-muted"
+    >
+      24 Years of Excellence
+    </motion.p>
 
-            
-  labelLine={chartData >= 640} // only draw label lines on desktop
-  fontSize={chartData < 640 ? 7 : 14} // smaller font on mobile
-      className="font-bold"    
-        >
-          {data.map((_, i) => (
-            <Cell key={i} fill={getColor(data.length, i)} />
-          ))}
-        </Pie>
-        <Tooltip formatter={(value) => value.toLocaleString()} />
-        <Legend />
-      </PieChart>
-    </ResponsiveContainer> */}
+    {/* IMAGE (from right on desktop, bottom on mobile) */}
+    <motion.div
+      variants={getAnimation("right")}
+      className="w-full flex justify-center"
+    >
+      <Image
+        src="/chart1_Update.png"
+        alt="About Us"
+        width={1000}
+        height={800}
+        priority
+      />
+    </motion.div>
 
- </motion.div>
-                </motion.div>
+  </motion.div>
 
-    </section>
+</section>
   );
 }
 

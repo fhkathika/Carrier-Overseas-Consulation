@@ -30,15 +30,48 @@ const item = {
     }
   }
 }
+const itemLeft =  {
+  hidden: { opacity: 0, x: -100 }, // 👈 from LEFT
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  }
+}
+const itemRight = {
+  hidden: { opacity: 0, x: 100 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  }
+}
+const itemBottom = {
+  hidden: { opacity: 0, y: 80 }, // start from bottom
+  show: {
+    opacity: 1,
+    y: 0, // move to original position
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  }
+}
   return (
     <section className='py-16 '>
 <motion.div
   variants={container}
   initial="hidden"
   whileInView="show"
-  viewport={{ once: true }}
+ viewport={{ once: false,amount:0.3 }}
 >
-  <motion.div variants={item}>
+  <motion.div variants={itemBottom}>
  <section className="py-5">
       <div className="container">
 
@@ -111,9 +144,9 @@ const item = {
   variants={container}
   initial="hidden"
   whileInView="show"
-  viewport={{ once: true }}
+  viewport={{ once: false,amount:0.3 }}
 >
-  <motion.div variants={item}>
+  <motion.div variants={itemLeft}>
     {/* manpower services  */}
     <section className="py-5 bg-light">
       <div className="container">
@@ -231,27 +264,29 @@ const item = {
   variants={container}
   initial="hidden"
   whileInView="show"
-  viewport={{ once: true }}
+  viewport={{ once: false,amount:0.3 }}
 >
- <motion.div variants={item}>
+
   {/* why choose us  */}
-          <section className="py-5 bg-[#F7F7F7] mt-5 " >
+          <section className="py-5 bg-[#FFFFFF] mt-5 " >
       <div className="container">
 
         {/* Heading */}
-        <div className="text-center mb-5">
+        <div className="text-center ">
           <h2 className="display-6 fw-bold">Why Choose COCL</h2>
           <p className="text-muted">
             Complete manpower solutions with training, support & global service excellence
           </p>
         </div>
-
+ <motion.div variants={itemRight}>
         {/* Cards */}
-        <div className="max-w-7xl mx-auto px-6  text-center block">
+        <div className="max-w-7xl mx-auto   text-center block">
           
         <div className="w-full flex justify-center">
           <Image
-            src="/demo2.jpeg"
+            // src="/demo2.jpeg"
+            // src="/in_house_services_final.svg"
+            src="/in_house_services_finalPng.png"
             alt="About Us"
             width={800}
             height={500}
@@ -259,31 +294,24 @@ const item = {
           />
         </div>
         </div>
-      
+      </motion.div>
       </div>
     </section>
 
-        </motion.div>
+       
 </motion.div>
 
-<motion.div
-  variants={container}
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: true }}
->
-         <motion.div variants={item}>
+
        <CandidateProcessChart/>
-        </motion.div>
-        </motion.div>
+    
 
 <motion.div
   variants={container}
   initial="hidden"
   whileInView="show"
-  viewport={{ once: true }}
+ viewport={{ once: false,amount:0.3 }}
 >
-          <motion.div variants={item}>
+          <motion.div variants={itemBottom}>
 <TotalCountryWeWork/>
 </motion.div>
 </motion.div>

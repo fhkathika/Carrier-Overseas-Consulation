@@ -8,6 +8,7 @@
   import 'swiper/css/grid';
   import 'swiper/css/pagination';
   import '../style.css'
+  import { motion } from "framer-motion"
   import { Autoplay, Grid, Pagination } from 'swiper/modules';
   export default function Reviews() {
       const [reviews, setReviews] = useState([]);
@@ -24,7 +25,25 @@
     useEffect(() => {
       getReview();
     }, []);
-
+    const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.25
+    }
+  }
+}
+const itemLeft =  {
+  hidden: { opacity: 0, x: -100 }, // 👈 from LEFT
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  }
+}
     return (
       <section className="py-16 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 text-center">
@@ -32,7 +51,13 @@
           <h2 className="text-2xl md:text-4xl font-bold  mb-2 sm:mb-10">
         What Our Clients Say
           </h2>
-
+<motion.div
+  variants={container}
+  initial="hidden"
+  whileInView="show"
+ viewport={{ once: false,amount:0.3 }}
+>
+  <motion.div variants={itemLeft}>
           <div className="relative w-full overflow-hidden">
             {/* <div className="flex animate-scroll gap-8 w-max">
 
@@ -106,7 +131,8 @@
                   
                   </Swiper>
           </div>
-
+</motion.div>
+</motion.div>
         </div>
       </section>
     )

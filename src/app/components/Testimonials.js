@@ -40,15 +40,26 @@ const item = {
     }
   }
 }
+const itemBottom = {
+  hidden: { opacity: 0, y: 80 }, // start from bottom
+  show: {
+    opacity: 1,
+    y: 0, // move to original position
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  }
+}
   return (
     <section className="py-10 bg-gray-100">
            <motion.div
               variants={container}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true }}
+              viewport={{ once: false,amount:0.3 }}
             >
-                      <motion.div variants={item}>
+                      <motion.div variants={itemBottom}>
       
       <div className="max-w-7xl mx-auto px-6">
 
