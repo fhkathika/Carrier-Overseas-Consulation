@@ -160,34 +160,32 @@ export default function Chart() {
     const [chartData, setChartData] = useState(); // default desktop radius
 const [isMobile, setIsMobile] = useState(false);
 
-useEffect(() => {
-  const handleResize = () => {
-    setIsMobile(window.innerWidth < 768);
-  };
+const [mounted, setMounted] = useState(false);
 
-  handleResize();
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
+useEffect(() => {
+  setMounted(true);
+  // ... your existing resize logic
 }, []);
+
+// Then in getAnimation:
 const getAnimation = (direction = "right") => {
-  if (isMobile) {
+  if (!mounted || isMobile) {   // ← add !mounted check
     return {
       hidden: { opacity: 0, y: 60 },
-      show: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.8 }
-      }
+      show: { opacity: 1, y: 0, transition: { duration: 0.8 } }
     };
   }
-
+  // desktop horizontal animation
   return {
-    hidden: { opacity: 0, x: direction === "left" ? -100 : 100 },
-    show: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8 }
+     hidden: { opacity: 0, x: 100 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1]
     }
+  }
   };
 };
 const container = {
@@ -222,8 +220,7 @@ const itemRight = {
   }
 }
   return (
-<section className="w-full sm:max-w-6xl mx-auto sm:px-6 mt-6 text-center mb-2">
-  
+<section className="w-full max-w-6xl mx-auto px-4 mt-3 text-center mb-2 overflow-hidden">
   <motion.div
     initial="hidden"
     whileInView="show"
@@ -239,33 +236,37 @@ const itemRight = {
   >
 
     {/* TITLE (from left on desktop) */}
-    <motion.h2
-      variants={getAnimation("left")}
-      className="text-1xl md:text-4xl font-bold"
-    >
+   <motion.h2
+  variants={getAnimation("left")}
+  className="text-xl md:text-4xl font-bold"   // ← was text-1xl
+>
       Country-wise Total Manpower Mobilized Through COCL(2001-2025)
     </motion.h2>
 
     {/* SUBTITLE */}
-    <motion.p
+    <motion.h4
       variants={getAnimation("left")}
       className="text-muted"
     >
       24 Years of Excellence
-    </motion.p>
+    </motion.h4>
 
     {/* IMAGE (from right on desktop, bottom on mobile) */}
     <motion.div
       variants={getAnimation("right")}
       className="w-full flex justify-center"
     >
-      <Image
-        src="/chart1_Update.png"
-        alt="About Us"
-        width={1000}
-        height={800}
-        priority
-      />
+      <div className="w-full max-w-[900px] mx-auto px-2 sm:px-0">
+     <Image
+  src="/chart1_Update.png"
+  alt="Chart"
+  width={1000}
+  height={800}
+  className="w-full h-auto m-auto"
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+  priority
+/>
+</div>
     </motion.div>
 
   </motion.div>

@@ -185,15 +185,15 @@ const handleLogout=async()=>{
             <ul className="navbar-nav m-auto">
 
               <li className="nav-item  font-bold">
-                <Link className="nav-link" href="/">Home</Link>
+                <Link className="nav-link" href="/" data-bs-dismiss="offcanvas">Home</Link>
               
               </li>
               <li className="nav-item  font-bold ">
-                <Link className="nav-link" href="/about">About Us</Link>
+                <Link className="nav-link" href="/about" data-bs-dismiss="offcanvas">About Us</Link>
               
               </li>
               <li className="nav-item  font-bold">
-                <Link className="nav-link" href="/success">Our Success</Link>
+                <Link className="nav-link" href="/success"data-bs-dismiss="offcanvas">Our Success</Link>
               
               </li>
               {/* <li className="nav-item  font-bold">
@@ -205,7 +205,7 @@ const handleLogout=async()=>{
               
               </li> */}
               <li className="nav-item  font-bold">
-                <Link className="nav-link" href="/galary">Gallary</Link>
+                <Link className="nav-link" href="/galary" data-bs-dismiss="offcanvas">Gallary</Link>
               
               </li>
 

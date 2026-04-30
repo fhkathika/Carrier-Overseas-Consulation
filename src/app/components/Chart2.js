@@ -79,9 +79,9 @@ const itemRight = {
              <h2 className="text-1xl md:text-4xl font-bold ">
                Total Manpower Mobilized Through COCL (2001-2025)
              </h2>
-             <p className="text-muted">
+             <h4 className="text-muted">
               24 Years of Excellence
-          </p>
+          </h4>
         
     <div className="w-full flex justify-center">
       <Image

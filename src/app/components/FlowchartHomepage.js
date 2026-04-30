@@ -286,7 +286,7 @@ const itemBottom = {
           <Image
             // src="/demo2.jpeg"
             // src="/in_house_services_final.svg"
-            src="/in_house_services_finalPng.png"
+            src="/OneStop Services.png"
             alt="About Us"
             width={800}
             height={500}
