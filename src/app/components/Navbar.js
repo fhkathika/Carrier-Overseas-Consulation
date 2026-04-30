@@ -3,7 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { motion } from "framer-motion"
 import Image from "next/image"
-import Link from "next/link"
+import { useRef } from "react";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import '../style.css'
@@ -15,6 +16,17 @@ export default function Navbar() {
   const router=useRouter()
   const pathname=usePathname()
   const [active, setActive] = useState("Home")
+   const offcanvasRef = useRef(null);
+
+  const closeOffcanvas = () => {
+    if (typeof window !== "undefined") {
+      const bootstrap = require("bootstrap/dist/js/bootstrap");
+      const offcanvasEl = document.getElementById("offcanvasNavbar");
+      const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvasEl);
+      if (offcanvasInstance) offcanvasInstance.hide();
+    }
+  };
+
    useEffect(()=>{
     const checkaAuth=async()=>{
 const res= await fetch("/api/admin/me")
@@ -137,25 +149,15 @@ const handleLogout=async()=>{
     </div>
 
  
-<nav className="navbar navbar-expand-lg sticky-top bg-white shadow-sm p-2">
+   <nav className="navbar navbar-expand-lg sticky-top bg-white shadow-sm p-2">
       <div className="container">
 
-        {/* Logo */}
-   
+        <Link href="/" className="navbar-brand flex items-center">
+          <div className="relative w-[120px] h-[60px] md:w-[160px] md:h-[50px]">
+            <Image src="/COCL logo - V2.png" alt="Logo" fill className="object-contain" priority />
+          </div>
+        </Link>
 
-<Link href="/" className="navbar-brand flex items-center">
-  <div className="relative w-[120px] h-[60px] md:w-[160px] md:h-[50px]">
-    <Image
-      src="/COCL logo - V2.png"
-      alt="Logo"
-      fill
-      className="object-contain"
-      priority
-    />
-  </div>
-</Link>
-
-        {/* Mobile Toggle */}
         <button
           className="navbar-toggler"
           type="button"
@@ -165,61 +167,35 @@ const handleLogout=async()=>{
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Offcanvas */}
-        <div
-          className="offcanvas offcanvas-start"
-          id="offcanvasNavbar"
-        >
+        <div className="offcanvas offcanvas-start" id="offcanvasNavbar">
           <div className="offcanvas-header">
             <h5>Menu</h5>
-            <button
-              type="button"
-              className="btn-close"
-              data-bs-dismiss="offcanvas"
-            ></button>
+            <button type="button" className="btn-close" data-bs-dismiss="offcanvas"></button>
           </div>
 
           <div className="offcanvas-body">
-
-            {/* Nav Items */}
             <ul className="navbar-nav m-auto">
 
-              <li className="nav-item  font-bold">
-                <Link className="nav-link" href="/" data-bs-dismiss="offcanvas">Home</Link>
-              
-              </li>
-              <li className="nav-item  font-bold ">
-                <Link className="nav-link" href="/about" data-bs-dismiss="offcanvas">About Us</Link>
-              
-              </li>
-              <li className="nav-item  font-bold">
-                <Link className="nav-link" href="/success"data-bs-dismiss="offcanvas">Our Success</Link>
-              
-              </li>
-              {/* <li className="nav-item  font-bold">
-                <Link className="nav-link" href="/achievement">Achievement</Link>
-              
-              </li> */}
-              {/* <li className="nav-item  font-bold">
-                <Link className="nav-link" href="/Circular">Job Circular</Link>
-              
-              </li> */}
-              <li className="nav-item  font-bold">
-                <Link className="nav-link" href="/galary" data-bs-dismiss="offcanvas">Gallary</Link>
-              
+              <li className="nav-item font-bold">
+                <Link className="nav-link" href="/" onClick={closeOffcanvas}>Home</Link>
               </li>
 
-            
+              <li className="nav-item font-bold">
+                <Link className="nav-link" href="/about" onClick={closeOffcanvas}>About Us</Link>
+              </li>
+
+              <li className="nav-item font-bold">
+                <Link className="nav-link" href="/success" onClick={closeOffcanvas}>Our Success</Link>
+              </li>
+
+              <li className="nav-item font-bold">
+                <Link className="nav-link" href="/galary" onClick={closeOffcanvas}>Gallary</Link>
+              </li>
+
             </ul>
 
-          {/* Right Side */}
             <div className="d-none d-lg-flex align-items-center">
-
-           
-              <Link href="/contactUs" className="btn btn-danger">
-                Contact Us
-              </Link>
-
+              <Link href="/contactUs" className="btn btn-danger">Contact Us</Link>
             </div>
           </div>
         </div>
