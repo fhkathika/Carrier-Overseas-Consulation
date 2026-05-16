@@ -85,7 +85,7 @@ const itemRight = {
         </div>
 <div className="w-full flex justify-center">
   <Image
-    src="/organizationC.png"
+    src="/Untitled-17.png"
     alt="About Us"
     width={1200}
     height={800}

@@ -89,10 +89,10 @@ const itemLeft =  {
   return (
     <section className="section py-5 mt-5 bg-primary bg-opacity-10">
        <div className="text-center ">
-          <h2 className="display-6 fw-bold"> Candidate Process Chart</h2>
-          <p className="text-muted">
+          {/* <h2 className="display-6 fw-bold"> Candidate Process Chart</h2> */}
+          {/* <p className="text-muted">
           Manpower selection & processing flow
-          </p>
+          </p> */}
         </div>
         <motion.div
   variants={container}
@@ -106,7 +106,7 @@ const itemLeft =  {
           <div className=" ">
             <div className=' w-full m--auto d-flex justify-content-center align-items-center'>
              <Image
-             src="/Candidate processing flowchartUpdate.png"
+             src="/Untitled-3.png"
              alt="About Us"
              width={800}
          height={400}
